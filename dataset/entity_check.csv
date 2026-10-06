@@ -1,0 +1,4 @@
+booking_entity_id,booking_entity_name,authorised
+ENT-KY-GC,Bank US – Grand Cayman Branch,False
+ENT-US-MIA,Bank US – Miami Branch,True
+ENT-US-NY,Bank US – New York (HQ),True

@@ -1,0 +1,6 @@
+flag_id,type,severity,txn_count,amount_usd,owner,opened_date,age_days,status
+FLAG-001,Coverage gap: affiliate-exemption rule excluding txns,Red,45,79408000.0,Financial Crime Risk,2026-06-03,89,Escalated
+FLAG-002,Coverage gap: standard-risk country wire exclusion,Amber,51,20516969.39,Compliance Ops,2026-06-02,90,Escalated
+FLAG-003,Coverage gap: booking entity not in monitoring scope,Green,95,6856058.56,Financial Crime Risk,2026-06-01,91,Escalated
+FLAG-004,Unauthorised entity transacting: Bank US – Grand Cayman Branch (ENT-KY-GC),Red,95,6856058.56,Financial Crime Risk,2026-06-01,91,Escalated
+FLAG-005,Coverage gap: monitoring feed ingestion failure,Green,3,107453.31,Data Engineering,2026-07-18,44,Escalated

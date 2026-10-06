@@ -1,0 +1,3 @@
+booking_entity_id,booking_entity_name,booking_entity_country,authorised,aml_monitoring_onboarded,notes
+ENT-US-NY,Bank US – New York (HQ),US,True,True,Head office; fully in AML monitoring scope
+ENT-US-MIA,Bank US – Miami Branch,US,True,True,Domestic branch; fully in AML monitoring scope

@@ -1,0 +1,6 @@
+# Python
+__pycache__/
+*.pyc
+
+# Reconciliation engine runtime state (escalation timers)
+reconcile_state.db

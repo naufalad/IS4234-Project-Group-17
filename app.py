@@ -70,8 +70,17 @@ def fallback_from_raw():
 def load():
     needed = ["flags.csv", "coverage_daily.csv", "entity_check.csv"]
     if all((D / n).exists() for n in needed):
-        return (pd.read_csv(D / "flags.csv"), pd.read_csv(D / "coverage_daily.csv"),
-                pd.read_csv(D / "entity_check.csv"), "reconcile.py outputs")
+        flags = pd.read_csv(D / "flags.csv")
+        daily = pd.read_csv(D / "coverage_daily.csv")
+        ents = pd.read_csv(D / "entity_check.csv")
+        # normalise `authorised` to real bools: a CSV may carry "True"/"False"
+        # strings depending on the writer, and the entity check below relies on
+        # `== False` / `is False` to spot unauthorised (e.g. Cayman) entities.
+        ents["authorised"] = (
+            ents["authorised"].astype(str).str.strip().str.lower()
+            .isin(["true", "1", "yes"])
+        )
+        return flags, daily, ents, "reconcile.py outputs"
     flags, daily, ents = fallback_from_raw()
     return flags, daily, ents, "raw dataset files (fallback)"
 
