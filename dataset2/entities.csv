@@ -1,0 +1,721 @@
+entity_id,name,entity_type,country,pep_category,linked_pep_id,linked_pep_name,pep_role,flagged_as_pep_by_bank,swiss_bank,offshore_jurisdiction,declared_income_usd,expected_monthly_volume_usd,source_of_funds_verified,bank_risk_rating,is_suspicious,scenario
+E00059,Horizon Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,278000.0,23000.0,Yes,MEDIUM,No,BACKGROUND
+E00060,Summit Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,2437000.0,203000.0,No,LOW,No,BACKGROUND
+E00061,Ironwood Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1934000.0,,Yes,LOW,No,BACKGROUND
+E00062,Alpine Properties SARL,Company,FR,Not PEP,,,,No,CH_A,No,7530000.0,627000.0,Yes,LOW,No,BACKGROUND
+E00063,Atlas Associates SA,Company,CH,Not PEP,,,,No,CH_C,No,9666000.0,805000.0,Yes,LOW,No,BACKGROUND
+E00064,Horizon Logistics SA,Company,CH,Not PEP,,,,No,CH_C,No,10219000.0,852000.0,Yes,LOW,No,BACKGROUND
+E00065,Granite Associates SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,55870000.0,,Yes,LOW,No,BACKGROUND
+E00066,Granite Group SAL,Company,LB,Not PEP,,,,No,CH_B,No,11909000.0,992000.0,Yes,MEDIUM,No,BACKGROUND
+E00067,Alpine Properties SAL,Company,LB,Not PEP,,,,No,CH_C,No,1588000.0,132000.0,Yes,LOW,No,BACKGROUND
+E00068,Meridian Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,4566000.0,,No,LOW,No,BACKGROUND
+E00069,Alpine Ventures SA,Company,CH,Not PEP,,,,No,CH_B,No,5907000.0,492000.0,Yes,LOW,No,BACKGROUND
+E00070,Riviera Holdings SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3522000.0,,Yes,MEDIUM,No,BACKGROUND
+E00071,Alpine Logistics SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,7021000.0,,Yes,MEDIUM,No,BACKGROUND
+E00072,Horizon Capital SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,821000.0,,No,LOW,No,BACKGROUND
+E00073,Summit Ventures SA,Company,CH,Not PEP,,,,No,CH_B,No,3118000.0,260000.0,Yes,LOW,No,BACKGROUND
+E00074,Lakeside Investments SA,Company,CH,Not PEP,,,,No,CH_D,No,1476000.0,123000.0,Yes,LOW,No,BACKGROUND
+E00075,Azure Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,13993000.0,1166000.0,Yes,MEDIUM,No,BACKGROUND
+E00076,Granite Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,26981000.0,,Yes,MEDIUM,No,BACKGROUND
+E00077,Granite Consulting SARL,Company,FR,Not PEP,,,,No,CH_C,No,50554000.0,4213000.0,No,LOW,No,BACKGROUND
+E00078,Orion Investments SA,Company,CH,Not PEP,,,,No,CH_C,No,4335000.0,361000.0,Yes,LOW,No,BACKGROUND
+E00079,Crescent Holdings SA,Company,CH,Not PEP,,,,No,CH_A,No,786000.0,66000.0,Yes,LOW,No,BACKGROUND
+E00080,Silverline Properties SA,Company,CH,Not PEP,,,,No,CH_B,No,175000.0,15000.0,No,LOW,No,BACKGROUND
+E00081,Summit Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,104281000.0,,No,MEDIUM,No,BACKGROUND
+E00082,Oakmont Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,1358000.0,113000.0,Yes,MEDIUM,No,BACKGROUND
+E00083,Pinnacle Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,39808000.0,3317000.0,Yes,LOW,No,BACKGROUND
+E00084,Oakmont Partners SAL,Company,LB,Not PEP,,,,No,CH_B,No,8728000.0,727000.0,Yes,MEDIUM,No,BACKGROUND
+E00085,Lakeside Consulting SAL,Company,LB,Not PEP,,,,No,CH_A,No,3796000.0,316000.0,Yes,MEDIUM,No,BACKGROUND
+E00086,Bluegate Services SA,Company,CH,Not PEP,,,,No,CH_B,No,3609000.0,301000.0,Yes,LOW,No,BACKGROUND
+E00087,Silverline Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,4013000.0,334000.0,Yes,LOW,No,BACKGROUND
+E00088,Summit Partners SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1763000.0,,Yes,LOW,No,BACKGROUND
+E00089,Cedar Properties Ltd,Company,CY,Not PEP,,,,No,CH_C,Yes,1384000.0,115000.0,Yes,HIGH,No,BACKGROUND
+E00090,Orion Capital SA,Company,CH,Not PEP,,,,No,CH_A,No,1617000.0,135000.0,Yes,MEDIUM,No,BACKGROUND
+E00091,Orion Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2475000.0,,Yes,LOW,No,BACKGROUND
+E00092,Bluegate Associates SA,Company,CH,Not PEP,,,,No,CH_D,No,6071000.0,506000.0,Yes,LOW,No,BACKGROUND
+E00093,Vantage Holdings LLC,Company,US,Not PEP,,,,No,CH_D,No,8124000.0,677000.0,Yes,MEDIUM,No,BACKGROUND
+E00094,Granite Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,3296000.0,,Yes,MEDIUM,No,BACKGROUND
+E00095,Bluegate Investments SAL,Company,LB,Not PEP,,,,No,CH_C,No,3696000.0,308000.0,Yes,LOW,No,BACKGROUND
+E00096,Atlas Services SA,Company,CH,Not PEP,,,,No,CH_D,No,4036000.0,336000.0,Yes,MEDIUM,No,BACKGROUND
+E00097,Silverline Partners FZE,Company,AE,Not PEP,,,,No,CH_A,No,1714000.0,143000.0,Yes,MEDIUM,No,BACKGROUND
+E00098,Oakmont Holdings SA,Company,CH,Not PEP,,,,No,CH_C,No,522000.0,43000.0,Yes,LOW,No,BACKGROUND
+E00099,Orion Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,1402000.0,117000.0,Yes,LOW,No,BACKGROUND
+E00100,Harbor Investments FZE,Company,AE,Not PEP,,,,No,CH_C,No,4636000.0,386000.0,Yes,LOW,No,BACKGROUND
+E00101,Lakeside Group SA,Company,CH,Not PEP,,,,No,CH_B,No,26246000.0,2187000.0,Yes,LOW,No,BACKGROUND
+E00102,Ironwood Properties SA,Company,CH,Not PEP,,,,No,CH_B,No,2288000.0,191000.0,Yes,MEDIUM,No,BACKGROUND
+E00103,Crescent Consulting Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,3661000.0,,Yes,MEDIUM,No,BACKGROUND
+E00104,Riviera Ventures Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,2117000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00105,Harbor Capital SA,Company,CH,Not PEP,,,,No,CH_A,No,5922000.0,494000.0,Yes,LOW,No,BACKGROUND
+E00106,Riviera Logistics SA,Company,CH,Not PEP,,,,No,CH_D,No,1393000.0,116000.0,Yes,LOW,No,BACKGROUND
+E00107,Harbor Ventures SA,Company,CH,Not PEP,,,,No,CH_A,No,2433000.0,203000.0,Yes,MEDIUM,No,BACKGROUND
+E00108,Atlas Ventures LLC,Company,US,Not PEP,,,,No,CH_C,No,29574000.0,2464000.0,Yes,LOW,No,BACKGROUND
+E00109,Cedar Ventures Ltd,Company,CY,Not PEP,,,,No,None (foreign counterparty),Yes,44694000.0,,Yes,HIGH,No,BACKGROUND
+E00110,Atlas Capital SA,Company,CH,Not PEP,,,,No,CH_B,No,6295000.0,525000.0,No,LOW,No,BACKGROUND
+E00111,Bluegate Capital Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,10634000.0,,Yes,LOW,No,BACKGROUND
+E00112,Alpine Associates SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,175000.0,,Yes,LOW,No,BACKGROUND
+E00113,Granite Investments SA,Company,CH,Not PEP,,,,No,CH_D,No,18444000.0,1537000.0,Yes,MEDIUM,No,BACKGROUND
+E00114,Azure Capital Ltd,Company,GB,Not PEP,,,,No,CH_B,No,1765000.0,147000.0,Yes,LOW,No,BACKGROUND
+E00115,Sterling Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,5301000.0,,Yes,LOW,No,BACKGROUND
+E00116,Lakeside Holdings Ltd,Company,CY,Not PEP,,,,No,CH_B,Yes,2077000.0,173000.0,No,HIGH,No,BACKGROUND
+E00117,Riviera Services FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,6536000.0,,Yes,LOW,No,BACKGROUND
+E00118,Orion Holdings SA,Company,CH,Not PEP,,,,No,CH_B,No,3698000.0,308000.0,Yes,LOW,No,BACKGROUND
+E00119,Azure Group SA,Company,CH,Not PEP,,,,No,CH_A,No,5359000.0,447000.0,Yes,MEDIUM,No,BACKGROUND
+E00120,Riviera Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,39382000.0,3282000.0,No,LOW,No,BACKGROUND
+E00121,Meridian Consulting SA,Company,CH,Not PEP,,,,No,CH_D,No,927000.0,77000.0,Yes,LOW,No,BACKGROUND
+E00122,Pinnacle Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,16018000.0,1335000.0,Yes,MEDIUM,No,BACKGROUND
+E00123,Alpine Consulting FZE,Company,AE,Not PEP,,,,No,CH_C,No,5497000.0,458000.0,Yes,LOW,No,BACKGROUND
+E00124,Harbor Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,3835000.0,,Yes,MEDIUM,No,BACKGROUND
+E00125,Cedar Group FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,942000.0,,Yes,MEDIUM,No,BACKGROUND
+E00126,Bluegate Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,5363000.0,447000.0,Yes,LOW,No,BACKGROUND
+E00127,Cedar Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,608000.0,,Yes,MEDIUM,No,BACKGROUND
+E00128,Harbor Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,47467000.0,,No,LOW,No,BACKGROUND
+E00129,Horizon Ventures Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,7217000.0,,Yes,MEDIUM,No,BACKGROUND
+E00130,Meridian Associates Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,1611000.0,,Yes,LOW,No,BACKGROUND
+E00131,Riviera Consulting Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,4322000.0,,Yes,LOW,No,BACKGROUND
+E00132,Orion Associates Ltd,Company,CY,Not PEP,,,,No,None (foreign counterparty),Yes,10317000.0,,Yes,HIGH,No,BACKGROUND
+E00133,Meridian Properties SA,Company,CH,Not PEP,,,,No,CH_C,No,2981000.0,248000.0,Yes,LOW,No,BACKGROUND
+E00134,Orion Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4423000.0,,No,MEDIUM,No,BACKGROUND
+E00135,Orion Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,478000.0,,Yes,LOW,No,BACKGROUND
+E00136,Granite Group SA,Company,CH,Not PEP,,,,No,CH_C,No,6203000.0,517000.0,Yes,MEDIUM,No,BACKGROUND
+E00137,Meridian Logistics SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,13841000.0,,Yes,LOW,No,BACKGROUND
+E00138,Crescent Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,623000.0,,Yes,LOW,No,BACKGROUND
+E00139,Horizon Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,655000.0,,Yes,MEDIUM,No,BACKGROUND
+E00140,Sterling Properties Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,13924000.0,,Yes,LOW,No,BACKGROUND
+E00141,Alpine Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,10597000.0,,Yes,LOW,No,BACKGROUND
+E00142,Bluegate Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4534000.0,,Yes,MEDIUM,No,BACKGROUND
+E00143,Oakmont Properties Ltd,Company,GB,Not PEP,,,,No,CH_B,No,69261000.0,5772000.0,Yes,LOW,No,BACKGROUND
+E00144,Oakmont Ventures SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,2581000.0,,Yes,MEDIUM,No,BACKGROUND
+E00145,Pinnacle Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,12026000.0,,No,MEDIUM,No,BACKGROUND
+E00146,Pinnacle Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,11965000.0,,Yes,LOW,No,BACKGROUND
+E00147,Riviera Ventures SA,Company,CH,Not PEP,,,,No,CH_C,No,540000.0,45000.0,Yes,LOW,No,BACKGROUND
+E00148,Harbor Investments SA,Company,CH,Not PEP,,,,No,CH_A,No,2919000.0,243000.0,Yes,LOW,No,BACKGROUND
+E00149,Oakmont Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,7398000.0,,No,LOW,No,BACKGROUND
+E00150,Cedar Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2375000.0,,Yes,LOW,No,BACKGROUND
+E00151,Lakeside Associates SAL,Company,LB,Not PEP,,,,No,CH_A,No,3290000.0,274000.0,Yes,LOW,No,BACKGROUND
+E00152,Riviera Investments LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,5389000.0,,Yes,MEDIUM,No,BACKGROUND
+E00153,Bluegate Ventures SA,Company,CH,Not PEP,,,,No,CH_C,No,6313000.0,526000.0,No,MEDIUM,No,BACKGROUND
+E00154,Summit Holdings Sarl,Company,LU,Not PEP,,,,No,CH_C,No,14575000.0,1215000.0,Yes,LOW,No,BACKGROUND
+E00155,Silverline Group SA,Company,CH,Not PEP,,,,No,CH_D,No,6434000.0,536000.0,No,LOW,No,BACKGROUND
+E00156,Silverline Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,11198000.0,,Yes,MEDIUM,No,BACKGROUND
+E00157,Crescent Ventures Ltd,Company,CY,Not PEP,,,,No,CH_A,Yes,6012000.0,501000.0,Yes,HIGH,No,BACKGROUND
+E00158,Cedar Capital FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,3576000.0,,No,MEDIUM,No,BACKGROUND
+E00159,Pinnacle Group Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,148000.0,,Yes,LOW,No,BACKGROUND
+E00160,Riviera Services SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,4294000.0,,Yes,LOW,No,BACKGROUND
+E00161,Cedar Trading SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,1151000.0,,Yes,MEDIUM,No,BACKGROUND
+E00162,Crescent Logistics SA,Company,CH,Not PEP,,,,No,CH_B,No,1634000.0,136000.0,Yes,LOW,No,BACKGROUND
+E00163,Summit Services Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,986000.0,,Yes,MEDIUM,No,BACKGROUND
+E00164,Oakmont Properties SAL,Company,LB,Not PEP,,,,No,CH_B,No,981000.0,82000.0,Yes,MEDIUM,No,BACKGROUND
+E00165,Lakeside Holdings FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,3485000.0,,Yes,MEDIUM,No,BACKGROUND
+E00166,Horizon Capital SA,Company,CH,Not PEP,,,,No,CH_D,No,2418000.0,201000.0,Yes,LOW,No,BACKGROUND
+E00167,Silverline Associates SARL,Company,FR,Not PEP,,,,No,CH_C,No,10134000.0,845000.0,Yes,LOW,No,BACKGROUND
+E00168,Sterling Associates SA,Company,CH,Not PEP,,,,No,CH_C,No,3506000.0,292000.0,Yes,LOW,No,BACKGROUND
+E00169,Sterling Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,6478000.0,540000.0,Yes,LOW,No,BACKGROUND
+E00170,Bluegate Partners SA,Company,CH,Not PEP,,,,No,CH_D,No,14495000.0,1208000.0,Yes,LOW,No,BACKGROUND
+E00171,Pinnacle Investments Ltd,Company,CY,Not PEP,,,,No,CH_D,Yes,11121000.0,927000.0,Yes,HIGH,No,BACKGROUND
+E00172,Atlas Properties SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3370000.0,,Yes,LOW,No,BACKGROUND
+E00173,Horizon Ventures SARL,Company,FR,Not PEP,,,,No,CH_C,No,1389000.0,116000.0,Yes,LOW,No,BACKGROUND
+E00174,Horizon Group SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,16571000.0,,Yes,LOW,No,BACKGROUND
+E00175,Silverline Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1667000.0,,Yes,LOW,No,BACKGROUND
+E00176,Summit Trading FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,15836000.0,,Yes,LOW,No,BACKGROUND
+E00177,Pinnacle Investments SAL,Company,LB,Not PEP,,,,No,CH_D,No,1008000.0,84000.0,No,LOW,No,BACKGROUND
+E00178,Alpine Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,4219000.0,352000.0,Yes,LOW,No,BACKGROUND
+E00179,Lakeside Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,42405000.0,,No,MEDIUM,No,BACKGROUND
+E00180,Alpine Partners SA,Company,CH,Not PEP,,,,No,CH_D,No,6784000.0,565000.0,Yes,MEDIUM,No,BACKGROUND
+E00181,Silverline Associates Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,20042000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00182,Riviera Capital SAL,Company,LB,Not PEP,,,,No,CH_B,No,280000.0,23000.0,Yes,LOW,No,BACKGROUND
+E00183,Harbor Services SA,Company,CH,Not PEP,,,,No,CH_B,No,5330000.0,444000.0,Yes,LOW,No,BACKGROUND
+E00184,Oakmont Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,217000.0,,Yes,LOW,No,BACKGROUND
+E00185,Bluegate Consulting SA,Company,CH,Not PEP,,,,No,CH_D,No,1128000.0,94000.0,Yes,LOW,No,BACKGROUND
+E00186,Atlas Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4171000.0,,Yes,LOW,No,BACKGROUND
+E00187,Lakeside Ventures SA,Company,CH,Not PEP,,,,No,CH_D,No,4579000.0,382000.0,Yes,LOW,No,BACKGROUND
+E00188,Azure Capital SA,Company,CH,Not PEP,,,,No,CH_C,No,2656000.0,221000.0,No,LOW,No,BACKGROUND
+E00189,Lakeside Consulting Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1565000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00190,Horizon Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,17037000.0,1420000.0,Yes,MEDIUM,No,BACKGROUND
+E00191,Oakmont Services Ltd,Company,GB,Not PEP,,,,No,CH_C,No,493000.0,41000.0,Yes,LOW,No,BACKGROUND
+E00192,Meridian Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4138000.0,,Yes,LOW,No,BACKGROUND
+E00193,Alpine Consulting SAL,Company,LB,Not PEP,,,,No,CH_B,No,632000.0,53000.0,Yes,LOW,No,BACKGROUND
+E00194,Alpine Associates LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,4894000.0,,Yes,LOW,No,BACKGROUND
+E00195,Lakeside Services SA,Company,CH,Not PEP,,,,No,CH_D,No,9697000.0,808000.0,No,LOW,No,BACKGROUND
+E00196,Alpine Partners Ltd,Company,GB,Not PEP,,,,No,CH_D,No,17719000.0,1477000.0,Yes,MEDIUM,No,BACKGROUND
+E00197,Alpine Services SAL,Company,LB,Not PEP,,,,No,CH_B,No,121000.0,10000.0,Yes,LOW,No,BACKGROUND
+E00198,Vantage Services SAL,Company,LB,Not PEP,,,,No,CH_B,No,23345000.0,1945000.0,Yes,LOW,No,BACKGROUND
+E00199,Lakeside Capital SA,Company,CH,Not PEP,,,,No,CH_D,No,10197000.0,850000.0,Yes,LOW,No,BACKGROUND
+E00200,Harbor Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1250000.0,,Yes,LOW,No,BACKGROUND
+E00201,Pinnacle Partners SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1387000.0,,Yes,LOW,No,BACKGROUND
+E00202,Ironwood Holdings Sarl,Company,LU,Not PEP,,,,No,CH_D,No,3345000.0,279000.0,Yes,LOW,No,BACKGROUND
+E00203,Bluegate Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,1544000.0,,Yes,MEDIUM,No,BACKGROUND
+E00204,Harbor Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,8048000.0,,No,MEDIUM,No,BACKGROUND
+E00205,Granite Properties Ltd,Company,GB,Not PEP,,,,No,CH_A,No,2748000.0,229000.0,Yes,LOW,No,BACKGROUND
+E00206,Meridian Logistics Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1070000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00207,Horizon Investments SARL,Company,FR,Not PEP,,,,No,CH_A,No,6102000.0,508000.0,Yes,MEDIUM,No,BACKGROUND
+E00208,Meridian Group SARL,Company,FR,Not PEP,,,,No,CH_A,No,5983000.0,499000.0,Yes,MEDIUM,No,BACKGROUND
+E00209,Orion Properties Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,550000.0,,Yes,MEDIUM,No,BACKGROUND
+E00210,Sterling Investments Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,11765000.0,,Yes,LOW,No,BACKGROUND
+E00211,Silverline Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,1619000.0,135000.0,Yes,MEDIUM,No,BACKGROUND
+E00212,Summit Investments Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,725000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00213,Meridian Group SAL,Company,LB,Not PEP,,,,No,CH_A,No,10891000.0,908000.0,Yes,LOW,No,BACKGROUND
+E00214,Harbor Partners Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,4266000.0,,Yes,MEDIUM,No,BACKGROUND
+E00215,Silverline Services SA,Company,CH,Not PEP,,,,No,CH_D,No,3574000.0,298000.0,Yes,LOW,No,BACKGROUND
+E00216,Ironwood Capital SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,113000.0,,Yes,LOW,No,BACKGROUND
+E00217,Lakeside Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,4183000.0,349000.0,Yes,LOW,No,BACKGROUND
+E00218,Summit Logistics LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,10268000.0,,Yes,LOW,No,BACKGROUND
+E00219,Orion Group SA,Company,CH,Not PEP,,,,No,CH_D,No,570000.0,47000.0,Yes,LOW,No,BACKGROUND
+E00220,Cedar Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,3087000.0,,Yes,MEDIUM,No,BACKGROUND
+E00221,Atlas Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2879000.0,,Yes,LOW,No,BACKGROUND
+E00222,Crescent Investments Ltd,Company,CY,Not PEP,,,,No,CH_C,Yes,2590000.0,216000.0,Yes,HIGH,No,BACKGROUND
+E00223,Oakmont Holdings Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,907000.0,,Yes,LOW,No,BACKGROUND
+E00224,Horizon Consulting SAL,Company,LB,Not PEP,,,,No,CH_A,No,4493000.0,374000.0,Yes,LOW,No,BACKGROUND
+E00225,Alpine Group SAL,Company,LB,Not PEP,,,,No,CH_A,No,6022000.0,502000.0,Yes,LOW,No,BACKGROUND
+E00226,Ironwood Trading SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1282000.0,,Yes,LOW,No,BACKGROUND
+E00227,Lakeside Properties SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3642000.0,,Yes,MEDIUM,No,BACKGROUND
+E00228,Pinnacle Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,3784000.0,315000.0,Yes,LOW,No,BACKGROUND
+E00229,Riviera Trading SA,Company,CH,Not PEP,,,,No,CH_D,No,4412000.0,368000.0,No,MEDIUM,No,BACKGROUND
+E00230,Bluegate Services Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1548000.0,0.0,Yes,HIGH,No,BACKGROUND
+E00231,Sterling Holdings SA,Company,CH,Not PEP,,,,No,CH_C,No,28668000.0,2389000.0,Yes,LOW,No,BACKGROUND
+E00232,Meridian Partners SA,Company,CH,Not PEP,,,,No,CH_B,No,600000.0,50000.0,Yes,MEDIUM,No,BACKGROUND
+E00233,Vantage Ventures Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,762000.0,,No,LOW,No,BACKGROUND
+E00234,Pinnacle Trading FZE,Company,AE,Not PEP,,,,No,CH_B,No,1609000.0,134000.0,Yes,LOW,No,BACKGROUND
+E00235,Atlas Investments SA,Company,CH,Not PEP,,,,No,CH_C,No,24259000.0,2022000.0,Yes,LOW,No,BACKGROUND
+E00236,Ironwood Logistics SAL,Company,LB,Not PEP,,,,No,CH_A,No,325000.0,27000.0,Yes,LOW,No,BACKGROUND
+E00237,Lakeside Properties SA,Company,CH,Not PEP,,,,No,CH_A,No,33302000.0,2775000.0,Yes,MEDIUM,No,BACKGROUND
+E00238,Vantage Consulting SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,474000.0,,No,LOW,No,BACKGROUND
+E00239,Samir R. Daher,Person,CH,Not PEP,,,,No,CH_D,No,244000.0,20300.0,Yes,LOW,No,BACKGROUND
+E00240,Hadi C. Haddad,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,88000.0,,Yes,LOW,No,BACKGROUND
+E00241,Youssef P. Nicolaou,Person,US,Not PEP,,,,No,None (foreign counterparty),No,44000.0,,Yes,LOW,No,BACKGROUND
+E00242,Bassam R. Sfeir,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,177000.0,,Yes,LOW,No,BACKGROUND
+E00243,James P. Keller,Person,CH,Not PEP,,,,No,CH_C,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E00244,Daniel I. Issa,Person,GB,Not PEP,,,,No,CH_B,No,36000.0,3000.0,Yes,LOW,No,BACKGROUND
+E00245,Nathalie A. Haddad,Person,CH,Not PEP,,,,No,CH_D,No,34000.0,2800.0,Yes,LOW,No,BACKGROUND
+E00246,Georges V. Abboud,Person,CH,Not PEP,,,,No,CH_D,No,467000.0,38900.0,Yes,LOW,No,BACKGROUND
+E00247,Walid A. Meier,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,MEDIUM,No,BACKGROUND
+E00248,Claire A. Zein,Person,AE,Not PEP,,,,No,CH_B,No,71000.0,5900.0,Yes,LOW,No,BACKGROUND
+E00249,Elena D. Sfeir,Person,CH,Not PEP,,,,No,CH_D,No,432000.0,36000.0,Yes,LOW,No,BACKGROUND
+E00250,Claire O. Smith,Person,CH,Not PEP,,,,No,CH_C,No,42000.0,3500.0,Yes,LOW,No,BACKGROUND
+E00251,Leila J. Nicolaou,Person,LB,Not PEP,,,,No,CH_A,No,75000.0,6300.0,Yes,LOW,No,BACKGROUND
+E00252,Elie G. Weber,Person,CH,Not PEP,,,,No,CH_B,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E00253,Rita Z. Sfeir,Person,LB,Not PEP,,,,No,CH_B,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E00254,Hiba T. Dubois,Person,CH,Not PEP,,,,No,CH_C,No,141000.0,11700.0,Yes,LOW,No,BACKGROUND
+E00255,Sarah F. Moreau,Person,CH,Not PEP,,,,No,CH_B,No,60000.0,5000.0,No,MEDIUM,No,BACKGROUND
+E00256,Nabil N. Huber,Person,CH,Not PEP,,,,No,CH_D,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E00257,Lina T. Kassab,Person,CH,Not PEP,,,,No,CH_C,No,69000.0,5800.0,Yes,LOW,No,BACKGROUND
+E00258,Joanna H. Weber,Person,LB,Not PEP,,,,No,CH_C,No,12000.0,1000.0,Yes,LOW,No,BACKGROUND
+E00259,Karim N. Moreau,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,57000.0,,Yes,LOW,No,BACKGROUND
+E00260,Sarah R. Laurent,Person,CH,Not PEP,,,,No,CH_A,No,168000.0,14000.0,Yes,LOW,No,BACKGROUND
+E00262,Rami A. Dubois,Person,CH,Not PEP,,,,No,CH_A,No,187000.0,15600.0,Yes,MEDIUM,No,BACKGROUND
+E00263,Nour O. Meier,Person,GB,Not PEP,,,,No,CH_D,No,122000.0,10200.0,Yes,MEDIUM,No,BACKGROUND
+E00264,Rania D. Bitar,Person,LU,Not PEP,,,,No,CH_B,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E00265,Daniel D. Rossi,Person,FR,Not PEP,,,,No,CH_D,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E00266,Fadi L. Issa,Person,FR,Not PEP,,,,No,CH_D,No,121000.0,10100.0,Yes,LOW,No,BACKGROUND
+E00267,Fadi A. Huber,Person,CH,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E00268,Lina O. Abboud,Person,GB,Not PEP,,,,No,CH_A,No,77000.0,6400.0,Yes,LOW,No,BACKGROUND
+E00269,Maya I. Weber,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,27000.0,,Yes,LOW,No,BACKGROUND
+E00270,Rami F. Haddad,Person,CH,Not PEP,,,,No,CH_C,No,44000.0,3600.0,Yes,LOW,No,BACKGROUND
+E00271,Nour W. Issa,Person,CH,Not PEP,,,,No,CH_D,No,71000.0,5900.0,Yes,LOW,No,BACKGROUND
+E00272,Luc Y. Meier,Person,US,Not PEP,,,,No,CH_D,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E00273,Andreas T. Moreau,Person,LB,Not PEP,,,,No,CH_C,No,101000.0,8400.0,Yes,LOW,No,BACKGROUND
+E00274,Yasmine O. Kassab,Person,CH,Not PEP,,,,No,CH_B,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E00275,Rita L. Rossi,Person,CH,Not PEP,,,,No,CH_C,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00276,Nabil T. Issa,Person,US,Not PEP,,,,No,CH_C,No,46000.0,3900.0,No,MEDIUM,No,BACKGROUND
+E00277,Michael K. Tannous,Person,GB,Not PEP,,,,No,CH_D,No,113000.0,9500.0,Yes,MEDIUM,No,BACKGROUND
+E00278,Rami N. Smith,Person,CY,Not PEP,,,,No,CH_C,Yes,31000.0,2500.0,Yes,MEDIUM,No,BACKGROUND
+E00279,Rania Y. Rahme,Person,CH,Not PEP,,,,No,CH_C,No,133000.0,11100.0,Yes,LOW,No,BACKGROUND
+E00280,Rami N. Zein,Person,LB,Not PEP,,,,No,CH_C,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E00281,Ziad Y. Najjar,Person,CH,Not PEP,,,,No,CH_D,No,123000.0,10300.0,Yes,LOW,No,BACKGROUND
+E00282,Rania G. Daher,Person,CH,Not PEP,,,,No,CH_B,No,51000.0,4200.0,No,LOW,No,BACKGROUND
+E00283,James L. Hanna,Person,CH,Not PEP,,,,No,CH_A,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E00284,Joseph E. Sfeir,Person,LB,Not PEP,,,,No,CH_B,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E00285,Chris D. Clarke,Person,LB,Not PEP,,,,No,CH_D,No,50000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00286,Nathalie X. Haddad,Person,CH,Not PEP,,,,No,CH_D,No,126000.0,10500.0,Yes,MEDIUM,No,BACKGROUND
+E00287,Hiba B. Yazbeck,Person,CY,Not PEP,,,,No,CH_C,Yes,63000.0,5300.0,Yes,MEDIUM,No,BACKGROUND
+E00288,Lina C. Zein,Person,CH,Not PEP,,,,No,CH_D,No,286000.0,23800.0,Yes,LOW,No,BACKGROUND
+E00289,Lukas A. Kassab,Person,CH,Not PEP,,,,No,CH_B,No,176000.0,14600.0,Yes,LOW,No,BACKGROUND
+E00290,Marc X. Zein,Person,LB,Not PEP,,,,No,CH_B,No,36000.0,3000.0,No,LOW,No,BACKGROUND
+E00291,Rania D. Daher,Person,FR,Not PEP,,,,No,CH_A,No,435000.0,36200.0,Yes,LOW,No,BACKGROUND
+E00292,Nabil A. Rahme,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,151000.0,,Yes,LOW,No,BACKGROUND
+E00293,Elie K. Jabbour,Person,GB,Not PEP,,,,No,CH_A,No,34000.0,2900.0,Yes,LOW,No,BACKGROUND
+E00294,Hadi R. Rahme,Person,FR,Not PEP,,,,No,CH_B,No,86000.0,7200.0,Yes,LOW,No,BACKGROUND
+E00296,Elie Y. Azar,Person,AE,Not PEP,,,,No,CH_A,No,119000.0,9900.0,Yes,LOW,No,BACKGROUND
+E00298,Chris J. Karam,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,30000.0,,Yes,LOW,No,BACKGROUND
+E00299,Elie J. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,270000.0,22500.0,Yes,LOW,No,BACKGROUND
+E00300,Sophie J. Karam,Person,US,Not PEP,,,,No,CH_A,No,27000.0,2300.0,Yes,LOW,No,BACKGROUND
+E00301,Paul G. Keller,Person,FR,Not PEP,,,,No,CH_A,No,13000.0,1100.0,Yes,LOW,No,BACKGROUND
+E00302,Daniel K. Sfeir,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,LOW,No,BACKGROUND
+E00303,Nathalie X. Meier,Person,CH,Not PEP,,,,No,CH_C,No,38000.0,3200.0,Yes,MEDIUM,No,BACKGROUND
+E00304,Leila W. Yazbeck,Person,GB,Not PEP,,,,No,CH_C,No,72000.0,6000.0,Yes,MEDIUM,No,BACKGROUND
+E00305,Mira R. Nicolaou,Person,CY,Not PEP,,,,No,CH_A,Yes,56000.0,4700.0,Yes,LOW,No,BACKGROUND
+E00306,Daniel T. Khoury,Person,CH,Not PEP,,,,No,CH_D,No,186000.0,15500.0,No,LOW,No,BACKGROUND
+E00307,James U. Nicolaou,Person,AE,Not PEP,,,,No,CH_C,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E00308,Sarah U. Daher,Person,LB,Not PEP,,,,No,CH_D,No,102000.0,8500.0,Yes,LOW,No,BACKGROUND
+E00309,Nadim X. Moreau,Person,CH,Not PEP,,,,No,CH_B,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E00310,Youssef G. Weber,Person,LB,Not PEP,,,,No,CH_B,No,74000.0,6100.0,Yes,LOW,No,BACKGROUND
+E00311,Joanna N. Dubois,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,108000.0,,Yes,LOW,No,BACKGROUND
+E00313,Nathalie C. Nicolaou,Person,LB,Not PEP,,,,No,CH_B,No,23000.0,1900.0,Yes,LOW,No,BACKGROUND
+E00314,Georges X. Smith,Person,CH,Not PEP,,,,No,CH_D,No,47000.0,3900.0,Yes,LOW,No,BACKGROUND
+E00315,Lina I. Nicolaou,Person,GB,Not PEP,,,,No,CH_A,No,46000.0,3800.0,Yes,MEDIUM,No,BACKGROUND
+E00316,Dina K. Weber,Person,CH,Not PEP,,,,No,CH_D,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E00317,Anna N. Nassar,Person,FR,Not PEP,,,,No,CH_A,No,93000.0,7800.0,Yes,LOW,No,BACKGROUND
+E00318,Georges K. Clarke,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,49000.0,,Yes,LOW,No,BACKGROUND
+E00319,Julia V. Jabbour,Person,CH,Not PEP,,,,No,CH_B,No,332000.0,27700.0,No,LOW,No,BACKGROUND
+E00320,Leila I. Zein,Person,CY,Not PEP,,,,No,CH_B,Yes,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E00321,Rania F. Tannous,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,MEDIUM,No,BACKGROUND
+E00322,Andreas R. Haddad,Person,LU,Not PEP,,,,No,CH_A,No,45000.0,3700.0,Yes,LOW,No,BACKGROUND
+E00323,Carla A. Haddad,Person,CH,Not PEP,,,,No,CH_A,No,220000.0,18300.0,Yes,LOW,No,BACKGROUND
+E00324,Hadi Y. Khoury,Person,FR,Not PEP,,,,No,CH_D,No,33000.0,2800.0,Yes,LOW,No,BACKGROUND
+E00325,Rami O. Khoury,Person,LB,Not PEP,,,,No,CH_C,No,29000.0,2400.0,Yes,LOW,No,BACKGROUND
+E00326,Dina W. Moreau,Person,CH,Not PEP,,,,No,CH_D,No,115000.0,9600.0,Yes,LOW,No,BACKGROUND
+E00327,Maya D. Kassab,Person,AE,Not PEP,,,,No,CH_C,No,72000.0,6000.0,No,MEDIUM,No,BACKGROUND
+E00328,Samir A. Issa,Person,CH,Not PEP,,,,No,CH_A,No,220000.0,18400.0,Yes,LOW,No,BACKGROUND
+E00329,Rania U. Daher,Person,GB,Not PEP,,,,No,CH_C,No,43000.0,3600.0,Yes,LOW,No,BACKGROUND
+E00330,Stefan O. Nassar,Person,CH,Not PEP,,,,No,CH_A,No,135000.0,11200.0,Yes,LOW,No,BACKGROUND
+E00331,Rita S. Issa,Person,US,Not PEP,,,,No,None (foreign counterparty),No,94000.0,,Yes,LOW,No,BACKGROUND
+E00332,Dina B. Moreau,Person,CH,Not PEP,,,,No,CH_B,No,127000.0,10600.0,No,LOW,No,BACKGROUND
+E00333,Leila A. Nicolaou,Person,CH,Not PEP,,,,No,CH_B,No,164000.0,13700.0,Yes,LOW,No,BACKGROUND
+E00334,Elie T. Nicolaou,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,20000.0,,Yes,LOW,No,BACKGROUND
+E00335,Elie P. Khoury,Person,FR,Not PEP,,,,No,CH_D,No,148000.0,12300.0,No,MEDIUM,No,BACKGROUND
+E00336,Nour L. Dubois,Person,GB,Not PEP,,,,No,CH_B,No,46000.0,3800.0,Yes,LOW,No,BACKGROUND
+E00337,Leila A. Huber,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,35000.0,,Yes,LOW,No,BACKGROUND
+E00339,Youssef K. Sfeir,Person,GB,Not PEP,,,,No,CH_D,No,122000.0,10200.0,Yes,LOW,No,BACKGROUND
+E00340,Elena O. Daher,Person,LB,Not PEP,,,,No,CH_B,No,17000.0,1400.0,Yes,LOW,No,BACKGROUND
+E00341,Rita M. Jabbour,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E00343,Carla U. Karam,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,86000.0,,No,LOW,No,BACKGROUND
+E00344,Rita Q. Issa,Person,FR,Not PEP,,,,No,CH_C,No,69000.0,5700.0,No,LOW,No,BACKGROUND
+E00345,Paul U. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,101000.0,8400.0,Yes,MEDIUM,No,BACKGROUND
+E00346,Antoine D. Zein,Person,LB,Not PEP,,,,No,CH_A,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E00347,Antoine F. Tannous,Person,CH,Not PEP,,,,No,CH_D,No,201000.0,16700.0,Yes,LOW,No,BACKGROUND
+E00348,Daniel P. Moreau,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,130000.0,,Yes,LOW,No,BACKGROUND
+E00349,Lina U. Moreau,Person,CH,Not PEP,,,,No,CH_D,No,216000.0,18000.0,Yes,LOW,No,BACKGROUND
+E00350,Samir D. Daher,Person,CH,Not PEP,,,,No,CH_D,No,119000.0,10000.0,Yes,LOW,No,BACKGROUND
+E00351,Lina A. Azar,Person,US,Not PEP,,,,No,None (foreign counterparty),No,68000.0,,Yes,LOW,No,BACKGROUND
+E00352,Julia K. Daher,Person,CH,Not PEP,,,,No,CH_B,No,70000.0,5900.0,Yes,MEDIUM,No,BACKGROUND
+E00353,Mira K. Nicolaou,Person,CH,Not PEP,,,,No,CH_A,No,397000.0,33100.0,Yes,MEDIUM,No,BACKGROUND
+E00354,Nour B. Fischer,Person,GB,Not PEP,,,,No,CH_D,No,174000.0,14500.0,No,MEDIUM,No,BACKGROUND
+E00355,Andreas W. Hanna,Person,LU,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E00356,Stefan I. Issa,Person,CH,Not PEP,,,,No,CH_A,No,216000.0,18000.0,Yes,MEDIUM,No,BACKGROUND
+E00357,Nathalie L. Khoury,Person,CY,Not PEP,,,,No,CH_A,Yes,242000.0,20200.0,Yes,LOW,No,BACKGROUND
+E00358,Hiba D. Tannous,Person,LB,Not PEP,,,,No,CH_B,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E00360,Rami W. Sfeir,Person,CH,Not PEP,,,,No,CH_B,No,113000.0,9400.0,Yes,LOW,No,BACKGROUND
+E00361,Nour Z. Moreau,Person,GB,Not PEP,,,,No,CH_A,No,60000.0,5000.0,Yes,MEDIUM,No,BACKGROUND
+E00362,Lukas G. Moreau,Person,FR,Not PEP,,,,No,CH_B,No,37000.0,3100.0,Yes,LOW,No,BACKGROUND
+E00363,Paul X. Karam,Person,US,Not PEP,,,,No,CH_B,No,95000.0,8000.0,Yes,MEDIUM,No,BACKGROUND
+E00364,Bassam Z. Bitar,Person,LB,Not PEP,,,,No,CH_D,No,16000.0,1300.0,Yes,MEDIUM,No,BACKGROUND
+E00365,Rania L. Kassab,Person,FR,Not PEP,,,,No,CH_D,No,67000.0,5600.0,Yes,LOW,No,BACKGROUND
+E00366,Carla I. Karam,Person,CH,Not PEP,,,,No,CH_D,No,189000.0,15800.0,Yes,LOW,No,BACKGROUND
+E00367,Daniel W. Azar,Person,CH,Not PEP,,,,No,CH_C,No,111000.0,9300.0,Yes,LOW,No,BACKGROUND
+E00368,Mira M. Khoury,Person,CH,Not PEP,,,,No,CH_A,No,254000.0,21100.0,Yes,LOW,No,BACKGROUND
+E00369,Tarek X. Khoury,Person,US,Not PEP,,,,No,CH_C,No,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E00370,Laura O. Haddad,Person,US,Not PEP,,,,No,None (foreign counterparty),No,108000.0,,Yes,LOW,No,BACKGROUND
+E00371,Joanna I. Weber,Person,US,Not PEP,,,,No,CH_B,No,48000.0,4000.0,No,MEDIUM,No,BACKGROUND
+E00372,Tarek R. Nicolaou,Person,FR,Not PEP,,,,No,CH_A,No,99000.0,8200.0,Yes,LOW,No,BACKGROUND
+E00373,Claire J. Tannous,Person,CH,Not PEP,,,,No,CH_A,No,148000.0,12300.0,Yes,LOW,No,BACKGROUND
+E00374,Rita A. Najjar,Person,CH,Not PEP,,,,No,CH_B,No,597000.0,49800.0,Yes,LOW,No,BACKGROUND
+E00375,Rania P. Najjar,Person,LU,Not PEP,,,,No,CH_C,No,184000.0,15400.0,Yes,LOW,No,BACKGROUND
+E00376,Nathalie B. Abboud,Person,CH,Not PEP,,,,No,CH_A,No,297000.0,24700.0,Yes,MEDIUM,No,BACKGROUND
+E00377,Luc N. Azar,Person,LU,Not PEP,,,,No,None (foreign counterparty),No,60000.0,,Yes,LOW,No,BACKGROUND
+E00378,Joanna S. Najjar,Person,FR,Not PEP,,,,No,CH_A,No,67000.0,5600.0,No,LOW,No,BACKGROUND
+E00379,Stefan S. Moreau,Person,CH,Not PEP,,,,No,CH_D,No,53000.0,4400.0,Yes,LOW,No,BACKGROUND
+E00380,Karim F. Smith,Person,CH,Not PEP,,,,No,CH_B,No,61000.0,5100.0,Yes,MEDIUM,No,BACKGROUND
+E00381,Rania C. Keller,Person,CH,Not PEP,,,,No,CH_B,No,136000.0,11300.0,Yes,LOW,No,BACKGROUND
+E00382,Sophie F. Abboud,Person,LB,Not PEP,,,,No,CH_A,No,77000.0,6400.0,No,MEDIUM,No,BACKGROUND
+E00383,Marc I. Daher,Person,CH,Not PEP,,,,No,CH_D,No,123000.0,10300.0,Yes,LOW,No,BACKGROUND
+E00384,Mira I. Daher,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,No,LOW,No,BACKGROUND
+E00385,Leila O. Zein,Person,FR,Not PEP,,,,No,CH_A,No,209000.0,17400.0,No,LOW,No,BACKGROUND
+E00386,Hiba Y. Kassab,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,33000.0,,Yes,LOW,No,BACKGROUND
+E00387,Dina E. Keller,Person,LB,Not PEP,,,,No,CH_A,No,42000.0,3500.0,Yes,LOW,No,BACKGROUND
+E00388,Lukas G. Daher,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,39000.0,,No,MEDIUM,No,BACKGROUND
+E00389,Mira Q. Yazbeck,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,85000.0,,Yes,MEDIUM,No,BACKGROUND
+E00391,Leila C. Rahme,Person,CH,Not PEP,,,,No,CH_B,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00392,Carla T. Azar,Person,LB,Not PEP,,,,No,CH_C,No,94000.0,7800.0,Yes,LOW,No,BACKGROUND
+E00393,Anna P. Laurent,Person,AE,Not PEP,,,,No,CH_D,No,29000.0,2400.0,Yes,LOW,No,BACKGROUND
+E00394,Hiba J. Najjar,Person,US,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,Yes,LOW,No,BACKGROUND
+E00395,Claire K. Haddad,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,24000.0,,Yes,MEDIUM,No,BACKGROUND
+E00396,Laura T. Smith,Person,LB,Not PEP,,,,No,CH_A,No,83000.0,6900.0,Yes,LOW,No,BACKGROUND
+E00397,Nathalie J. Najjar,Person,CH,Not PEP,,,,No,CH_A,No,99000.0,8300.0,Yes,LOW,No,BACKGROUND
+E00398,Yasmine K. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,30000.0,2500.0,Yes,MEDIUM,No,BACKGROUND
+E00399,Lukas H. Nassar,Person,FR,Not PEP,,,,No,CH_D,No,38000.0,3200.0,Yes,MEDIUM,No,BACKGROUND
+E00400,Pierre W. Rossi,Person,CH,Not PEP,,,,No,CH_A,No,251000.0,20900.0,Yes,MEDIUM,No,BACKGROUND
+E00401,Julia N. Nassar,Person,CH,Not PEP,,,,No,CH_A,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E00403,Leila L. Fischer,Person,GB,Not PEP,,,,No,CH_B,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E00404,Rami J. Laurent,Person,CH,Not PEP,,,,No,CH_B,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E00405,Pierre U. Moreau,Person,GB,Not PEP,,,,No,CH_C,No,71000.0,6000.0,Yes,LOW,No,BACKGROUND
+E00406,Paul C. Clarke,Person,CH,Not PEP,,,,No,CH_B,No,202000.0,16800.0,Yes,MEDIUM,No,BACKGROUND
+E00409,Antoine S. Jabbour,Person,CY,Not PEP,,,,No,CH_D,Yes,65000.0,5400.0,No,LOW,No,BACKGROUND
+E00410,Joanna X. Clarke,Person,CY,Not PEP,,,,No,CH_C,Yes,106000.0,8800.0,Yes,LOW,No,BACKGROUND
+E00411,Joanna C. Moreau,Person,LB,Not PEP,,,,No,CH_B,No,73000.0,6100.0,Yes,LOW,No,BACKGROUND
+E00412,Mira C. Daher,Person,US,Not PEP,,,,No,None (foreign counterparty),No,73000.0,,Yes,LOW,No,BACKGROUND
+E00413,Omar S. Weber,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E00414,Julia R. Huber,Person,LB,Not PEP,,,,No,CH_B,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E00415,Julia C. Hanna,Person,FR,Not PEP,,,,No,CH_A,No,26000.0,2100.0,Yes,LOW,No,BACKGROUND
+E00416,Dina O. Tannous,Person,LU,Not PEP,,,,No,None (foreign counterparty),No,65000.0,,Yes,MEDIUM,No,BACKGROUND
+E00417,Joseph X. Clarke,Person,CH,Not PEP,,,,No,CH_A,No,92000.0,7700.0,Yes,LOW,No,BACKGROUND
+E00418,Maya H. Keller,Person,CH,Not PEP,,,,No,CH_A,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E00419,Joanna H. Sfeir,Person,FR,Not PEP,,,,No,CH_C,No,127000.0,10600.0,Yes,LOW,No,BACKGROUND
+E00420,Jean B. Fischer,Person,CH,Not PEP,,,,No,CH_D,No,36000.0,3000.0,Yes,MEDIUM,No,BACKGROUND
+E00421,Chris P. Karam,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,49000.0,,Yes,LOW,No,BACKGROUND
+E00422,Sophie C. Azar,Person,CH,Not PEP,,,,No,CH_A,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E00423,Nathalie K. Karam,Person,LB,Not PEP,,,,No,CH_A,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E00424,Dina Y. Meier,Person,CH,Not PEP,,,,No,CH_A,No,99000.0,8200.0,Yes,MEDIUM,No,BACKGROUND
+E00425,Yasmine Q. Abboud,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,41000.0,,Yes,LOW,No,BACKGROUND
+E00426,Nour P. Meier,Person,GB,Not PEP,,,,No,CH_C,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00427,Joanna A. Fischer,Person,CH,Not PEP,,,,No,CH_C,No,68000.0,5700.0,Yes,LOW,No,BACKGROUND
+E00429,Yasmine K. Daher,Person,LB,Not PEP,,,,No,CH_B,No,64000.0,5300.0,Yes,LOW,No,BACKGROUND
+E00430,Maya P. Zein,Person,CY,Not PEP,,,,No,CH_D,Yes,193000.0,16100.0,Yes,LOW,No,BACKGROUND
+E00431,Youssef G. Karam,Person,LB,Not PEP,,,,No,CH_A,No,63000.0,5200.0,Yes,LOW,No,BACKGROUND
+E00432,Thomas B. Daher,Person,LB,Not PEP,,,,No,CH_D,No,52000.0,4300.0,Yes,LOW,No,BACKGROUND
+E00433,Yasmine B. Abboud,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,28000.0,,Yes,LOW,No,BACKGROUND
+E00434,Sophie L. Abboud,Person,LB,Not PEP,,,,No,CH_A,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00435,Chris T. Daher,Person,CH,Not PEP,,,,No,CH_B,No,159000.0,13200.0,Yes,LOW,No,BACKGROUND
+E00436,Bassam I. Najjar,Person,LB,Not PEP,,,,No,CH_C,No,20000.0,1700.0,No,LOW,No,BACKGROUND
+E00437,Ziad K. Laurent,Person,US,Not PEP,,,,No,None (foreign counterparty),No,32000.0,,Yes,MEDIUM,No,BACKGROUND
+E00438,Tarek M. Abboud,Person,CY,Not PEP,,,,No,CH_D,Yes,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E00439,Hiba E. Issa,Person,AE,Not PEP,,,,No,CH_C,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E00440,Leila D. Issa,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,59000.0,,Yes,LOW,No,BACKGROUND
+E00441,Rania J. Issa,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,63000.0,,No,LOW,No,BACKGROUND
+E00442,Claire F. Moreau,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,80000.0,,Yes,LOW,No,BACKGROUND
+E00443,Joseph G. Daher,Person,CH,Not PEP,,,,No,CH_B,No,64000.0,5400.0,Yes,LOW,No,BACKGROUND
+E00444,Daniel J. Weber,Person,LB,Not PEP,,,,No,CH_D,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E00445,Lukas Z. Najjar,Person,CH,Not PEP,,,,No,CH_D,No,46000.0,3900.0,Yes,LOW,No,BACKGROUND
+E00446,Maya E. Rahme,Person,FR,Not PEP,,,,No,CH_A,No,34000.0,2800.0,Yes,LOW,No,BACKGROUND
+E00447,Tarek L. Bitar,Person,CH,Not PEP,,,,No,CH_D,No,70000.0,5800.0,Yes,LOW,No,BACKGROUND
+E00448,Julia K. Dubois,Person,CH,Not PEP,,,,No,CH_A,No,54000.0,4500.0,Yes,MEDIUM,No,BACKGROUND
+E00449,Maya B. Weber,Person,CH,Not PEP,,,,No,CH_D,No,236000.0,19700.0,Yes,LOW,No,BACKGROUND
+E00450,Joanna A. Najjar,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,LOW,No,BACKGROUND
+E00451,Nadim A. Nicolaou,Person,LU,Not PEP,,,,No,CH_D,No,82000.0,6800.0,Yes,MEDIUM,No,BACKGROUND
+E00452,Anna L. Najjar,Person,LU,Not PEP,,,,No,CH_B,No,360000.0,30000.0,No,LOW,No,BACKGROUND
+E00453,Nadim Y. Azar,Person,CH,Not PEP,,,,No,CH_C,No,203000.0,16900.0,Yes,LOW,No,BACKGROUND
+E00454,Jean S. Moreau,Person,AE,Not PEP,,,,No,CH_B,No,134000.0,11100.0,Yes,LOW,No,BACKGROUND
+E00455,Karim Z. Najjar,Person,CH,Not PEP,,,,No,CH_D,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E00456,Walid Z. Zein,Person,LU,Not PEP,,,,No,CH_B,No,129000.0,10700.0,Yes,LOW,No,BACKGROUND
+E00457,Lukas I. Kassab,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,84000.0,,Yes,MEDIUM,No,BACKGROUND
+E00458,Maya T. Bitar,Person,GB,Not PEP,,,,No,CH_C,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E00459,Thomas R. Nassar,Person,CH,Not PEP,,,,No,CH_B,No,70000.0,5800.0,Yes,LOW,No,BACKGROUND
+E00460,Maya U. Daher,Person,FR,Not PEP,,,,No,CH_B,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E00461,Laura E. Nicolaou,Person,CH,Not PEP,,,,No,CH_C,No,135000.0,11300.0,Yes,MEDIUM,No,BACKGROUND
+E00462,Lina K. Fischer,Person,CH,Not PEP,,,,No,CH_B,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E00463,Mira D. Karam,Person,CH,Not PEP,,,,No,CH_B,No,152000.0,12600.0,Yes,MEDIUM,No,BACKGROUND
+E00464,Anna W. Issa,Person,LB,Not PEP,,,,No,CH_D,No,12000.0,1000.0,No,LOW,No,BACKGROUND
+E00465,Luc B. Dubois,Person,CH,Not PEP,,,,No,CH_D,No,87000.0,7300.0,Yes,LOW,No,BACKGROUND
+E00466,Walid N. Jabbour,Person,CH,Not PEP,,,,No,CH_C,No,103000.0,8600.0,No,LOW,No,BACKGROUND
+E00467,Sophie H. Yazbeck,Person,CH,Not PEP,,,,No,CH_C,No,164000.0,13700.0,Yes,LOW,No,BACKGROUND
+E00468,Nadim J. Weber,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,151000.0,,Yes,LOW,No,BACKGROUND
+E00469,Tarek C. Jabbour,Person,CY,Not PEP,,,,No,CH_B,Yes,161000.0,13400.0,Yes,LOW,No,BACKGROUND
+E00470,Carla C. Tannous,Person,CY,Not PEP,,,,No,CH_D,Yes,189000.0,15700.0,Yes,MEDIUM,No,BACKGROUND
+E00471,Carla N. Haddad,Person,CH,Not PEP,,,,No,CH_C,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E00472,Jean H. Rossi,Person,CH,Not PEP,,,,No,CH_D,No,217000.0,18100.0,Yes,MEDIUM,No,BACKGROUND
+E00473,Thomas D. Issa,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,37000.0,,Yes,LOW,No,BACKGROUND
+E00474,Rania M. Khoury,Person,US,Not PEP,,,,No,None (foreign counterparty),No,64000.0,,Yes,LOW,No,BACKGROUND
+E00475,Mira J. Bitar,Person,CH,Not PEP,,,,No,CH_D,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E00476,Bassam N. Moreau,Person,FR,Not PEP,,,,No,CH_D,No,163000.0,13600.0,Yes,LOW,No,BACKGROUND
+E00477,Lina G. Hanna,Person,CH,Not PEP,,,,No,CH_B,No,47000.0,3900.0,No,MEDIUM,No,BACKGROUND
+E00478,Elena N. Weber,Person,GB,Not PEP,,,,No,CH_B,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E00479,Anna I. Fischer,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,15000.0,,Yes,LOW,No,BACKGROUND
+E00480,Sophie P. Abboud,Person,GB,Not PEP,,,,No,CH_B,No,84000.0,7000.0,Yes,MEDIUM,No,BACKGROUND
+E00481,Sophie Y. Huber,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,275000.0,,Yes,LOW,No,BACKGROUND
+E00482,Hiba A. Rossi,Person,CH,Not PEP,,,,No,CH_C,No,139000.0,11600.0,Yes,LOW,No,BACKGROUND
+E00483,Pierre C. Sfeir,Person,LB,Not PEP,,,,No,CH_B,No,27000.0,2200.0,Yes,LOW,No,BACKGROUND
+E00484,Paul B. Najjar,Person,US,Not PEP,,,,No,None (foreign counterparty),No,65000.0,,Yes,MEDIUM,No,BACKGROUND
+E00486,Yasmine W. Smith,Person,US,Not PEP,,,,No,CH_B,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E00487,Sarah N. Smith,Person,CH,Not PEP,,,,No,CH_A,No,145000.0,12000.0,Yes,LOW,No,BACKGROUND
+E00488,Rita L. Rahme,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,82000.0,,Yes,MEDIUM,No,BACKGROUND
+E00489,Anna D. Zein,Person,CH,Not PEP,,,,No,CH_B,No,35000.0,2900.0,Yes,MEDIUM,No,BACKGROUND
+E00490,Lina B. Nassar,Person,CH,Not PEP,,,,No,CH_B,No,51000.0,4300.0,Yes,MEDIUM,No,BACKGROUND
+E00491,Rita O. Meier,Person,GB,Not PEP,,,,No,CH_D,No,104000.0,8700.0,No,MEDIUM,No,BACKGROUND
+E00492,Joanna T. Abboud,Person,CH,Not PEP,,,,No,CH_D,No,54000.0,4500.0,Yes,LOW,No,BACKGROUND
+E00493,Omar I. Dubois,Person,US,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,Yes,LOW,No,BACKGROUND
+E00494,Thomas T. Daher,Person,CH,Not PEP,,,,No,CH_D,No,46000.0,3800.0,Yes,LOW,No,BACKGROUND
+E00495,Rita E. Kassab,Person,LB,Not PEP,,,,No,CH_A,No,118000.0,9800.0,Yes,MEDIUM,No,BACKGROUND
+E00496,Stefan R. Kassab,Person,CH,Not PEP,,,,No,CH_D,No,37000.0,3100.0,No,LOW,No,BACKGROUND
+E00497,Omar Z. Meier,Person,CH,Not PEP,,,,No,CH_A,No,26000.0,2200.0,Yes,LOW,No,BACKGROUND
+E00498,Thomas Y. Bitar,Person,CH,Not PEP,,,,No,CH_C,No,167000.0,13900.0,Yes,MEDIUM,No,BACKGROUND
+E00499,Rami F. Sfeir,Person,FR,Not PEP,,,,No,CH_A,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E00500,Pierre N. Najjar,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,23000.0,,Yes,LOW,No,BACKGROUND
+E00501,Joseph P. Khoury,Person,CH,Not PEP,,,,No,CH_D,No,92000.0,7600.0,Yes,LOW,No,BACKGROUND
+E00502,Bassam K. Khoury,Person,CH,Not PEP,,,,No,CH_A,No,66000.0,5500.0,No,LOW,No,BACKGROUND
+E00503,Michael E. Tannous,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,29000.0,,Yes,LOW,No,BACKGROUND
+E00504,Ziad V. Zein,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,67000.0,,Yes,LOW,No,BACKGROUND
+E00505,Sophie K. Fischer,Person,CH,Not PEP,,,,No,CH_C,No,53000.0,4400.0,Yes,LOW,No,BACKGROUND
+E00506,Carla E. Azar,Person,CH,Not PEP,,,,No,CH_A,No,52000.0,4400.0,Yes,LOW,No,BACKGROUND
+E00507,Sarah Y. Najjar,Person,LB,Not PEP,,,,No,CH_D,No,73000.0,6100.0,Yes,LOW,No,BACKGROUND
+E00508,Joseph G. Dubois,Person,CH,Not PEP,,,,No,CH_B,No,75000.0,6300.0,Yes,LOW,No,BACKGROUND
+E00509,Nathalie G. Meier,Person,FR,Not PEP,,,,No,CH_D,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E00510,Rita C. Hanna,Person,LB,Not PEP,,,,No,CH_A,No,19000.0,1600.0,Yes,LOW,No,BACKGROUND
+E00511,Rita J. Abboud,Person,LB,Not PEP,,,,No,CH_C,No,51000.0,4200.0,Yes,LOW,No,BACKGROUND
+E00512,Rami B. Azar,Person,US,Not PEP,,,,No,CH_D,No,22000.0,1800.0,Yes,LOW,No,BACKGROUND
+E00513,Yasmine R. Abboud,Person,CH,Not PEP,,,,No,CH_A,No,151000.0,12600.0,Yes,LOW,No,BACKGROUND
+E00514,Karim Q. Sfeir,Person,CY,Not PEP,,,,No,CH_B,Yes,105000.0,8700.0,Yes,LOW,No,BACKGROUND
+E00515,Nadim N. Rahme,Person,FR,Not PEP,,,,No,CH_D,No,154000.0,12900.0,Yes,LOW,No,BACKGROUND
+E00516,Paul H. Abboud,Person,FR,Not PEP,,,,No,CH_B,No,216000.0,18000.0,Yes,LOW,No,BACKGROUND
+E00517,Nadim W. Jabbour,Person,FR,Not PEP,,,,No,CH_B,No,18000.0,1500.0,Yes,LOW,No,BACKGROUND
+E00518,Jean R. Sfeir,Person,FR,Not PEP,,,,No,CH_B,No,96000.0,8000.0,Yes,LOW,No,BACKGROUND
+E00519,Rania B. Nassar,Person,FR,Not PEP,,,,No,CH_B,No,64000.0,5300.0,Yes,LOW,No,BACKGROUND
+E00520,Mira N. Sfeir,Person,FR,Not PEP,,,,No,CH_C,No,52000.0,4300.0,No,MEDIUM,No,BACKGROUND
+E00521,Pierre E. Najjar,Person,AE,Not PEP,,,,No,CH_D,No,116000.0,9600.0,Yes,LOW,No,BACKGROUND
+E00522,Marc N. Rahme,Person,CH,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E00523,Laura W. Karam,Person,CH,Not PEP,,,,No,CH_B,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E00524,Ziad I. Weber,Person,LB,Not PEP,,,,No,CH_B,No,13000.0,1100.0,Yes,LOW,No,BACKGROUND
+E00525,Lukas K. Smith,Person,LB,Not PEP,,,,No,CH_B,No,47000.0,3900.0,Yes,LOW,No,BACKGROUND
+E00526,Hiba G. Nicolaou,Person,AE,Not PEP,,,,No,CH_C,No,158000.0,13200.0,Yes,LOW,No,BACKGROUND
+E00527,Samir S. Kassab,Person,CH,Not PEP,,,,No,CH_C,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E00528,Ziad I. Issa,Person,AE,Not PEP,,,,No,CH_C,No,332000.0,27700.0,Yes,LOW,No,BACKGROUND
+E00529,Ziad A. Clarke,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,37000.0,,Yes,LOW,No,BACKGROUND
+E00530,Dina X. Smith,Person,LB,Not PEP,,,,No,CH_A,No,31000.0,2600.0,Yes,LOW,No,BACKGROUND
+E00531,Hiba B. Meier,Person,LB,Not PEP,,,,No,CH_C,No,55000.0,4600.0,Yes,MEDIUM,No,BACKGROUND
+E00533,Pierre U. Najjar,Person,LB,Not PEP,,,,No,CH_A,No,55000.0,4500.0,Yes,LOW,No,BACKGROUND
+E00534,Dina F. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,68000.0,5700.0,Yes,MEDIUM,No,BACKGROUND
+E00535,Michael D. Clarke,Person,CH,Not PEP,,,,No,CH_D,No,44000.0,3700.0,Yes,LOW,No,BACKGROUND
+E00536,Sophie L. Rahme,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,100000.0,,Yes,LOW,No,BACKGROUND
+E00537,Leila B. Moreau,Person,FR,Not PEP,,,,No,CH_C,No,89000.0,7400.0,No,LOW,No,BACKGROUND
+E00538,Sarah U. Laurent,Person,CH,Not PEP,,,,No,CH_A,No,565000.0,47100.0,Yes,MEDIUM,No,BACKGROUND
+E00539,Bassam A. Nassar,Person,CH,Not PEP,,,,No,CH_D,No,324000.0,27000.0,Yes,MEDIUM,No,BACKGROUND
+E00540,Elena Z. Laurent,Person,LB,Not PEP,,,,No,CH_A,No,31000.0,2600.0,Yes,MEDIUM,No,BACKGROUND
+E00541,Elena C. Moreau,Person,CH,Not PEP,,,,No,CH_B,No,99000.0,8300.0,No,LOW,No,BACKGROUND
+E00542,Fadi S. Sfeir,Person,CH,Not PEP,,,,No,CH_C,No,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E00544,Joseph B. Smith,Person,CH,Not PEP,,,,No,CH_C,No,50000.0,4200.0,Yes,MEDIUM,No,BACKGROUND
+E00545,Carla J. Laurent,Person,CY,Not PEP,,,,No,CH_A,Yes,100000.0,8300.0,Yes,LOW,No,BACKGROUND
+E00546,Tarek K. Tannous,Person,CH,Not PEP,,,,No,CH_A,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E00547,Karim R. Nicolaou,Person,CH,Not PEP,,,,No,CH_B,No,148000.0,12300.0,Yes,MEDIUM,No,BACKGROUND
+E00548,Rania Y. Weber,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,55000.0,,Yes,LOW,No,BACKGROUND
+E00549,Rami W. Daher,Person,FR,Not PEP,,,,No,CH_A,No,109000.0,9100.0,Yes,LOW,No,BACKGROUND
+E00550,Paul P. Sfeir,Person,LB,Not PEP,,,,No,CH_B,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E00551,Sophie S. Nicolaou,Person,CH,Not PEP,,,,No,CH_C,No,132000.0,11000.0,No,LOW,No,BACKGROUND
+E00552,Luc W. Issa,Person,CH,Not PEP,,,,No,CH_B,No,224000.0,18700.0,Yes,LOW,No,BACKGROUND
+E00553,Luc A. Haddad,Person,CH,Not PEP,,,,No,CH_D,No,36000.0,3000.0,Yes,LOW,No,BACKGROUND
+E00554,Lina U. Dubois,Person,CY,Not PEP,,,,No,CH_C,Yes,33000.0,2800.0,Yes,LOW,No,BACKGROUND
+E00555,Lina M. Nicolaou,Person,CH,Not PEP,,,,No,CH_B,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E00556,Julia X. Clarke,Person,GB,Not PEP,,,,No,CH_D,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E00557,Nour O. Laurent,Person,US,Not PEP,,,,No,CH_C,No,335000.0,27900.0,Yes,LOW,No,BACKGROUND
+E00558,Andreas B. Abboud,Person,CH,Not PEP,,,,No,CH_B,No,192000.0,16000.0,Yes,LOW,No,BACKGROUND
+E00559,Leila K. Clarke,Person,FR,Not PEP,,,,No,CH_A,No,66000.0,5500.0,Yes,MEDIUM,No,BACKGROUND
+E00560,Chris G. Kassab,Person,FR,Not PEP,,,,No,CH_B,No,68000.0,5700.0,Yes,LOW,No,BACKGROUND
+E00561,Anna B. Abboud,Person,CY,Not PEP,,,,No,CH_B,Yes,86000.0,7100.0,Yes,LOW,No,BACKGROUND
+E00562,Rania L. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,48000.0,4000.0,Yes,MEDIUM,No,BACKGROUND
+E00563,Claire W. Fischer,Person,GB,Not PEP,,,,No,CH_B,No,125000.0,10400.0,Yes,LOW,No,BACKGROUND
+E00564,Bassam K. Sfeir,Person,LB,Not PEP,,,,No,CH_A,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E00565,Joanna U. Fischer,Person,CY,Not PEP,,,,No,CH_B,Yes,92000.0,7700.0,Yes,LOW,No,BACKGROUND
+E00566,Laura J. Yazbeck,Person,CH,Not PEP,,,,No,CH_D,No,37000.0,3100.0,Yes,LOW,No,BACKGROUND
+E00567,Dina E. Sfeir,Person,CY,Not PEP,,,,No,CH_C,Yes,202000.0,16900.0,No,LOW,No,BACKGROUND
+E00569,Carla N. Najjar,Person,GB,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E00570,Elena V. Meier,Person,LB,Not PEP,,,,No,CH_C,No,26000.0,2100.0,Yes,LOW,No,BACKGROUND
+E00571,Sophie R. Karam,Person,FR,Not PEP,,,,No,CH_D,No,46000.0,3800.0,Yes,MEDIUM,No,BACKGROUND
+E00572,Joseph E. Rossi,Person,FR,Not PEP,,,,No,CH_C,No,179000.0,14900.0,Yes,MEDIUM,No,BACKGROUND
+E00573,Stefan I. Laurent,Person,FR,Not PEP,,,,No,CH_B,No,52000.0,4400.0,Yes,LOW,No,BACKGROUND
+E00574,Andreas W. Meier,Person,LB,Not PEP,,,,No,CH_B,No,59000.0,4900.0,Yes,LOW,No,BACKGROUND
+E00575,Leila C. Bitar,Person,CY,Not PEP,,,,No,CH_B,Yes,37000.0,3000.0,Yes,LOW,No,BACKGROUND
+E00576,Leila Q. Rahme,Person,LB,Not PEP,,,,No,CH_B,No,18000.0,1500.0,Yes,LOW,No,BACKGROUND
+E00578,Paul M. Meier,Person,CH,Not PEP,,,,No,CH_A,No,83000.0,6900.0,Yes,MEDIUM,No,BACKGROUND
+E00579,Nour V. Nassar,Person,FR,Not PEP,,,,No,CH_B,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E00580,Carla C. Hanna,Person,LB,Not PEP,,,,No,CH_A,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E00581,Nour H. Jabbour,Person,FR,Not PEP,,,,No,CH_C,No,62000.0,5200.0,Yes,LOW,No,BACKGROUND
+E00582,Claire Y. Keller,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,125000.0,,No,MEDIUM,No,BACKGROUND
+E00583,Anna I. Dubois,Person,CH,Not PEP,,,,No,CH_D,No,139000.0,11600.0,Yes,LOW,No,BACKGROUND
+E00584,Walid H. Keller,Person,FR,Not PEP,,,,No,CH_A,No,110000.0,9200.0,Yes,LOW,No,BACKGROUND
+E00585,Yasmine S. Tannous,Person,LB,Not PEP,,,,No,CH_C,No,74000.0,6200.0,Yes,LOW,No,BACKGROUND
+E00586,Rania O. Hanna,Person,CH,Not PEP,,,,No,CH_B,No,133000.0,11100.0,Yes,LOW,No,BACKGROUND
+E00587,Andreas J. Laurent,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,45000.0,,Yes,LOW,No,BACKGROUND
+E00588,Sarah M. Fischer,Person,FR,Not PEP,,,,No,CH_A,No,62000.0,5100.0,Yes,LOW,No,BACKGROUND
+E00589,Nour O. Issa,Person,CH,Not PEP,,,,No,CH_D,No,79000.0,6600.0,No,LOW,No,BACKGROUND
+E00590,Carla M. Rossi,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,163000.0,,Yes,LOW,No,BACKGROUND
+E00591,Karim N. Huber,Person,CH,Not PEP,,,,No,CH_D,No,247000.0,20600.0,Yes,LOW,No,BACKGROUND
+E00592,Karim A. Najjar,Person,CH,Not PEP,,,,No,CH_C,No,177000.0,14700.0,Yes,LOW,No,BACKGROUND
+E00593,Nadim O. Najjar,Person,LB,Not PEP,,,,No,CH_C,No,43000.0,3600.0,Yes,LOW,No,BACKGROUND
+E00594,Karim U. Laurent,Person,LB,Not PEP,,,,No,CH_A,No,23000.0,1900.0,Yes,LOW,No,BACKGROUND
+E00595,Joseph B. Najjar,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,231000.0,,Yes,LOW,No,BACKGROUND
+E00596,Yasmine M. Haddad,Person,LB,Not PEP,,,,No,CH_D,No,32000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E00597,Yasmine Y. Issa,Person,CH,Not PEP,,,,No,CH_C,No,220000.0,18400.0,Yes,LOW,No,BACKGROUND
+E00599,Daniel F. Nassar,Person,CH,Not PEP,,,,No,CH_D,No,33000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E00600,Rania L. Najjar,Person,CH,Not PEP,,,,No,CH_B,No,124000.0,10300.0,Yes,LOW,No,BACKGROUND
+E00601,Rita V. Khoury,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,83000.0,,No,LOW,No,BACKGROUND
+E00602,Fadi X. Sfeir,Person,CH,Not PEP,,,,No,CH_A,No,164000.0,13700.0,No,LOW,No,BACKGROUND
+E00603,Leila R. Meier,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,LOW,No,BACKGROUND
+E00604,Samir Z. Tannous,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,42000.0,,Yes,LOW,No,BACKGROUND
+E00605,Maya U. Yazbeck,Person,CH,Not PEP,,,,No,CH_D,No,174000.0,14500.0,Yes,LOW,No,BACKGROUND
+E00606,Georges B. Zein,Person,GB,Not PEP,,,,No,CH_D,No,47000.0,3900.0,Yes,MEDIUM,No,BACKGROUND
+E00607,Nadim A. Fischer,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,69000.0,,Yes,MEDIUM,No,BACKGROUND
+E00609,Maya S. Rahme,Person,LB,Not PEP,,,,No,CH_C,No,56000.0,4700.0,Yes,LOW,No,BACKGROUND
+E00610,Walid O. Moreau,Person,LB,Not PEP,,,,No,CH_A,No,79000.0,6500.0,Yes,LOW,No,BACKGROUND
+E00611,Sarah I. Zein,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,27000.0,,Yes,LOW,No,BACKGROUND
+E00612,Lina W. Keller,Person,CH,Not PEP,,,,No,CH_C,No,129000.0,10700.0,Yes,LOW,No,BACKGROUND
+E00613,Maya V. Azar,Person,CH,Not PEP,,,,No,CH_C,No,116000.0,9700.0,No,MEDIUM,No,BACKGROUND
+E00614,Sarah Z. Moreau,Person,LB,Not PEP,,,,No,CH_B,No,56000.0,4700.0,No,MEDIUM,No,BACKGROUND
+E00615,Omar T. Moreau,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,LOW,No,BACKGROUND
+E00616,Georges X. Bitar,Person,LB,Not PEP,,,,No,CH_D,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E00617,Bassam F. Hanna,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,81000.0,,Yes,LOW,No,BACKGROUND
+E00618,Chris T. Rossi,Person,LU,Not PEP,,,,No,CH_D,No,385000.0,32100.0,Yes,MEDIUM,No,BACKGROUND
+E00619,Daniel Z. Tannous,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,78000.0,,Yes,LOW,No,BACKGROUND
+E00620,Rami P. Nicolaou,Person,CH,Not PEP,,,,No,CH_C,No,103000.0,8500.0,Yes,MEDIUM,No,BACKGROUND
+E00621,Chris T. Weber,Person,CH,Not PEP,,,,No,CH_D,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E00622,Luc E. Issa,Person,US,Not PEP,,,,No,None (foreign counterparty),No,57000.0,,Yes,LOW,No,BACKGROUND
+E00623,Paul C. Abboud,Person,CH,Not PEP,,,,No,CH_A,No,111000.0,9200.0,Yes,LOW,No,BACKGROUND
+E00624,Leila I. Rossi,Person,CH,Not PEP,,,,No,CH_A,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E00625,Joanna R. Daher,Person,LB,Not PEP,,,,No,CH_C,No,55000.0,4600.0,No,MEDIUM,No,BACKGROUND
+E00626,Marc V. Azar,Person,LB,Not PEP,,,,No,CH_C,No,102000.0,8500.0,Yes,LOW,No,BACKGROUND
+E00627,Maya Q. Zein,Person,LU,Not PEP,,,,No,CH_C,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E00628,Joanna G. Nassar,Person,GB,Not PEP,,,,No,CH_B,No,70000.0,5800.0,Yes,MEDIUM,No,BACKGROUND
+E00629,Omar F. Abboud,Person,AE,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E00630,Claire N. Smith,Person,CH,Not PEP,,,,No,CH_B,No,45000.0,3700.0,No,LOW,No,BACKGROUND
+E00631,Thomas F. Rahme,Person,FR,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,MEDIUM,No,BACKGROUND
+E00632,Sarah M. Azar,Person,CH,Not PEP,,,,No,CH_A,No,54000.0,4500.0,Yes,LOW,No,BACKGROUND
+E00633,Claire Q. Weber,Person,CH,Not PEP,,,,No,CH_A,No,55000.0,4600.0,Yes,LOW,No,BACKGROUND
+E00634,Daniel V. Bitar,Person,LB,Not PEP,,,,No,CH_B,No,53000.0,4500.0,Yes,LOW,No,BACKGROUND
+E00635,Anna N. Najjar,Person,FR,Not PEP,,,,No,CH_C,No,120000.0,10000.0,Yes,LOW,No,BACKGROUND
+E00636,Carla K. Issa,Person,CY,Not PEP,,,,No,CH_A,Yes,87000.0,7200.0,No,LOW,No,BACKGROUND
+E00637,Walid S. Jabbour,Person,CH,Not PEP,,,,No,CH_A,No,207000.0,17200.0,Yes,LOW,No,BACKGROUND
+E00638,Anna Z. Tannous,Person,CH,Not PEP,,,,No,CH_B,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E00639,Elie U. Fischer,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,60000.0,,No,LOW,No,BACKGROUND
+E00640,Leila J. Clarke,Person,CH,Not PEP,,,,No,CH_A,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E00641,Samir Q. Karam,Person,CH,Not PEP,,,,No,CH_C,No,376000.0,31400.0,Yes,LOW,No,BACKGROUND
+E00642,Hadi Z. Huber,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,69000.0,,Yes,LOW,No,BACKGROUND
+E00643,Anna F. Issa,Person,US,Not PEP,,,,No,None (foreign counterparty),No,107000.0,,Yes,LOW,No,BACKGROUND
+E00644,Elena A. Smith,Person,LU,Not PEP,,,,No,CH_C,No,137000.0,11500.0,Yes,LOW,No,BACKGROUND
+E00645,Elena B. Smith,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,51000.0,,Yes,MEDIUM,No,BACKGROUND
+E00646,Sarah G. Dubois,Person,GB,Not PEP,,,,No,CH_A,No,52000.0,4300.0,Yes,LOW,No,BACKGROUND
+E00647,Omar J. Bitar,Person,CH,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E00648,Chris F. Haddad,Person,CY,Not PEP,,,,No,CH_C,Yes,59000.0,4900.0,Yes,LOW,No,BACKGROUND
+E00649,Claire M. Khoury,Person,US,Not PEP,,,,No,CH_A,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E00650,Lukas I. Bitar,Person,AE,Not PEP,,,,No,CH_D,No,31000.0,2600.0,Yes,MEDIUM,No,BACKGROUND
+E00651,Claire E. Yazbeck,Person,GB,Not PEP,,,,No,CH_D,No,182000.0,15100.0,Yes,LOW,No,BACKGROUND
+E00652,Ziad Z. Tannous,Person,CH,Not PEP,,,,No,CH_D,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E00653,Ziad Y. Clarke,Person,FR,Not PEP,,,,No,CH_D,No,97000.0,8100.0,Yes,LOW,No,BACKGROUND
+E00654,Paul H. Daher,Person,CH,Not PEP,,,,No,CH_A,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E00655,Claire T. Rossi,Person,CH,Not PEP,,,,No,CH_D,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E00656,Omar J. Zein,Person,CH,Not PEP,,,,No,CH_A,No,121000.0,10100.0,Yes,LOW,No,BACKGROUND
+E00657,Julia I. Daher,Person,LB,Not PEP,,,,No,CH_C,No,24000.0,2000.0,Yes,LOW,No,BACKGROUND
+E00658,Sarah P. Haddad,Person,CH,Not PEP,,,,No,CH_A,No,357000.0,29700.0,Yes,LOW,No,BACKGROUND
+E00659,Nabil A. Sfeir,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,42000.0,,Yes,LOW,No,BACKGROUND
+E00660,Walid H. Karam,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E00661,Andreas P. Moreau,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,23000.0,,Yes,LOW,No,BACKGROUND
+E00662,Elie W. Clarke,Person,CH,Not PEP,,,,No,CH_D,No,82000.0,6900.0,Yes,LOW,No,BACKGROUND
+E00663,Sophie R. Smith,Person,CH,Not PEP,,,,No,CH_D,No,110000.0,9100.0,Yes,MEDIUM,No,BACKGROUND
+E00664,Georges J. Azar,Person,CH,Not PEP,,,,No,CH_D,No,163000.0,13500.0,Yes,LOW,No,BACKGROUND
+E00665,Nour V. Tannous,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,228000.0,,No,LOW,No,BACKGROUND
+E00666,Jean L. Jabbour,Person,CH,Not PEP,,,,No,CH_D,No,173000.0,14500.0,Yes,MEDIUM,No,BACKGROUND
+E00667,Dina M. Smith,Person,LB,Not PEP,,,,No,CH_C,No,32000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E00668,Karim F. Fischer,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,72000.0,,Yes,LOW,No,BACKGROUND
+E00669,Daniel R. Keller,Person,CH,Not PEP,,,,No,CH_C,No,323000.0,26900.0,Yes,LOW,No,BACKGROUND
+E00670,Joanna I. Jabbour,Person,CH,Not PEP,,,,No,CH_B,No,244000.0,20300.0,Yes,LOW,No,BACKGROUND
+E00671,Sarah X. Haddad,Person,CH,Not PEP,,,,No,CH_C,No,153000.0,12800.0,Yes,LOW,No,BACKGROUND
+E00672,Nour Y. Abboud,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,77000.0,,No,LOW,No,BACKGROUND
+E00673,Karim P. Sfeir,Person,LB,Not PEP,,,,No,CH_B,No,22000.0,1800.0,Yes,LOW,No,BACKGROUND
+E00674,Rania G. Smith,Person,CY,Not PEP,,,,No,CH_D,Yes,77000.0,6400.0,Yes,MEDIUM,No,BACKGROUND
+E00675,Julia J. Nassar,Person,GB,Not PEP,,,,No,CH_B,No,116000.0,9700.0,Yes,LOW,No,BACKGROUND
+E00676,Antoine J. Laurent,Person,CH,Not PEP,,,,No,CH_C,No,326000.0,27100.0,Yes,LOW,No,BACKGROUND
+E00677,Rita D. Huber,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,125000.0,,Yes,LOW,No,BACKGROUND
+E00678,Nour Y. Karam,Person,AE,Not PEP,,,,No,CH_C,No,88000.0,7300.0,Yes,LOW,No,BACKGROUND
+E00679,Ziad B. Azar,Person,CH,Not PEP,,,,No,CH_C,No,88000.0,7300.0,Yes,LOW,No,BACKGROUND
+E00680,Jean R. Karam,Person,GB,Not PEP,,,,No,CH_B,No,106000.0,8800.0,Yes,MEDIUM,No,BACKGROUND
+E00681,Michael Y. Najjar,Person,FR,Not PEP,,,,No,CH_C,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E00682,Antoine Q. Daher,Person,FR,Not PEP,,,,No,CH_B,No,106000.0,8800.0,Yes,LOW,No,BACKGROUND
+E00683,Pierre W. Clarke,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,110000.0,,Yes,LOW,No,BACKGROUND
+E00684,Rita I. Laurent,Person,LB,Not PEP,,,,No,CH_A,No,46000.0,3900.0,Yes,LOW,No,BACKGROUND
+E00685,Thomas A. Weber,Person,US,Not PEP,,,,No,None (foreign counterparty),No,75000.0,,Yes,LOW,No,BACKGROUND
+E00686,Nour C. Zein,Person,CH,Not PEP,,,,No,CH_B,No,41000.0,3400.0,Yes,LOW,No,BACKGROUND
+E00687,Claire T. Issa,Person,CH,Not PEP,,,,No,CH_C,No,158000.0,13200.0,Yes,LOW,No,BACKGROUND
+E00688,Joanna F. Haddad,Person,LB,Not PEP,,,,No,CH_B,No,98000.0,8100.0,Yes,LOW,No,BACKGROUND
+E00689,Government Ministry/Agency FR-01,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00690,Omar U. Kassab,Person,FR,PEP,,,Minister of Finance,Yes,CH_B,No,182000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00691,Paul U. Khoury,Person,FR,PEP family,E00690,Omar U. Kassab,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00692,Government Ministry/Agency FR-02,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00693,Nathalie X. Weber,Person,FR,PEP,,,Member of Parliament,Yes,CH_A,No,202000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00694,Mira Q. Dubois,Person,FR,PEP family,E00693,Nathalie X. Weber,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00695,Government Ministry/Agency GB-03,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00696,Julia Q. Dubois,Person,GB,PEP,,,Supreme Court Judge,Yes,CH_B,No,204000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00697,Mira K. Fischer,Person,GB,PEP family,E00696,Julia Q. Dubois,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00698,Government Ministry/Agency GB-04,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00699,Andreas H. Weber,Person,GB,PEP,,,Ambassador,Yes,CH_A,No,91000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00700,Lukas X. Bitar,Person,GB,PEP family,E00699,Andreas H. Weber,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00701,Fadi X. Jabbour,Person,GB,PEP family,E00699,Andreas H. Weber,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00702,Government Ministry/Agency LB-05,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00703,Lina S. Abboud,Person,LB,PEP,,,Head of State-Owned Utility,Yes,CH_A,No,194000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00704,Lina M. Weber,Person,LB,PEP family,E00703,Lina S. Abboud,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00705,Rami A. Smith,Person,LB,PEP family,E00703,Lina S. Abboud,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00706,Government Ministry/Agency CH-06,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E00707,Yasmine A. Dubois,Person,CH,PEP,,,Deputy Minister,Yes,CH_B,No,244000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00708,Bassam H. Haddad,Person,CH,PEP family,E00707,Yasmine A. Dubois,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00709,Nathalie M. Zein,Person,CH,PEP family,E00707,Yasmine A. Dubois,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00710,Government Ministry/Agency CH-07,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E00711,Nadim I. Karam,Person,CH,PEP,,,Mayor of Capital City,Yes,CH_A,No,102000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00712,Stefan B. Kassab,Person,CH,PEP family,E00711,Nadim I. Karam,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00713,Andreas C. Hanna,Person,CH,PEP family,E00711,Nadim I. Karam,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00714,Government Ministry/Agency GB-08,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00715,Fadi A. Laurent,Person,GB,PEP,,,Military General,Yes,CH_A,No,230000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00716,Maya V. Najjar,Person,GB,PEP family,E00715,Fadi A. Laurent,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00717,Antoine S. Khoury,Person,GB,PEP family,E00715,Fadi A. Laurent,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00718,Government Ministry/Agency CY-09,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00719,Elie B. Hanna,Person,CY,PEP,,,Director of National Pension Fund,Yes,CH_A,Yes,117000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00720,Luc V. Hanna,Person,CY,PEP family,E00719,Elie B. Hanna,,Yes,CH_A,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00721,Government Ministry/Agency CY-10,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00722,Rami G. Nassar,Person,CY,PEP,,,Senator,Yes,CH_A,Yes,187000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00723,Daniel L. Laurent,Person,CY,PEP family,E00722,Rami G. Nassar,,Yes,CH_A,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00724,Government Ministry/Agency CH-11,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E00725,Hadi K. Meier,Person,CH,PEP,,,Minister of Finance,Yes,CH_C,No,228000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00726,Rania W. Laurent,Person,CH,PEP family,E00725,Hadi K. Meier,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00727,Laura H. Fischer,Person,CH,PEP family,E00725,Hadi K. Meier,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00728,Government Ministry/Agency LB-12,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00729,Thomas O. Khoury,Person,LB,PEP,,,Member of Parliament,Yes,CH_B,No,205000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00730,Yasmine B. Sfeir,Person,LB,PEP family,E00729,Thomas O. Khoury,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00731,Government Ministry/Agency AE-13,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00732,Dina I. Rossi,Person,AE,PEP,,,Supreme Court Judge,Yes,CH_C,No,185000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00733,Elena T. Meier,Person,AE,PEP family,E00732,Dina I. Rossi,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00734,Claire S. Nassar,Person,AE,PEP family,E00732,Dina I. Rossi,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00735,Government Ministry/Agency FR-14,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00736,Rania M. Najjar,Person,FR,PEP,,,Ambassador,Yes,CH_D,No,146000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00737,Luc Z. Sfeir,Person,FR,PEP family,E00736,Rania M. Najjar,,Yes,CH_D,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00738,Claire N. Yazbeck,Person,FR,PEP family,E00736,Rania M. Najjar,,Yes,CH_D,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00739,Government Ministry/Agency AE-15,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00740,Yasmine Q. Moreau,Person,AE,PEP,,,Head of State-Owned Utility,Yes,CH_A,No,217000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00741,Nathalie U. Laurent,Person,AE,PEP family,E00740,Yasmine Q. Moreau,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00742,Government Ministry/Agency AE-16,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00743,Marc Z. Najjar,Person,AE,PEP,,,Deputy Minister,Yes,CH_B,No,139000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00744,Joanna Z. Jabbour,Person,AE,PEP family,E00743,Marc Z. Najjar,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00745,Government Ministry/Agency GB-17,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00746,Marc G. Keller,Person,GB,PEP,,,Mayor of Capital City,Yes,CH_C,No,173000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00747,Maya W. Issa,Person,GB,PEP family,E00746,Marc G. Keller,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00748,Maya R. Azar,Person,GB,PEP family,E00746,Marc G. Keller,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00749,Government Ministry/Agency CY-18,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00750,Paul N. Kassab,Person,CY,PEP,,,Military General,Yes,CH_C,Yes,154000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00751,Paul Y. Karam,Person,CY,PEP family,E00750,Paul N. Kassab,,Yes,CH_C,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00752,Government Ministry/Agency FR-19,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00753,Mira B. Rahme,Person,FR,PEP,,,Director of National Pension Fund,Yes,CH_B,No,191000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00754,Nour J. Smith,Person,FR,PEP family,E00753,Mira B. Rahme,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00755,Government Ministry/Agency LB-20,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E00756,Anna I. Clarke,Person,LB,PEP,,,Senator,Yes,CH_A,No,183000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00757,Yasmine V. Laurent,Person,LB,PEP family,E00756,Anna I. Clarke,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E00758,Alpine Commodities Trading SA,Company,CH,Not PEP,,,,No,CH_B,No,400000000.0,35000000.0,Yes,MEDIUM,No,DECOY_TRADER
+E00759,Vantage Properties Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00760,Lakeside Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00761,Crescent Logistics LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00762,Oakmont Associates SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00763,Riviera Trading Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00764,Pinnacle Group FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00765,Meridian Partners Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00766,Cedar Trading Ltd,Company,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,DECOY_TRADER
+E00767,Ironwood Holdings LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00768,Lakeside Associates Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,DECOY_TRADER
+E00769,Central Bank of Country L (synthetic),Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00770,Fares N. Haddad-Rahme,Person,LB,PEP,,,"Governor, Central Bank",No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00771,Rami N. Haddad-Rahme,Person,LB,PEP family,E00770,Fares N. Haddad-Rahme,,Yes,CH_A,No,1500000.0,100000.0,No,HIGH,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00772,Samir K. Tannous,Person,LB,PEP close associate,E00770,Fares N. Haddad-Rahme,,No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00773,Fernhill Associates Ltd,Company,VG,PEP-owned company,E00770,Fares N. Haddad-Rahme,,No,CH_A,Yes,3000000.0,250000.0,No,MEDIUM,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00774,Cedar Heights Properties SAL,Company,LB,PEP-owned company,E00770,Fares N. Haddad-Rahme,,No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00775,Mount Lebanon Developments SAL,Company,LB,PEP-owned company,E00770,Fares N. Haddad-Rahme,,No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00776,Hadi N. Clarke,Person,PA,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00777,Northbridge Capital Holdings Inc,Company,PA,PEP-owned company,E00770,Fares N. Haddad-Rahme,,No,CH_D,Yes,,100000.0,No,MEDIUM,Yes,S1_CENTRAL_BANK_COMMISSION_DIVERSION
+E00778,Galerie Rive Gauche SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,BACKGROUND
+E00779,Riviera Yacht Brokers SAM,Company,MC,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,BACKGROUND
+E00780,Lac Leman Jewellers SA,Company,CH,Not PEP,,,,No,CH_C,No,,0.0,Unknown,Not rated,No,BACKGROUND
+E00781,Alpine Jet Charter SA,Company,CH,Not PEP,,,,No,CH_C,No,,0.0,Unknown,Not rated,No,BACKGROUND
+E00782,Kensington Prep School Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,BACKGROUND
+E00783,State Port Authority of Country L (synthetic),Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S2_PROCUREMENT_KICKBACK
+E00784,Georges B. Issa,Person,LB,PEP,,,"Director-General, State Port Authority",Yes,None (foreign counterparty),No,140000.0,,Yes,HIGH,Yes,S2_PROCUREMENT_KICKBACK
+E00785,Sarah O. Fischer,Person,LB,PEP family,E00784,Georges B. Issa,,No,CH_B,No,0.0,20000.0,No,MEDIUM,Yes,S2_PROCUREMENT_KICKBACK
+E00786,Harbor Logistics SAL,Company,LB,Not PEP,,,,No,CH_B,No,,1500000.0,Unknown,Not rated,No,S2_PROCUREMENT_KICKBACK
+E00787,Walid Q. Tannous,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,Yes,S2_PROCUREMENT_KICKBACK
+E00788,Orion Advisory Ltd,Company,CY,PEP-owned company,E00784,Georges B. Issa,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,Yes,S2_PROCUREMENT_KICKBACK
+E00789,Bluegate Consulting Ltd,Company,VG,PEP-owned company,E00784,Georges B. Issa,,No,CH_B,Yes,,100000.0,No,HIGH,Yes,S2_PROCUREMENT_KICKBACK
+E00790,Haussmann Immobilier SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,BACKGROUND
+E00791,Customs Directorate of Country L (synthetic),Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S3_FAMILY_STRUCTURING
+E00792,Elie Q. Fischer,Person,LB,PEP,,,Senior Customs Official,No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S3_FAMILY_STRUCTURING
+E00793,Crescent General Trading FZE,Company,AE,PEP-owned company,E00792,Elie Q. Fischer,,No,None (foreign counterparty),No,,,Unknown,Not rated,Yes,S3_FAMILY_STRUCTURING
+E00794,Georges H. Nassar,Person,CH,PEP family,E00792,Elie Q. Fischer,,No,CH_C,No,21000.0,4000.0,Yes,LOW,Yes,S3_FAMILY_STRUCTURING
+E00795,Yasmine Z. Jabbour,Person,CH,PEP family,E00792,Elie Q. Fischer,,No,CH_C,No,60000.0,4000.0,Yes,LOW,Yes,S3_FAMILY_STRUCTURING
+E00796,Joseph G. Weber,Person,CH,PEP family,E00792,Elie Q. Fischer,,No,CH_C,No,47000.0,4000.0,Yes,LOW,Yes,S3_FAMILY_STRUCTURING
+E00797,Tarek U. Issa,Person,CH,PEP family,E00792,Elie Q. Fischer,,No,CH_C,No,40000.0,4000.0,Yes,LOW,Yes,S3_FAMILY_STRUCTURING
