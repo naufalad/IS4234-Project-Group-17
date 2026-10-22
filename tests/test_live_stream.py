@@ -114,3 +114,4 @@ def test_reset_db_to_baseline(temp_db):
     counts = DBM.get_counts(temp_db)
     assert counts["entities"] == 720
     assert counts["pep_quarterly_report"] == 2084
+

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import streamlit as st
 
+from pep_analytics import db as DBM
 from pep_analytics.config import RiskConfig
 from pep_analytics.data_loader import DataValidationError, load_all
 from pep_analytics.scoring import score_report
@@ -57,6 +58,18 @@ def sidebar_config() -> RiskConfig:
     interval = st.sidebar.number_input(
         "KYC review interval (quarters)", 1, 40, base.kyc_review_interval_quarters,
     )
+    st.sidebar.divider()
+    st.sidebar.subheader("Live Database")
+    counts = DBM.get_counts()
+    st.sidebar.caption(
+        f"Entities: {counts.get('entities', 0):,} | Reports: {counts.get('pep_quarterly_report', 0):,}"
+    )
+    if st.sidebar.button("🔄 Reset to Baseline", key="sidebar_reset_btn"):
+        DBM.reset_db_to_baseline()
+        st.cache_data.clear()
+        st.sidebar.success("Database reset to baseline!")
+        st.rerun()
+
     try:
         return base.with_overrides(
             escalate_at=int(escalate_at),
@@ -106,5 +119,6 @@ Use the pages in the sidebar:
 5. **Review** — independent KYC-review worklist
 6. **Drilldown** — one entity: transactions, counterparties, subgraph, risk history
 7. **Validation** — detection quality vs the answer key
+8. **Live CMS** — manual case submission, Lebanon typology presets & interval stream simulator
 """
 )

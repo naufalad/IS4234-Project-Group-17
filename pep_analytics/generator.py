@@ -396,3 +396,4 @@ def generate_unified_record(
         "transactions": transactions,
         "score_factors": row.get("score_factors", []),
     }
+

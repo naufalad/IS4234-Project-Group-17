@@ -117,6 +117,22 @@ CREATE TABLE IF NOT EXISTS stream_audit_log (
     trigger_reason TEXT,
     details TEXT
 );
+
+CREATE TABLE IF NOT EXISTS cases (
+    case_id TEXT PRIMARY KEY,
+    entity_id TEXT,
+    entity_name TEXT,
+    quarter TEXT,
+    swiss_bank TEXT,
+    risk_score REAL,
+    status TEXT,
+    assigned_supervisor TEXT,
+    override_officer TEXT,
+    override_justification TEXT,
+    investigation_notes TEXT,
+    created_at TEXT,
+    updated_at TEXT
+);
 """
 
 
@@ -175,6 +191,7 @@ def init_db(db_path: Path | str | None = None, force_reseed: bool = False) -> No
                 DROP TABLE IF EXISTS transactions;
                 DROP TABLE IF EXISTS pep_quarterly_report;
                 DROP TABLE IF EXISTS stream_audit_log;
+                DROP TABLE IF EXISTS cases;
             """)
 
         conn.executescript(SCHEMA_SQL)
@@ -221,7 +238,7 @@ def get_counts(db_path: Path | str | None = None) -> dict[str, int]:
     counts: dict[str, int] = {}
     try:
         cur = conn.cursor()
-        for tbl in ["entities", "network_edges", "transactions", "pep_quarterly_report", "stream_audit_log"]:
+        for tbl in ["entities", "network_edges", "transactions", "pep_quarterly_report", "stream_audit_log", "cases"]:
             try:
                 cur.execute(f"SELECT COUNT(*) FROM {tbl}")
                 counts[tbl] = cur.fetchone()[0]
@@ -366,9 +383,245 @@ def insert_unified_pep_record(
             ),
         )
 
+        # 6. Auto-register case if escalated
+        if escalate == "Yes":
+            cid = f"CASE-{report.get('quarter', '2016')}-{entity.get('entity_id')}"
+            cur.execute("""
+                INSERT OR REPLACE INTO cases (
+                    case_id, entity_id, entity_name, quarter, swiss_bank,
+                    risk_score, status, assigned_supervisor, override_officer,
+                    override_justification, investigation_notes, created_at, updated_at
+                ) VALUES (
+                    ?, ?, ?, ?, ?,
+                    ?, COALESCE((SELECT status FROM cases WHERE case_id = ?), 'NEW_ALERT'),
+                    COALESCE((SELECT assigned_supervisor FROM cases WHERE case_id = ?), 'Senior Investigator - Bern Desk'),
+                    ?, ?, ?,
+                    COALESCE((SELECT created_at FROM cases WHERE case_id = ?), ?),
+                    ?
+                )
+            """, (
+                cid, entity.get("entity_id"), entity.get("name"),
+                report.get("quarter", ""), entity.get("swiss_bank"),
+                risk_score, cid, cid,
+                "Head of Private Banking" if report.get("management_overrides", 0) >= 1 else None,
+                "Overridden due to executive relationship assurance" if report.get("management_overrides", 0) >= 1 else None,
+                "Automated intake from live supervisory alert.",
+                cid, now_iso, now_iso,
+            ))
+
     return {
         "status": "success",
         "entity_id": entity.get("entity_id"),
         "timestamp": now_iso,
         "escalate_to_finma": escalate,
     }
+
+
+# ==============================================================================
+# Case Lifecycle & Dispositioning Management
+# ==============================================================================
+
+def list_cases(status: str | None = None, db_path: Path | str | None = None) -> pd.DataFrame:
+    """Return all cases, optionally filtered by status, auto-seeding if empty."""
+    path = get_db_path(db_path)
+    if not path.exists():
+        init_db(path)
+
+    auto_seed_cases_from_escalations(path)
+
+    conn = get_connection(path)
+    try:
+        if status:
+            df = pd.read_sql_query(
+                "SELECT * FROM cases WHERE status = ? ORDER BY risk_score DESC, updated_at DESC",
+                conn,
+                params=[status],
+            )
+        else:
+            df = pd.read_sql_query(
+                "SELECT * FROM cases ORDER BY risk_score DESC, updated_at DESC",
+                conn,
+            )
+    finally:
+        conn.close()
+    return df
+
+
+def get_case(case_id: str, db_path: Path | str | None = None) -> dict[str, Any] | None:
+    """Fetch a single case by case_id."""
+    path = get_db_path(db_path)
+    if not path.exists():
+        init_db(path)
+    conn = get_connection(path)
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM cases WHERE case_id = ?", [case_id])
+        row = cur.fetchone()
+        return dict(row) if row else None
+    finally:
+        conn.close()
+
+
+def get_case_dossier_data(case_id: str, db_path: Path | str | None = None) -> dict[str, Any] | None:
+    """Fetch complete case dossier bundle: case, entity, report, edges, transactions."""
+    path = get_db_path(db_path)
+    if not path.exists():
+        init_db(path)
+    conn = get_connection(path)
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM cases WHERE case_id = ?", [case_id])
+        case_row = cur.fetchone()
+        if not case_row:
+            return None
+        case = dict(case_row)
+        eid = case.get("entity_id")
+        quarter = case.get("quarter")
+
+        # Entity KYC
+        cur.execute("SELECT * FROM entities WHERE entity_id = ?", [eid])
+        ent_row = cur.fetchone()
+        entity = dict(ent_row) if ent_row else {"entity_id": eid, "name": case.get("entity_name")}
+
+        # Quarterly Report
+        cur.execute("SELECT * FROM pep_quarterly_report WHERE entity_id = ? AND quarter = ?", [eid, quarter])
+        rep_row = cur.fetchone()
+        if not rep_row:
+            cur.execute("SELECT * FROM pep_quarterly_report WHERE entity_id = ? ORDER BY quarter DESC LIMIT 1", [eid])
+            rep_row = cur.fetchone()
+        report = dict(rep_row) if rep_row else None
+
+        # Network Edges
+        cur.execute("SELECT * FROM network_edges WHERE source_id = ? OR target_id = ?", [eid, eid])
+        edges = [dict(r) for r in cur.fetchall()]
+
+        # Transactions
+        cur.execute("SELECT * FROM transactions WHERE from_id = ? OR to_id = ? ORDER BY date DESC LIMIT 20", [eid, eid])
+        transactions = [dict(r) for r in cur.fetchall()]
+
+        return {
+            "case": case,
+            "entity": entity,
+            "report": report,
+            "edges": edges,
+            "transactions": transactions,
+        }
+    finally:
+        conn.close()
+
+
+def update_case(
+    case_id: str,
+    status: str | None = None,
+    assigned_supervisor: str | None = None,
+    override_justification: str | None = None,
+    investigation_notes: str | None = None,
+    db_path: Path | str | None = None,
+) -> bool:
+    """Update fields on an existing case."""
+    path = get_db_path(db_path)
+    conn = get_connection(path)
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    updates = []
+    params = []
+    if status is not None:
+        updates.append("status = ?")
+        params.append(status)
+    if assigned_supervisor is not None:
+        updates.append("assigned_supervisor = ?")
+        params.append(assigned_supervisor)
+    if override_justification is not None:
+        updates.append("override_justification = ?")
+        params.append(override_justification)
+    if investigation_notes is not None:
+        updates.append("investigation_notes = ?")
+        params.append(investigation_notes)
+
+    if not updates:
+        conn.close()
+        return False
+
+    updates.append("updated_at = ?")
+    params.append(now_iso)
+    params.append(case_id)
+
+    with conn:
+        cur = conn.cursor()
+        cur.execute(f"UPDATE cases SET {', '.join(updates)} WHERE case_id = ?", params)
+        success = cur.rowcount > 0
+    conn.close()
+    return success
+
+
+def auto_seed_cases_from_escalations(db_path: Path | str | None = None) -> None:
+    """Seed initial cases table from high-risk / escalated reports if empty."""
+    path = get_db_path(db_path)
+    conn = get_connection(path)
+    with conn:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM cases")
+        if cur.fetchone()[0] == 0:
+            cur.execute("""
+                SELECT quarter, entity_id, name, swiss_bank, risk_score, management_overrides
+                FROM pep_quarterly_report
+                WHERE escalate_to_finma = 'Yes' OR risk_score >= 60
+                ORDER BY risk_score DESC
+                LIMIT 30
+            """)
+            rows = cur.fetchall()
+            now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            cases_data = []
+            for r in rows:
+                cid = f"CASE-{r['quarter']}-{r['entity_id']}"
+                has_ov = (r["management_overrides"] or 0) >= 1
+                cases_data.append((
+                    cid, r["entity_id"], r["name"], r["quarter"], r["swiss_bank"],
+                    float(r["risk_score"] or 0.0),
+                    "NEW_ALERT",
+                    "Lead Financial Investigator - Zurich Desk",
+                    "Head of Wealth Management" if has_ov else None,
+                    "Client confirmed high-net-worth introducer backing" if has_ov else None,
+                    "Automated intake from baseline supervisory escalation.",
+                    now_iso, now_iso,
+                ))
+            if cases_data:
+                cur.executemany("""
+                    INSERT OR REPLACE INTO cases (
+                        case_id, entity_id, entity_name, quarter, swiss_bank,
+                        risk_score, status, assigned_supervisor, override_officer,
+                        override_justification, investigation_notes, created_at, updated_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, cases_data)
+    conn.close()
+
+
+def batch_insert_unified_records(
+    records: list[dict[str, Any]],
+    event_type: str = "BATCH_FILE_INGESTION",
+    db_path: Path | str | None = None,
+) -> dict[str, Any]:
+    """Ingest a batch of records from uploaded file or external payload."""
+    ingested = 0
+    escalated = 0
+    for rec in records:
+        res = insert_unified_pep_record(
+            entity=rec.get("entity", {}),
+            edge=rec.get("edge"),
+            report=rec.get("report"),
+            transactions=rec.get("transactions"),
+            event_type=event_type,
+            db_path=db_path,
+        )
+        if res.get("status") == "success":
+            ingested += 1
+            if res.get("escalate_to_finma") == "Yes":
+                escalated += 1
+
+    return {
+        "status": "success",
+        "total_ingested": ingested,
+        "escalations_triggered": escalated,
+    }
+
+
