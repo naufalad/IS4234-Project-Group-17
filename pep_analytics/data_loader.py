@@ -1,7 +1,7 @@
-"""Load, type-coerce and validate the four ``dataset2/`` tables.
+"""Load, type-coerce and validate the four tables from SQLite or ``dataset2/``.
 
 Requirements: 2.1, 2.2 (ingestion), 2.3 (readable validation errors),
-10.1 (reads from ``dataset2/``).
+10.1 (reads from ``dataset2/`` as baseline), plus dynamic live SQLite backing.
 """
 from __future__ import annotations
 
@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import pandas as pd
+
+from pep_analytics import db as DBM
 
 # dataset2/ lives next to the repo root (one level up from this package).
 DATA_DIR = Path(__file__).resolve().parent.parent / "dataset2"
@@ -81,19 +83,12 @@ class Datasets:
         }
 
 
-def _read_one(name: str, data_dir: Path) -> pd.DataFrame:
-    path = data_dir / f"{name}.csv"
-    if not path.exists():
-        raise DataValidationError(f"Missing data file: {path}")
-    try:
-        df = pd.read_csv(path)
-    except Exception as exc:  # pragma: no cover - pandas raises many parse types
-        raise DataValidationError(f"Could not parse {path}: {exc}") from exc
-
+def _validate_and_coerce(df: pd.DataFrame, name: str) -> pd.DataFrame:
+    """Validate required columns and coerce numerics."""
     missing = [c for c in REQUIRED_COLUMNS[name] if c not in df.columns]
     if missing:
         raise DataValidationError(
-            f"{name}.csv is missing required column(s): {', '.join(missing)}"
+            f"{name} is missing required column(s): {', '.join(missing)}"
         )
 
     # Coerce numerics; invalid values become NaN rather than crashing, but a
@@ -102,11 +97,23 @@ def _read_one(name: str, data_dir: Path) -> pd.DataFrame:
         coerced = pd.to_numeric(df[col], errors="coerce")
         if df[col].notna().any() and coerced.notna().sum() == 0:
             raise DataValidationError(
-                f"{name}.csv column '{col}' contains no numeric values"
+                f"{name} column '{col}' contains no numeric values"
             )
         df[col] = coerced
 
     return df
+
+
+def _read_one_csv(name: str, data_dir: Path) -> pd.DataFrame:
+    path = data_dir / f"{name}.csv"
+    if not path.exists():
+        raise DataValidationError(f"Missing data file: {path}")
+    try:
+        df = pd.read_csv(path)
+    except Exception as exc:  # pragma: no cover - pandas raises many parse types
+        raise DataValidationError(f"Could not parse {path}: {exc}") from exc
+
+    return _validate_and_coerce(df, name)
 
 
 def _normalise_bool_text(series: pd.Series) -> pd.Series:
@@ -114,17 +121,38 @@ def _normalise_bool_text(series: pd.Series) -> pd.Series:
     return series.astype("string").str.strip().str.capitalize()
 
 
-def load_all(data_dir: Path | str = DATA_DIR) -> Datasets:
+def load_all(
+    data_dir: Path | str = DATA_DIR,
+    use_db: bool = True,
+    db_path: Path | str | None = None,
+) -> Datasets:
     """Load and validate all four tables.
+
+    If ``use_db=True``, reads from SQLite (auto-seeded from ``dataset2/`` on first run).
+    Otherwise reads directly from CSVs in ``data_dir``.
 
     Raises :class:`DataValidationError` with a readable message if any table is
     missing, missing a required column, or has a malformed numeric column.
     """
     data_dir = Path(data_dir)
-    entities = _read_one("entities", data_dir)
-    edges = _read_one("network_edges", data_dir)
-    txns = _read_one("transactions", data_dir)
-    report = _read_one("pep_quarterly_report", data_dir)
+
+    if use_db:
+        try:
+            entities = _validate_and_coerce(DBM.load_table("entities", db_path=db_path), "entities")
+            edges = _validate_and_coerce(DBM.load_table("network_edges", db_path=db_path), "network_edges")
+            txns = _validate_and_coerce(DBM.load_table("transactions", db_path=db_path), "transactions")
+            report = _validate_and_coerce(DBM.load_table("pep_quarterly_report", db_path=db_path), "pep_quarterly_report")
+        except Exception:
+            # Fallback to CSV if DB access fails
+            entities = _read_one_csv("entities", data_dir)
+            edges = _read_one_csv("network_edges", data_dir)
+            txns = _read_one_csv("transactions", data_dir)
+            report = _read_one_csv("pep_quarterly_report", data_dir)
+    else:
+        entities = _read_one_csv("entities", data_dir)
+        edges = _read_one_csv("network_edges", data_dir)
+        txns = _read_one_csv("transactions", data_dir)
+        report = _read_one_csv("pep_quarterly_report", data_dir)
 
     # Parse transaction dates (Requirement 8.1 drill-down over time).
     txns["date"] = pd.to_datetime(txns["date"], errors="coerce")

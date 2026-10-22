@@ -29,6 +29,7 @@ streamlit run pep_app.py
 | Review | Independent KYC-review worklist (Jyske-bank reference), prioritised, with refresh-due flags |
 | Drilldown | One entity: transactions over time, counterparties, subgraph, quarterly risk history |
 | Validation | Detection quality (precision/recall) vs the answer key |
+| Live CMS | Case Management gateway: single-entry submission, Lebanon case typology presets & interval streaming simulator |
 
 ### Design notes
 
@@ -54,6 +55,8 @@ pep_analytics/
   escalation.py         automated escalation records + CSV export
   review.py             independent KYC-review worklist
   validation.py         precision/recall vs answer key
+  db.py                 SQLite persistence, baseline seeder & audit logging
+  generator.py          scenario-aware typology presets (Forry/Lebanon case)
 tests/                  pytest unit tests
 ```
 
