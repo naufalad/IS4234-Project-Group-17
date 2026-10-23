@@ -25,11 +25,11 @@ F_CASH = "cash_deposits"
 def default_weights() -> dict[str, int]:
     """Point weights per factor, per the dataset README risk table."""
     return {
-        F_PASS_THROUGH: 25,
-        F_VOLUME: 20,
-        F_HIGH_RISK_DEST: 15,
-        F_PEP_NOT_FLAGGED: 15,
-        F_SOF_UNVERIFIED: 10,
+        F_PASS_THROUGH: 10,
+        F_VOLUME: 10,
+        F_HIGH_RISK_DEST: 10,
+        F_PEP_NOT_FLAGGED: 20,
+        F_SOF_UNVERIFIED: 20,
         F_OVERRIDE: 15,
         F_CASH: 15,
     }

@@ -23,11 +23,11 @@ def _row_factors(row: pd.Series, cfg: RiskConfig) -> list[tuple[str, int]]:
     """Return the (factor, points) contributions that fire for one row.
 
     Mirrors the README table:
-      - pass_through_ratio >= 0.8 AND inflow > 100k  -> 25
-      - volume_vs_expected > 5                        -> 20
-      - high_risk_destination_share > 0.5             -> 15
-      - PEP-linked but not flagged by bank            -> 15
-      - source of funds not verified                  -> 10
+      - pass_through_ratio >= 0.8 AND inflow > 100k   -> 10
+      - volume_vs_expected > 5                        -> 10
+      - high_risk_destination_share > 0.5             -> 10
+      - PEP-linked but not flagged by bank            -> 20
+      - source of funds not verified                  -> 20
       - management override this quarter              -> 15
       - cash deposits > 50k                           -> 15
     """

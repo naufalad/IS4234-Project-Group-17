@@ -132,3 +132,4 @@ def find_matching_entities(
 
     results.sort(key=lambda r: r["score"], reverse=True)
     return results[:limit]
+

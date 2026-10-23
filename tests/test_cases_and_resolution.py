@@ -169,3 +169,4 @@ def test_generate_sar_dossier():
     assert "REGULATORY BLIND SPOT DETECTED" in dossier_text
     assert "0.997" in dossier_text
     assert "Swiss Office of the Attorney General" in dossier_text
+
