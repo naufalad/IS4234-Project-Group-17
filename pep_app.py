@@ -16,7 +16,8 @@ from pep_analytics.config import RiskConfig
 from pep_analytics.data_loader import DataValidationError, load_all
 from pep_analytics.scoring import score_report
 
-st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide")
+st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed",
+)
 
 
 @st.cache_data(show_spinner="Loading dataset2…")
@@ -92,33 +93,42 @@ def get_scored(cfg: RiskConfig):
 
 
 # ---- landing page ----
-st.title("FINMA PEP Supervisory Analytics")
-st.caption(
-    "Regulator-side analytics over bank-submitted PEP data. Risk is re-derived "
-    "independently of the bank's own alerts; answer-key columns are used only on "
-    "the Validation page."
-)
+def home_page():
+    st.title("FINMA PEP Supervisory Analytics")
+    st.caption("Regulator-side analytics over bank-submitted PEP data.")
 
-cfg = sidebar_config()
-ds, scored = get_scored(cfg)
+    cfg = sidebar_config()
+    ds, scored = get_scored(cfg)
 
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("PEP client-quarters", f"{len(scored):,}")
-c2.metric("Distinct PEP-linked entities", f"{scored['entity_id'].nunique():,}")
-c3.metric("High-risk client-quarters", int((scored["risk_level"] == "High").sum()))
-c4.metric("Escalations", int((scored["escalate_to_finma"] == "Yes").sum()))
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("PEP client-quarters", f"{len(scored):,}")
+    c2.metric("Distinct PEP-linked entities", f"{scored['entity_id'].nunique():,}")
+    c3.metric("High-risk client-quarters", int((scored["risk_level"] == "High").sum()))
+    c4.metric("Escalations", int((scored["escalate_to_finma"] == "Yes").sum()))
 
-st.markdown(
+    st.markdown(
+        """
+    Use the pages in the sidebar:
+
+    1. **Overview** — portfolio KPIs and risk by bank
+    2. **Watchlist** — high-risk client-quarters with score breakdown
+    3. **Network** — PEP network graph + cluster analytics (hidden links highlighted)
+    4. **Governance** — source-of-funds gaps, overrides, introducer reliance
+    5. **Drilldown** — one entity: transactions, counterparties, subgraph, risk history
+    6. **Live CMS** — manual case submission, Lebanon typology presets & interval stream simulator
     """
-Use the pages in the sidebar:
+    )
 
-1. **Overview** — portfolio KPIs and risk by bank
-2. **Watchlist** — high-risk client-quarters with score breakdown
-3. **Network** — PEP network graph + cluster analytics (hidden links highlighted)
-4. **Governance** — source-of-funds gaps, overrides, introducer reliance
-5. **Review** — independent KYC-review worklist
-6. **Drilldown** — one entity: transactions, counterparties, subgraph, risk history
-7. **Validation** — detection quality vs the answer key
-8. **Live CMS** — manual case submission, Lebanon typology presets & interval stream simulator
-"""
-)
+
+
+navigation = st.navigation([
+    st.Page(home_page, title="Home", default=True),
+    st.Page("pages/1_Overview.py", title="Overview"),
+    st.Page("pages/2_Watchlist.py", title="Watchlist"),
+    st.Page("pages/3_Network.py", title="Network"),
+    st.Page("pages/4_Governance.py", title="Governance"),
+    st.Page("pages/6_Drilldown.py", title="Drilldown"),
+    st.Page("pages/8_Live_CMS.py", title="Live CMS"),
+], position="top")
+
+navigation.run()
