@@ -37,7 +37,7 @@ def generate_sar_dossier(
     quarter = report.get("quarter", "N/A") if report else case.get("quarter", "N/A")
     cash_deposits = float(report.get("cash_usd", 0.0)) if report else 0.0
     overrides = int(report.get("management_overrides", 0)) if report else 0
-    sar_delay = int(report.get("days_alert_to_sar", 0)) if report else 0
+    sar_delay = int(report.get("days_alert_to_sar") or 0) if report else 0
 
     # Format relationships
     edge_text = ""
