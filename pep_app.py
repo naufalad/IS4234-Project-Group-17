@@ -19,6 +19,57 @@ from pep_analytics.scoring import score_report
 st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed",
 )
 
+st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed")
+
+st.markdown(
+    """
+    <style>
+    .stApp h1 {
+        font-size: 2.4rem !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.02em;
+        padding-bottom: 0.4rem !important;
+        margin-bottom: 0.6rem;
+        border-bottom: 4px solid #FF4B4B;
+        display: inline-block;
+    }
+    .stApp h2 {
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.01em;
+        padding-left: 0.75rem !important;
+        border-left: 5px solid #FF4B4B;
+        margin-top: 1.5rem;
+    }
+    .stApp h3 {
+        font-size: 1.25rem !important;
+        font-weight: 600 !important;
+        color: #4a4f5c;
+    }
+    [data-testid="stMetricLabel"],
+    [data-testid="stMetricLabel"] p {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #6b7280 !important;
+    }
+    [data-testid="stMetricValue"],
+    [data-testid="stMetricValue"] div {
+        font-size: 3.5rem !important;
+        font-weight: 800 !important;
+        color: #FF4B4B !important;
+        line-height: 1.1 !important;
+    }
+    .stApp hr {
+        border-color: #e5e7eb !important;
+        margin: 1.5rem 0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 @st.cache_data(show_spinner="Loading dataset2…")
 def _load():
@@ -116,6 +167,7 @@ def home_page():
     4. **Governance** — source-of-funds gaps, overrides, introducer reliance
     5. **Drilldown** — one entity: transactions, counterparties, subgraph, risk history
     6. **Live CMS** — manual case submission, Lebanon typology presets & interval stream simulator
+    
     """
     )
 
