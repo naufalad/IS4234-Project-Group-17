@@ -1,4 +1,4 @@
-"""Scenario-aware synthetic PEP data generator for live CMS and streaming.
+"""Scenario-aware synthetic PEP data generator for dashboard.
 
 Provides realistic presets mirroring the HSBC Lebanon / Forry case:
   - COMMISSION_DIVERSION: Offshore shell, nominee links, 98% pass-through, compliance override.

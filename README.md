@@ -29,7 +29,7 @@ streamlit run pep_app.py
 | Review | Independent KYC-review worklist (Jyske-bank reference), prioritised, with refresh-due flags |
 | Drilldown | One entity: transactions over time, counterparties, subgraph, quarterly risk history |
 | Validation | Detection quality (precision/recall) vs the answer key |
-| Live CMS | Case Management gateway: single-entry submission, Lebanon case typology presets & interval streaming simulator |
+| Case Management | Case Management gateway: single-entry submission, Lebanon case typology presets & interval streaming simulator |
 
 ### Design notes
 
