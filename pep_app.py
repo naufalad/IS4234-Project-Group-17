@@ -105,7 +105,7 @@ st.markdown(
     /* Full-width top bar */
 [data-testid="stHeader"] {
     background-color: #ffffff !important;
-    border-bottom: 3px solid #FF4B4B;
+    border-bottom: 3px solid #d1d5db;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     width: 100% !important;
     padding: 0.25rem 1rem !important;
@@ -119,15 +119,15 @@ st.markdown(
     transition: background-color 0.15s ease;
 }
 [data-testid="stHeader"] a:hover {
-    background-color: #ffe5e5 !important;
+    background-color: #e5e7eb !important;
 }
 
-/* Active (clicked) tab: red with white text */
+/* Active (clicked) tab: neutral grey */
 [data-testid="stHeader"] a[aria-current="page"],
 [data-testid="stHeader"] a[data-testid="stTopNavLink"][aria-current="page"],
 [data-testid="stHeader"] a[aria-current="page"] * {
-    background-color: #FF4B4B !important;
-    color: #ffffff !important;
+    background-color: #e5e7eb !important;   /* light grey */
+    color: #1f2937 !important;              /* dark slate text */
 }
 
 /* Dashboard cards */
