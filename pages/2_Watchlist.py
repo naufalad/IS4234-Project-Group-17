@@ -10,6 +10,41 @@ from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Watchlist")
 
+st.markdown(
+    """
+    <style>
+    /* LOW = green */
+[data-tag][aria-label="Low"],
+span[data-baseweb="tag"][title="Low"],
+span[data-baseweb="tag"][aria-label^="Low"],
+span[data-baseweb="tag"]:has(span[title="Low"]) {
+    background-color: #2e9e6b !important;
+    color: #ffffff !important;
+}
+
+/* MEDIUM = orange */
+[data-tag][aria-label="Medium"],
+span[data-baseweb="tag"][title="Medium"],
+span[data-baseweb="tag"][aria-label^="Medium"],
+span[data-baseweb="tag"]:has(span[title="Medium"]) {
+    background-color: #f08c00 !important;
+    color: #ffffff !important;
+}
+
+/* white text/icons inside the chips */
+[data-tag][aria-label="Low"] *,
+[data-tag][aria-label="Medium"] *,
+span[data-baseweb="tag"][aria-label^="Low"] *,
+span[data-baseweb="tag"][aria-label^="Medium"] *,
+span[data-baseweb="tag"]:has(span[title="Low"]) *,
+span[data-baseweb="tag"]:has(span[title="Medium"]) * {
+    color: #ffffff !important;
+}   
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 cfg = sidebar_config()
 ds, scored = get_scored(cfg)
 
