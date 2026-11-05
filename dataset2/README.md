@@ -73,18 +73,18 @@ All transactions touching a PEP network, plus 3,000 normal ones and a sample of 
 ### Risk score (transparent, adjustable)
 | Condition | Points | Notes
 |---|---|---|
-| pass_through_ratio ≥ 0.8 and inflow > $100k | 10  | decrease to 10| 
-| volume_vs_expected > 5 | 10 | decrease to 10 |
-| high_risk_destination_share > 0.5 | 10 | remove or decrease to 10? |
-| PEP-linked but not flagged by bank | 20 | increase to 20 |
-| Source of funds not verified | 20 | increase to 20 |
-| Management override this quarter | 15 | keep for now|
-| Cash deposits > $50k | 15 | keep for now |
+| pass_through_ratio ≥ 0.8 and inflow > $100k | 10 
+| volume_vs_expected > 5 | 10 
+| high_risk_destination_share > 0.5 | 10 
+| PEP-linked but not flagged by bank | 20 
+| Source of funds not verified | 20 
+| Management override this quarter | 15 
+| Cash deposits > $50k | 15 
 
 
 Capped at 100. Low < 30, Medium 30–59, High ≥ 60 → `escalate_to_finma = Yes`.
 
-## Suggested dashboard pages
+## dashboard pages
 1. **Overview** — KPIs: PEP clients, high-risk count, total PEP inflows, overrides, avg days to SAR; risk level by bank.
 2. **Watchlist** — table of High-risk client-quarters, sorted by score.
 3. **Bank governance** — overrides, introducer reliance and SAR delay by bank over time.
