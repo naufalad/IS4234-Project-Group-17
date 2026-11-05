@@ -318,21 +318,78 @@ def batch_data_dialog(cfg):
         )
 
 
+@st.dialog("Reset entire database", dismissible=False)
+def reset_database_dialog():
+    """Confirm and execute a destructive database rebuild."""
+    st.error(
+        "This deletes all uploaded records, cases, officer assignments, audit logs, "
+        "and other database changes. The schema will be recreated and baseline CSV "
+        "data plus the default officer directory will be seeded again."
+    )
+    confirmed = st.checkbox(
+        "I understand that all current database changes will be deleted.",
+        key="confirm_full_database_reset",
+    )
+    cancel_col, reset_col = st.columns(2)
+    if cancel_col.button("Cancel", width="stretch", key="cancel_full_database_reset"):
+        st.rerun()
+    if reset_col.button(
+        "Reset database",
+        type="primary",
+        icon=":material/delete_forever:",
+        width="stretch",
+        disabled=not confirmed,
+        key="confirm_full_database_reset_button",
+    ):
+        with st.spinner("Dropping tables, rebuilding schema, and reseeding baseline data..."):
+            DBM.reset_db_to_baseline()
+            st.cache_data.clear()
+            st.session_state.clear()
+            st.session_state["database_reset_complete"] = True
+        st.rerun()
+
+
 # ---- landing page ----
 def home_page():
     cfg = sidebar_config()
-    title_col, action_col = st.columns([7, 2], vertical_alignment="center")
+    title_col, action_col = st.columns([8, 1], vertical_alignment="center")
     title_col.title("FINMA PEP Supervisory Analytics")
-    if action_col.button(
-        "Upload / generate data",
-        type="primary",
-        icon=":material/upload:",
-        width="stretch",
-        help="Upload a batch file, or download generated sample CSV/JSON files.",
-        key="open_batch_dialog",
-    ):
-        batch_data_dialog(cfg)
+    st.markdown(
+        """
+        <style>
+        .st-key-open_batch_dialog button,
+        .st-key-open_database_reset_dialog button {
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+            min-height: 2.5rem !important;
+            padding: 0 !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    with action_col.container(horizontal=True, horizontal_alignment="right"):
+        if st.button(
+            "",
+            type="primary",
+            icon=":material/upload:",
+            width="content",
+            help="Upload a batch file, or download generated sample CSV/JSON files.",
+            key="open_batch_dialog",
+        ):
+            batch_data_dialog(cfg)
+        if st.button(
+            "",
+            icon=":material/restart_alt:",
+            width="content",
+            help="Delete all database changes, rebuild the schema, and reseed baseline data.",
+            key="open_database_reset_dialog",
+        ):
+            reset_database_dialog()
     st.caption("Regulator-side analytics over bank-submitted PEP data.")
+
+    if st.session_state.pop("database_reset_complete", False):
+        st.success("Database reset complete. Schema and baseline data were rebuilt.")
 
     ds, scored = get_scored(cfg)
 
