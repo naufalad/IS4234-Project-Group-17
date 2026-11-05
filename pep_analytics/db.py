@@ -775,37 +775,6 @@ def list_officer_cases(db_path: Path | str | None = None) -> pd.DataFrame:
         conn.close()
 
 
-def unassign_officer_from_case(
-    case_id: str,
-    officer_id: str,
-    db_path: Path | str | None = None,
-) -> bool:
-    """Remove an officer assignment and clear the legacy supervisor field."""
-    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    conn = get_connection(db_path)
-    with conn:
-        cursor = conn.execute(
-            "DELETE FROM officer_cases WHERE case_id = ? AND officer_id = ?",
-            [case_id, officer_id],
-        )
-        removed = cursor.rowcount > 0
-        if removed:
-            remaining = conn.execute(
-                "SELECT COUNT(*) FROM officer_cases WHERE case_id = ?", [case_id]
-            ).fetchone()[0]
-            if remaining == 0:
-                conn.execute(
-                    """
-                    UPDATE cases
-                    SET assigned_supervisor = NULL, updated_at = ?
-                    WHERE case_id = ?
-                    """,
-                    [now_iso, case_id],
-                )
-    conn.close()
-    return removed
-
-
 def update_officer_case(
     case_id: str,
     officer_id: str,

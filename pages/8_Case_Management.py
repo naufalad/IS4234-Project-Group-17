@@ -116,7 +116,7 @@ def confirm_case_removal_dialog(case_id: str, officer_id: str) -> None:
         width="stretch",
         key="confirm_case_removal",
     ):
-        DBM.unassign_officer_from_case(case_id, officer_id)
+        DBM.unassign_case(case_id)
         _reset_assignment_board()
         st.toast(f"{case_id} returned to the unassigned lane.")
         st.rerun()

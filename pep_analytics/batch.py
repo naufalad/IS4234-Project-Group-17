@@ -12,6 +12,30 @@ from pep_analytics.config import RiskConfig
 from pep_analytics.scoring import score_report
 
 
+def _present(value: Any) -> bool:
+    """Return whether an uploaded cell contains a usable value."""
+    return value is not None and not pd.isna(value) and str(value).strip() != ""
+
+
+def _text(row: pd.Series, column: str, default: str = "") -> str:
+    value = row.get(column)
+    return str(value).strip() if _present(value) else default
+
+
+def _number(row: pd.Series, column: str, default: float = 0.0) -> float:
+    value = row.get(column)
+    if not _present(value):
+        return float(default)
+    try:
+        return float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"Column '{column}' must contain numeric values.") from exc
+
+
+def _integer(row: pd.Series, column: str, default: int = 0) -> int:
+    return int(_number(row, column, float(default)))
+
+
 def generate_sample_batch_csv() -> str:
     """Generate a tabular sample containing all supported PEP scenarios."""
     records = [
@@ -58,46 +82,61 @@ def generate_sample_batch_json() -> str:
 
 
 def convert_csv_row_to_unified(row: pd.Series, cfg: RiskConfig) -> dict[str, Any]:
-    """Convert one tabular upload row to the unified persistence structure."""
-    entity_id = str(row.get("entity_id") or f"ENT-BATCH-{random.randint(1000, 9999)}")
-    name = str(row.get("name") or "Unnamed Entity")
-    quarter = str(row.get("quarter") or "2017Q1")
-    bank = str(row.get("swiss_bank") or "CH_A")
-    inflow = float(row.get("inflow_usd") or 1_000_000.0)
-    outflow = float(row.get("outflow_usd") or 900_000.0)
-    ratio = float(row.get("pass_through_ratio") or (outflow / inflow if inflow else 0.0))
-    overrides = int(row.get("management_overrides") or 0)
-    days_sar = int(row.get("days_alert_to_sar") or 0)
+    """Convert simplified or native quarterly-report CSV rows for persistence."""
+    native_report = "volume_vs_expected" in row.index
+    entity_id = _text(
+        row, "entity_id", f"ENT-BATCH-{random.randint(1000, 9999)}"
+    )
+    name = _text(row, "name", "Unnamed Entity")
+    quarter = _text(row, "quarter", "2017Q1")
+    bank = _text(row, "swiss_bank", "CH_A")
+    inflow = _number(row, "inflow_usd", 1_000_000.0)
+    outflow = _number(row, "outflow_usd", 900_000.0)
+    fallback_ratio = outflow / inflow if inflow else 0.0
+    ratio = _number(row, "pass_through_ratio", fallback_ratio)
+    overrides = _integer(row, "management_overrides")
+    days_sar = _integer(row, "days_alert_to_sar")
+    linked_pep_name = _text(row, "linked_pep_name") or None
+    suspicious = _text(
+        row,
+        "is_suspicious",
+        "Yes" if overrides or ratio >= 0.80 else "No",
+    )
+    scenario = _text(
+        row,
+        "scenario",
+        "BATCH_QUARTERLY_REPORT" if native_report else "BATCH_CSV_INGESTION",
+    )
 
     entity = {
         "entity_id": entity_id,
         "name": name,
-        "entity_type": str(row.get("entity_type") or "Company"),
-        "country": str(row.get("country") or "CH"),
-        "pep_category": str(row.get("pep_category") or "PEP-owned company"),
+        "entity_type": _text(row, "entity_type", "Company"),
+        "country": _text(row, "country", "CH"),
+        "pep_category": _text(row, "pep_category", "PEP-owned company"),
         "linked_pep_id": None,
-        "linked_pep_name": str(row.get("linked_pep_name") or "") or None,
-        "pep_role": "Public Official" if row.get("linked_pep_name") else None,
-        "flagged_as_pep_by_bank": str(row.get("flagged_as_pep_by_bank") or "No"),
+        "linked_pep_name": linked_pep_name,
+        "pep_role": "Public Official" if linked_pep_name else None,
+        "flagged_as_pep_by_bank": _text(row, "flagged_as_pep_by_bank", "No"),
         "swiss_bank": bank,
-        "offshore_jurisdiction": str(row.get("offshore_jurisdiction") or "No"),
+        "offshore_jurisdiction": _text(row, "offshore_jurisdiction", "No"),
         "declared_income_usd": 250_000.0,
         "expected_monthly_volume_usd": 100_000.0,
-        "source_of_funds_verified": str(row.get("source_of_funds_verified") or "No"),
+        "source_of_funds_verified": _text(row, "source_of_funds_verified", "No"),
         "bank_risk_rating": "High" if overrides else "Medium",
-        "is_suspicious": "Yes" if overrides or ratio >= 0.80 else "No",
-        "scenario": "BATCH_CSV_INGESTION",
+        "is_suspicious": suspicious,
+        "scenario": scenario,
     }
-    edge = {
+    edge = None if native_report else {
         "source_id": entity_id,
         "source_name": name,
         "target_id": f"TGT-{entity_id}",
-        "target_name": str(row.get("target_name") or "Counterparty Holding"),
-        "edge_type": str(row.get("edge_type") or "Money transfer"),
+        "target_name": _text(row, "target_name", "Counterparty Holding"),
+        "edge_type": _text(row, "edge_type", "Money transfer"),
         "detail": "Batch file ingestion linkage",
         "total_usd": inflow,
         "txn_count": 1,
-        "known_to_bank": str(row.get("known_to_bank") or "Yes"),
+        "known_to_bank": _text(row, "known_to_bank", "Yes"),
         "found_via": "Batch Upload Gateway",
         "is_suspicious": entity["is_suspicious"],
     }
@@ -111,20 +150,28 @@ def convert_csv_row_to_unified(row: pd.Series, cfg: RiskConfig) -> dict[str, Any
         "flagged_as_pep_by_bank": entity["flagged_as_pep_by_bank"],
         "inflow_usd": inflow,
         "outflow_usd": outflow,
-        "cash_usd": float(row.get("cash_usd") or 0.0),
+        "cash_usd": _number(row, "cash_usd"),
         "pass_through_ratio": ratio,
-        "volume_vs_expected": 2.5,
-        "high_risk_destination_share": 0.5,
-        "n_counterparties": 3,
-        "alerts_raised": 1 if days_sar else 0,
-        "compliance_recommended_exit_or_sar": 1 if overrides else 0,
+        "volume_vs_expected": _number(row, "volume_vs_expected", 2.5),
+        "high_risk_destination_share": _number(
+            row, "high_risk_destination_share", 0.5
+        ),
+        "n_counterparties": _number(row, "n_counterparties", 3),
+        "alerts_raised": _number(
+            row, "alerts_raised", 1 if days_sar else 0
+        ),
+        "compliance_recommended_exit_or_sar": _number(
+            row, "compliance_recommended_exit_or_sar", 1 if overrides else 0
+        ),
         "management_overrides": overrides,
-        "introducer_assurance_used": 1 if overrides else 0,
-        "sar_filed": 1 if days_sar else 0,
+        "introducer_assurance_used": _number(
+            row, "introducer_assurance_used", 1 if overrides else 0
+        ),
+        "sar_filed": _number(row, "sar_filed", 1 if days_sar else 0),
         "days_alert_to_sar": days_sar,
         "source_of_funds_verified": entity["source_of_funds_verified"],
-        "is_suspicious": entity["is_suspicious"],
-        "scenario": "BATCH_CSV_INGESTION",
+        "is_suspicious": suspicious,
+        "scenario": scenario,
     }
     scored = score_report(pd.DataFrame([report]), cfg).iloc[0]
     report["risk_score"] = int(scored["risk_score"])

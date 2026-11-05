@@ -214,7 +214,9 @@ def batch_data_dialog(cfg):
     """Render batch generation and ingestion without crowding the Home page."""
     st.caption(
         "Download a complete generated dataset or upload quarterly report in CSV/JSON format.  \n"
-        "The uploaded batch will be ingested into the database and trigger any necessary escalations."
+        "The uploaded batch will be ingested into the database and trigger any necessary escalations.  \n"
+        "Accepted CSV layouts: the generated unified template or the project's native "
+        "`pep_quarterly_report.csv`."
     )
 
     download_csv, download_json = st.columns(2)
@@ -245,12 +247,14 @@ def batch_data_dialog(cfg):
     try:
         if uploaded_file.name.lower().endswith(".csv"):
             uploaded = pd.read_csv(uploaded_file)
+            native_quarterly = "volume_vs_expected" in uploaded.columns
             batch_records = [
                 convert_csv_row_to_unified(row, cfg)
                 for _, row in uploaded.iterrows()
             ]
             st.info(
-                f"Loaded CSV with **{len(uploaded)}** rows and "
+                f"Loaded **{'native quarterly-report' if native_quarterly else 'unified'}** "
+                f"CSV with **{len(uploaded)}** rows and "
                 f"**{len(uploaded.columns)}** columns."
             )
         else:
