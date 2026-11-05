@@ -5,7 +5,7 @@ import plotly.express as px
 import streamlit as st
 
 from pep_analytics import review, validation
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Overview")
 
@@ -40,7 +40,7 @@ fig = px.bar(
     category_orders={"risk_level": ["Medium", "High"]},
     title="Client-quarters by risk level and bank",
 )
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width='stretch')
 
 # # ---- escalations over time ----
 # st.subheader("Escalations over time")
@@ -51,7 +51,7 @@ st.plotly_chart(fig, use_container_width=True)
 #     trend = esc.groupby("quarter").size().reset_index(name="escalations")
 #     fig2 = px.line(trend, x="quarter", y="escalations", markers=True,
 #                    title="Escalations per quarter")
-#     st.plotly_chart(fig2, use_container_width=True)
+#     st.plotly_chart(fig2, width='stretch')
 
 # st.divider()
 
@@ -73,7 +73,7 @@ st.caption(
     "the analytics escalated."
 )
 st.metric("Bank-missed cases caught", len(caught))
-st.dataframe(caught, use_container_width=True, hide_index=True)
+st.dataframe(caught, width='stretch', hide_index=True)
 
 st.divider()
 
@@ -104,7 +104,7 @@ if only_seeded:
         review_view["is_blind_spot"] | review_view["has_hidden_link"]
     ]
 
-st.dataframe(review_view, use_container_width=True, hide_index=True)
+st.dataframe(review_view, width='stretch', hide_index=True)
 
 st.download_button(
     "Download review worklist (CSV)",

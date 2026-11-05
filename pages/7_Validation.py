@@ -7,7 +7,7 @@ from __future__ import annotations
 import streamlit as st
 
 from pep_analytics import validation
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Detection-quality validation")
 
@@ -46,7 +46,7 @@ st.caption(
     "the analytics escalated."
 )
 st.metric("Bank-missed cases caught", len(caught))
-st.dataframe(caught, use_container_width=True, hide_index=True)
+st.dataframe(caught, width='stretch', hide_index=True)
 
 st.divider()
 

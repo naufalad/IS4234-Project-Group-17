@@ -8,7 +8,7 @@ from __future__ import annotations
 import streamlit as st
 
 from pep_analytics import graph as G
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Network")
 
@@ -71,7 +71,7 @@ st.caption(
     "bank (known_to_bank = No)."
 )
 
-st.plotly_chart(G.plotly_figure(graph_to_draw, "PEP network"), use_container_width=True)
+st.plotly_chart(G.plotly_figure(graph_to_draw, "PEP network"), width='stretch')
 
 st.subheader("Hidden edges (regulator-found)")
 he = G.hidden_edges(ds.network_edges)
@@ -81,7 +81,7 @@ he = he[
 ]
 cols = [c for c in ["source_name", "target_name", "edge_type", "detail",
                     "found_via", "total_usd"] if c in he.columns]
-st.dataframe(he[cols], use_container_width=True, hide_index=True)
+st.dataframe(he[cols], width='stretch', hide_index=True)
 
 st.divider()
 
@@ -93,10 +93,10 @@ with col1:
     bs = G.blind_spots(ds.entities)
     cols = [c for c in ["entity_id", "name", "pep_category", "linked_pep_name",
                         "swiss_bank"] if c in bs.columns]
-    st.dataframe(bs[cols], use_container_width=True, hide_index=True)
+    st.dataframe(bs[cols], width='stretch', hide_index=True)
 
 with col2:
     st.subheader("Pass-through client-quarters")
     st.caption("Near-1 inflow/outflow ratio on material inflow (Requirement 4.2).")
     pt = G.pass_through_entities(scored, cfg)
-    st.dataframe(pt, use_container_width=True, hide_index=True)
+    st.dataframe(pt, width='stretch', hide_index=True)

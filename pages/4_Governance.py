@@ -9,7 +9,7 @@ import plotly.express as px
 import streamlit as st
 
 from pep_analytics import escalation, exceptions
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Governance & exceptions")
 
@@ -30,8 +30,8 @@ metric = st.selectbox(
 )
 fig = px.line(agg, x="quarter", y=metric, color="swiss_bank", markers=True,
                 title=f"{metric_labels.get(metric)} by bank over time")
-st.plotly_chart(fig, use_container_width=True)
-st.dataframe(agg, use_container_width=True, hide_index=True)
+st.plotly_chart(fig, width='stretch')
+st.dataframe(agg, width='stretch', hide_index=True)
 
 
 st.subheader("Source-of-funds exceptions (Requirement 5.1).")
@@ -41,7 +41,7 @@ st.caption(
 )
 sof = exceptions.sof_exceptions(scored, cfg)
 st.caption(f"{len(sof):,} exceptions.")
-st.dataframe(sof, use_container_width=True, hide_index=True)
+st.dataframe(sof, width='stretch', hide_index=True)
 
 st.subheader("Override exceptions (Requirement 5.2).")
 st.caption(
@@ -50,11 +50,11 @@ st.caption(
 )
 ov = exceptions.override_exceptions(scored)
 st.caption(f"{len(ov):,} override-against-compliance events.")
-st.dataframe(ov, use_container_width=True, hide_index=True)
+st.dataframe(ov, width='stretch', hide_index=True)
 
 st.subheader("Introducer reliance (Requirement 5.3).")
 st.caption("Decisions that relied on an introducer vouching (Requirement 5.3).")
 intro = exceptions.introducer_reliance(scored)
 st.caption(f"{len(intro):,} client-quarters relied on an introducer.")
-st.dataframe(intro, use_container_width=True, hide_index=True)
+st.dataframe(intro, width='stretch', hide_index=True)
 

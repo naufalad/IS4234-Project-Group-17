@@ -4,7 +4,7 @@ from __future__ import annotations
 import streamlit as st
 
 from pep_analytics import review
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Independent KYC review worklist")
 
@@ -34,7 +34,7 @@ if only_due:
 if only_seeded:
     view = view[view["is_blind_spot"] | view["has_hidden_link"]]
 
-st.dataframe(view, use_container_width=True, hide_index=True)
+st.dataframe(view, width='stretch', hide_index=True)
 
 st.download_button(
     "Download review worklist (CSV)",

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0e1117;
+      --panel: #1f222b;
+      --panel-soft: #262730;
+      --border: #3d4451;
+      --text: #f5f5f5;
+      --muted: #a8adb7;
+      --accent: #ff4b4b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: transparent; color: var(--text); font-family: sans-serif; }
+    .board { display: grid; grid-template-columns: minmax(360px, 1.4fr) minmax(280px, 1fr); gap: 12px; height: 600px; }
+    .lane, .officers { border: 1px solid var(--border); border-radius: 10px; background: var(--panel-soft); overflow: hidden; }
+    .lane { display: flex; flex-direction: column; }
+    .lane-header { flex: 0 0 auto; padding: 12px; background: rgba(255,75,75,.12); font-weight: 700; }
+    .case-list { min-height: 80px; padding: 8px; overflow-y: auto; overscroll-behavior: contain; }
+    .officers { padding: 8px; overflow-y: auto; overscroll-behavior: contain; }
+    .officer-zone { min-height: 112px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 9px; background: var(--panel); transition: border-color .12s, background .12s; }
+    .officer-zone:last-child { margin-bottom: 0; }
+    .officer-zone.drag-over { border-color: var(--accent); background: rgba(255,75,75,.10); }
+    .officer-header { padding: 10px; border-bottom: 1px solid var(--border); font-weight: 700; }
+    .officer-email { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; font-weight: 400; }
+    .officer-cases { min-height: 58px; max-height: 210px; padding: 7px; overflow-y: auto; }
+    .case-card { margin: 6px 0; padding: 10px; border-left: 4px solid var(--accent); border-radius: 7px; background: #171a21; cursor: grab; user-select: none; }
+    .case-card:active { cursor: grabbing; }
+    .case-card.dragging { opacity: .45; }
+    .case-title { font-weight: 700; }
+    .case-meta { margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .empty { padding: 12px; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 700px) { .board { grid-template-columns: 1fr; height: 900px; } }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const send = (type, payload = {}) => window.parent.postMessage(
+      { isStreamlitMessage: true, type, ...payload }, "*"
+    );
+    let draggedCaseId = null;
+    let latestArgs = null;
+
+    function text(value) {
+      const span = document.createElement("span");
+      span.textContent = value == null ? "" : String(value);
+      return span.innerHTML;
+    }
+
+    function card(item) {
+      const node = document.createElement("div");
+      node.className = "case-card";
+      node.draggable = true;
+      node.dataset.caseId = item.case_id;
+      node.innerHTML = `<div class="case-title">${text(item.case_id)} · ${text(item.entity_name)}</div>
+        <div class="case-meta">Risk ${Number(item.risk_score || 0).toFixed(0)} · ${text(item.swiss_bank || "")}</div>`;
+      node.addEventListener("dragstart", event => {
+        draggedCaseId = item.case_id;
+        node.classList.add("dragging");
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/plain", item.case_id);
+      });
+      node.addEventListener("dragend", () => {
+        draggedCaseId = null;
+        node.classList.remove("dragging");
+        document.querySelectorAll(".drag-over").forEach(el => el.classList.remove("drag-over"));
+      });
+      return node;
+    }
+
+    function render(args) {
+      latestArgs = args;
+      const root = document.getElementById("root");
+      root.innerHTML = "";
+      const board = document.createElement("div");
+      board.className = "board";
+
+      const left = document.createElement("section");
+      left.className = "lane";
+      left.innerHTML = `<div class="lane-header">Unassigned critical cases</div>`;
+      const unassignedList = document.createElement("div");
+      unassignedList.className = "case-list";
+      (args.unassigned || []).forEach(item => unassignedList.appendChild(card(item)));
+      if (!(args.unassigned || []).length) unassignedList.innerHTML = `<div class="empty">All critical cases are assigned.</div>`;
+      left.appendChild(unassignedList);
+      board.appendChild(left);
+
+      const right = document.createElement("section");
+      right.className = "officers";
+      const assignments = args.assignments || [];
+      (args.officers || []).forEach(officer => {
+        const zone = document.createElement("div");
+        zone.className = "officer-zone";
+        zone.dataset.officerId = officer.officer_id;
+        zone.innerHTML = `<div class="officer-header">${text(officer.name)} · ${text(officer.officer_id)}
+          <span class="officer-email">${text(officer.email)}</span></div>`;
+        const cases = document.createElement("div");
+        cases.className = "officer-cases";
+        const owned = assignments.filter(item => item.officer_id === officer.officer_id);
+        owned.forEach(item => cases.appendChild(card(item)));
+        if (!owned.length) cases.innerHTML = `<div class="empty">Drop a case here</div>`;
+        zone.appendChild(cases);
+        zone.addEventListener("dragover", event => {
+          event.preventDefault();
+          event.dataTransfer.dropEffect = "move";
+          zone.classList.add("drag-over");
+        });
+        zone.addEventListener("dragleave", event => {
+          if (!zone.contains(event.relatedTarget)) zone.classList.remove("drag-over");
+        });
+        zone.addEventListener("drop", event => {
+          event.preventDefault();
+          zone.classList.remove("drag-over");
+          const caseId = event.dataTransfer.getData("text/plain") || draggedCaseId;
+          if (!caseId) return;
+          send("streamlit:setComponentValue", {
+            value: { case_id: caseId, officer_id: officer.officer_id },
+            dataType: "json"
+          });
+        });
+        right.appendChild(zone);
+      });
+      board.appendChild(right);
+      root.appendChild(board);
+      send("streamlit:setFrameHeight", { height: 600 });
+    }
+
+    window.addEventListener("message", event => {
+      if (event.data && event.data.type === "streamlit:render") render(event.data.args || {});
+    });
+    send("streamlit:componentReady", { apiVersion: 1 });
+  </script>
+</body>
+</html>

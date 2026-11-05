@@ -133,7 +133,37 @@ CREATE TABLE IF NOT EXISTS cases (
     created_at TEXT,
     updated_at TEXT
 );
+
+CREATE TABLE IF NOT EXISTS officers (
+    officer_id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS officer_cases (
+    case_id TEXT NOT NULL,
+    officer_id TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'ASSIGNED'
+        CHECK (status IN ('ASSIGNED', 'IN_PROGRESS', 'PENDING_REVIEW', 'COMPLETED')),
+    confirmed INTEGER NOT NULL DEFAULT 0 CHECK (confirmed IN (0, 1)),
+    notes TEXT,
+    assigned_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    PRIMARY KEY (case_id, officer_id),
+    FOREIGN KEY (case_id) REFERENCES cases(case_id) ON DELETE CASCADE,
+    FOREIGN KEY (officer_id) REFERENCES officers(officer_id) ON DELETE RESTRICT
+);
+
+CREATE INDEX IF NOT EXISTS idx_officer_cases_case_id ON officer_cases(case_id);
+CREATE INDEX IF NOT EXISTS idx_officer_cases_officer_id ON officer_cases(officer_id);
 """
+
+DEFAULT_OFFICERS = [
+    ("OFF-001", "Amelia Roth", "amelia.roth@finma.example"),
+    ("OFF-002", "Noah Keller", "noah.keller@finma.example"),
+    ("OFF-003", "Sofia Meier", "sofia.meier@finma.example"),
+    ("OFF-004", "Luca Frei", "luca.frei@finma.example"),
+]
 
 
 def get_db_path(db_path: Path | str | None = None) -> Path:
@@ -146,6 +176,7 @@ def get_connection(db_path: Path | str | None = None) -> sqlite3.Connection:
     path = get_db_path(db_path)
     conn = sqlite3.connect(str(path))
     conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA foreign_keys=ON;")
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -186,6 +217,8 @@ def init_db(db_path: Path | str | None = None, force_reseed: bool = False) -> No
     with conn:
         if force_reseed:
             conn.executescript("""
+                DROP TABLE IF EXISTS officer_cases;
+                DROP TABLE IF EXISTS officers;
                 DROP TABLE IF EXISTS entities;
                 DROP TABLE IF EXISTS network_edges;
                 DROP TABLE IF EXISTS transactions;
@@ -195,6 +228,10 @@ def init_db(db_path: Path | str | None = None, force_reseed: bool = False) -> No
             """)
 
         conn.executescript(SCHEMA_SQL)
+        conn.executemany(
+            "INSERT OR IGNORE INTO officers (officer_id, name, email) VALUES (?, ?, ?)",
+            DEFAULT_OFFICERS,
+        )
 
         # Check if tables have rows; if not, seed from CSVs
         cursor = conn.cursor()
@@ -238,7 +275,10 @@ def get_counts(db_path: Path | str | None = None) -> dict[str, int]:
     counts: dict[str, int] = {}
     try:
         cur = conn.cursor()
-        for tbl in ["entities", "network_edges", "transactions", "pep_quarterly_report", "stream_audit_log", "cases"]:
+        for tbl in [
+            "entities", "network_edges", "transactions", "pep_quarterly_report",
+            "stream_audit_log", "cases", "officers", "officer_cases",
+        ]:
             try:
                 cur.execute(f"SELECT COUNT(*) FROM {tbl}")
                 counts[tbl] = cur.fetchone()[0]
@@ -594,6 +634,173 @@ def auto_seed_cases_from_escalations(db_path: Path | str | None = None) -> None:
                     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, cases_data)
     conn.close()
+
+
+OFFICER_CASE_STATUSES = ("ASSIGNED", "IN_PROGRESS", "PENDING_REVIEW", "COMPLETED")
+
+
+def list_officers(db_path: Path | str | None = None) -> pd.DataFrame:
+    """Return the officer directory."""
+    init_db(db_path)
+    conn = get_connection(db_path)
+    try:
+        return pd.read_sql_query(
+            "SELECT officer_id, name, email FROM officers ORDER BY name",
+            conn,
+        )
+    finally:
+        conn.close()
+
+
+def add_officer(
+    officer_id: str,
+    name: str,
+    email: str,
+    db_path: Path | str | None = None,
+) -> None:
+    """Add an officer to the directory."""
+    officer_id = officer_id.strip()
+    name = name.strip()
+    email = email.strip().lower()
+    if not officer_id or not name or not email or "@" not in email:
+        raise ValueError("Officer ID, name, and a valid email are required.")
+    init_db(db_path)
+    conn = get_connection(db_path)
+    try:
+        with conn:
+            conn.execute(
+                "INSERT INTO officers (officer_id, name, email) VALUES (?, ?, ?)",
+                [officer_id, name, email],
+            )
+    except sqlite3.IntegrityError as exc:
+        raise ValueError("Officer ID or email already exists.") from exc
+    finally:
+        conn.close()
+
+
+def list_unassigned_critical_cases(
+    min_risk_score: float = 60.0,
+    db_path: Path | str | None = None,
+) -> pd.DataFrame:
+    """Return open critical cases that have no officer assignment."""
+    init_db(db_path)
+    auto_seed_cases_from_escalations(db_path)
+    conn = get_connection(db_path)
+    try:
+        return pd.read_sql_query(
+            """
+            SELECT c.case_id, c.entity_name, c.quarter, c.swiss_bank,
+                   c.risk_score, c.status, c.investigation_notes AS notes,
+                   c.updated_at
+            FROM cases c
+            WHERE c.risk_score >= ?
+              AND c.status <> 'CLOSED_RESOLVED'
+              AND NOT EXISTS (
+                  SELECT 1 FROM officer_cases oc WHERE oc.case_id = c.case_id
+              )
+            ORDER BY c.risk_score DESC, c.updated_at ASC
+            """,
+            conn,
+            params=[min_risk_score],
+        )
+    finally:
+        conn.close()
+
+
+def assign_officer_to_case(
+    case_id: str,
+    officer_id: str,
+    notes: str = "",
+    db_path: Path | str | None = None,
+) -> None:
+    """Assign an officer to a case and preserve the assignment audit fields."""
+    init_db(db_path)
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    conn = get_connection(db_path)
+    with conn:
+        officer = conn.execute(
+            "SELECT name FROM officers WHERE officer_id = ?", [officer_id]
+        ).fetchone()
+        case = conn.execute(
+            "SELECT case_id FROM cases WHERE case_id = ?", [case_id]
+        ).fetchone()
+        if not officer:
+            raise ValueError(f"Unknown officer: {officer_id}")
+        if not case:
+            raise ValueError(f"Unknown case: {case_id}")
+        # A case has one active owner. Moving it to another officer replaces
+        # the previous mapping rather than creating a duplicate assignment.
+        conn.execute(
+            "DELETE FROM officer_cases WHERE case_id = ? AND officer_id <> ?",
+            [case_id, officer_id],
+        )
+        conn.execute(
+            """
+            INSERT INTO officer_cases (
+                case_id, officer_id, status, confirmed, notes, assigned_at, updated_at
+            ) VALUES (?, ?, 'ASSIGNED', 0, ?, ?, ?)
+            ON CONFLICT(case_id, officer_id) DO UPDATE SET
+                notes = excluded.notes,
+                updated_at = excluded.updated_at
+            """,
+            [case_id, officer_id, notes, now_iso, now_iso],
+        )
+        conn.execute(
+            "UPDATE cases SET assigned_supervisor = ?, updated_at = ? WHERE case_id = ?",
+            [officer["name"], now_iso, case_id],
+        )
+    conn.close()
+
+
+def list_officer_cases(db_path: Path | str | None = None) -> pd.DataFrame:
+    """Return all case assignments enriched with officer and case details."""
+    init_db(db_path)
+    conn = get_connection(db_path)
+    try:
+        return pd.read_sql_query(
+            """
+            SELECT oc.case_id, oc.officer_id, o.name AS officer_name, o.email,
+                   c.entity_name, c.risk_score, oc.status,
+                   CAST(oc.confirmed AS INTEGER) AS confirmed,
+                   COALESCE(oc.notes, '') AS notes,
+                   oc.assigned_at, oc.updated_at
+            FROM officer_cases oc
+            JOIN officers o ON o.officer_id = oc.officer_id
+            JOIN cases c ON c.case_id = oc.case_id
+            ORDER BY oc.confirmed ASC, c.risk_score DESC, oc.updated_at DESC
+            """,
+            conn,
+        )
+    finally:
+        conn.close()
+
+
+def update_officer_case(
+    case_id: str,
+    officer_id: str,
+    *,
+    status: str,
+    confirmed: bool,
+    notes: str,
+    db_path: Path | str | None = None,
+) -> bool:
+    """Update the controlled workflow fields for one assignment."""
+    if status not in OFFICER_CASE_STATUSES:
+        raise ValueError(f"Unsupported assignment status: {status}")
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    conn = get_connection(db_path)
+    with conn:
+        cursor = conn.execute(
+            """
+            UPDATE officer_cases
+            SET status = ?, confirmed = ?, notes = ?, updated_at = ?
+            WHERE case_id = ? AND officer_id = ?
+            """,
+            [status, int(confirmed), notes, now_iso, case_id, officer_id],
+        )
+        updated = cursor.rowcount > 0
+    conn.close()
+    return updated
 
 
 def batch_insert_unified_records(

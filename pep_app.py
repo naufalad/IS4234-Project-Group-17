@@ -9,15 +9,30 @@ Shared helpers here are imported by the pages in pages/.
 """
 from __future__ import annotations
 
+import base64
+import json
+from pathlib import Path
+
+import pandas as pd
 import streamlit as st
 
 from pep_analytics import db as DBM
-from pep_analytics.config import RiskConfig
-from pep_analytics.data_loader import DataValidationError, load_all
-from pep_analytics.scoring import score_report
-
-st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed",
+from pep_analytics.batch import (
+    convert_csv_row_to_unified,
+    generate_sample_batch_csv,
+    generate_sample_batch_json,
 )
+from pep_analytics.ui import get_scored, sidebar_config
+
+DBM.init_db()
+
+BATCH_ICON_PATH = Path(__file__).resolve().parent / "assets" / "batch-upload.svg"
+
+
+def _batch_icon_data_uri() -> str:
+    """Return the replaceable batch-action asset as an embeddable image."""
+    encoded = base64.b64encode(BATCH_ICON_PATH.read_bytes()).decode("ascii")
+    return f"data:image/svg+xml;base64,{encoded}"
 
 st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed")
 
@@ -71,84 +86,151 @@ st.markdown(
 )
 
 
-@st.cache_data(show_spinner="Loading dataset2…")
-def _load():
-    ds = load_all()
-    return ds
+@st.dialog("Batch Data Generator & Upload", width="large")
+def batch_data_dialog(cfg):
+    """Render batch generation and ingestion without crowding the Home page."""
+    st.caption(
+        "Download a complete generated dataset or upload quarterly report in CSV/JSON format.  \n"
+        "The uploaded batch will be ingested into the database and trigger any necessary escalations."
+    )
 
+    download_csv, download_json = st.columns(2)
+    download_csv.download_button(
+        "Download Generated CSV",
+        data=generate_sample_batch_csv().encode("utf-8"),
+        file_name="sample_pep_batch.csv",
+        mime="text/csv",
+        width="stretch",
+    )
+    download_json.download_button(
+        "Download Generated JSON",
+        data=generate_sample_batch_json().encode("utf-8"),
+        file_name="sample_pep_batch.json",
+        mime="application/json",
+        width="stretch",
+    )
 
-def get_data():
-    """Load datasets, surfacing validation errors in the UI (Requirement 2.3)."""
+    uploaded_file = st.file_uploader(
+        "Upload complete batch (.csv or .json)",
+        type=["csv", "json"],
+        key="home_batch_upload",
+    )
+    if uploaded_file is None:
+        return
+
+    batch_records = []
     try:
-        return _load()
-    except DataValidationError as exc:
-        st.error(f"Data validation error: {exc}")
-        st.stop()
+        if uploaded_file.name.lower().endswith(".csv"):
+            uploaded = pd.read_csv(uploaded_file)
+            batch_records = [
+                convert_csv_row_to_unified(row, cfg)
+                for _, row in uploaded.iterrows()
+            ]
+            st.info(
+                f"Loaded CSV with **{len(uploaded)}** rows and "
+                f"**{len(uploaded.columns)}** columns."
+            )
+        else:
+            payload = json.load(uploaded_file)
+            if isinstance(payload, list):
+                batch_records = payload
+            elif isinstance(payload, dict):
+                batch_records = [payload]
+            else:
+                raise ValueError("JSON must contain one record object or a list of records.")
+            st.info(f"Loaded JSON with **{len(batch_records)}** unified records.")
+    except Exception as exc:
+        st.error(f"Could not parse the uploaded batch: {exc}")
+        return
 
+    if not batch_records:
+        st.warning("The uploaded file contains no records.")
+        return
 
-def sidebar_config() -> RiskConfig:
-    """Render the adjustable-threshold sidebar and return an overridden config.
-
-    Shared across pages so a change recomputes every page consistently
-    (Requirements 3.4, 3.5).
-    """
-    st.sidebar.header("Risk model configuration")
-    base = RiskConfig()
-    escalate_at = st.sidebar.slider(
-        "Escalation threshold (risk score)", 0, 100, base.escalate_at, 5,
-        help="Client-quarters at or above this score escalate to FINMA.",
-    )
-    high_at = st.sidebar.slider("High-risk band starts at", 0, 100, base.high_at, 5)
-    medium_at = st.sidebar.slider("Medium-risk band starts at", 0, high_at, base.medium_at, 5)
-    max_days = st.sidebar.number_input(
-        "Max SAR delay before escalation (days)", 0, 3650, base.max_days_alert_to_sar, 5,
-    )
-    sof_min = st.sidebar.number_input(
-        "Source-of-funds materiality (USD inflow)", 0, 10_000_000,
-        int(base.sof_materiality_min), 10_000,
-    )
-    interval = st.sidebar.number_input(
-        "KYC review interval (quarters)", 1, 40, base.kyc_review_interval_quarters,
-    )
-    st.sidebar.divider()
-    st.sidebar.subheader("Live Database")
-    counts = DBM.get_counts()
-    st.sidebar.caption(
-        f"Entities: {counts.get('entities', 0):,} | Reports: {counts.get('pep_quarterly_report', 0):,}"
-    )
-    if st.sidebar.button("🔄 Reset to Baseline", key="sidebar_reset_btn"):
-        DBM.reset_db_to_baseline()
-        st.cache_data.clear()
-        st.sidebar.success("Database reset to baseline!")
-        st.rerun()
-
-    try:
-        return base.with_overrides(
-            escalate_at=int(escalate_at),
-            high_at=int(high_at),
-            medium_at=int(medium_at),
-            max_days_alert_to_sar=int(max_days),
-            sof_materiality_min=float(sof_min),
-            kyc_review_interval_quarters=int(interval),
+    preview_rows = []
+    escalation_count = 0
+    for record in batch_records:
+        entity = record.get("entity", {})
+        report = record.get("report", {})
+        escalated = (
+            report.get("escalate_to_finma") == "Yes"
+            or float(report.get("risk_score") or 0) >= 60
         )
-    except ValueError as exc:
-        st.sidebar.error(str(exc))
-        return base
+        escalation_count += int(escalated)
+        preview_rows.append({
+            "Entity ID": entity.get("entity_id", "Unknown"),
+            "Name": entity.get("name", "Unknown"),
+            "Bank": entity.get("swiss_bank", "Unknown"),
+            "Quarter": report.get("quarter", "Unknown"),
+            "Risk Score": float(report.get("risk_score") or 0),
+            "Status": "Escalation" if escalated else "Standard intake",
+        })
 
+    total = len(batch_records)
+    p1, p2, p3 = st.columns(3)
+    p1.metric("Batch Records", total)
+    p2.metric("Escalations", escalation_count)
+    p3.metric("Standard", total - escalation_count)
+    st.dataframe(pd.DataFrame(preview_rows), width="stretch", hide_index=True)
 
-def get_scored(cfg: RiskConfig):
-    """Datasets + the scored quarterly report for the current config."""
-    ds = get_data()
-    scored = score_report(ds.pep_quarterly_report, cfg)
-    return ds, scored
+    if st.button(
+        f"Commit Entire Batch ({total} records)",
+        type="primary",
+        width="stretch",
+        key="home_batch_commit",
+    ):
+        with st.spinner("Applying complete batch update..."):
+            result = DBM.batch_insert_unified_records(
+                batch_records,
+                event_type="BATCH_FILE_INGESTION",
+            )
+            st.cache_data.clear()
+        st.success(
+            f"Batch update complete: {result['total_ingested']} records ingested; "
+            f"{result['escalations_triggered']} escalations registered."
+        )
 
 
 # ---- landing page ----
 def home_page():
-    st.title("FINMA PEP Supervisory Analytics")
+    cfg = sidebar_config()
+    title_col, action_col = st.columns([9, 1], vertical_alignment="center")
+    title_col.title("FINMA PEP Supervisory Analytics")
+    st.markdown(
+        f"""
+        <style>
+        .st-key-open_batch_dialog button {{
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: auto;
+            border: 1px solid var(--secondary-background-color);
+            border-radius: 0.5rem;
+            background-color: var(--secondary-background-color);
+            background-image: url("{_batch_icon_data_uri()}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1.35rem 1.35rem;
+            transition: transform 120ms ease, border-color 120ms ease;
+        }}
+        .st-key-open_batch_dialog button:hover {{
+            transform: translateY(-1px);
+            border-color: #ff4b4b;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    if action_col.button(
+        "",
+        help=(
+            "Generate sample CSV/JSON files or upload and commit a complete "
+            "batch without event streaming."
+        ),
+        key="open_batch_dialog",
+    ):
+        batch_data_dialog(cfg)
     st.caption("Regulator-side analytics over bank-submitted PEP data.")
 
-    cfg = sidebar_config()
     ds, scored = get_scored(cfg)
 
     c1, c2, c3, c4 = st.columns(4)
@@ -166,7 +248,7 @@ def home_page():
     3. **Network** — PEP network graph + cluster analytics (hidden links highlighted)
     4. **Governance** — source-of-funds gaps, overrides, introducer reliance
     5. **Drilldown** — one entity: transactions, counterparties, subgraph, risk history
-    6. **Live CMS** — manual case submission, Lebanon typology presets & interval stream simulator
+    6. **Case Management** — case monitoring and officer assignments
     
     """
     )
@@ -180,7 +262,7 @@ navigation = st.navigation([
     st.Page("pages/3_Network.py", title="Network"),
     st.Page("pages/4_Governance.py", title="Governance"),
     st.Page("pages/6_Drilldown.py", title="Drilldown"),
-    st.Page("pages/8_Live_CMS.py", title="Live CMS"),
+    st.Page("pages/8_Case_Management.py", title="Case Management"),
 ], position="top")
 
 navigation.run()

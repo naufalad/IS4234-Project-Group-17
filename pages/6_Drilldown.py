@@ -10,7 +10,7 @@ import plotly.express as px
 import streamlit as st
 
 from pep_analytics import graph as G
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Client drill-down")
 
@@ -62,7 +62,7 @@ else:
         hover_data=["from_name", "to_name", "purpose"],
         title="Transactions over time",
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     # ---- counterparties (Requirement 8.2) ----
     st.subheader("Counterparties")
@@ -76,7 +76,7 @@ else:
         .rename(columns={"sum": "total_usd", "count": "n_txns"})
         .sort_values("total_usd", ascending=False)
     )
-    st.dataframe(cp, use_container_width=True, hide_index=True)
+    st.dataframe(cp, width='stretch', hide_index=True)
 
 # ---- quarterly risk history (Requirement 8.4) ----
 st.subheader("Quarterly risk history")
@@ -87,12 +87,12 @@ else:
     cols = [c for c in ["quarter", "inflow_usd", "outflow_usd", "cash_usd",
                         "pass_through_ratio", "risk_score", "risk_level",
                         "escalate_to_finma"] if c in hist.columns]
-    st.dataframe(hist[cols], use_container_width=True, hide_index=True)
+    st.dataframe(hist[cols], width='stretch', hide_index=True)
     rfig = px.bar(hist, x="quarter", y="risk_score", color="risk_level",
                   color_discrete_map={"Low": "#74c69d", "Medium": "#f6ad55",
                                       "High": "#e57373"},
                   title="Risk score by quarter")
-    st.plotly_chart(rfig, use_container_width=True)
+    st.plotly_chart(rfig, width='stretch')
 
 # ---- immediate subgraph (Requirement 8.3) ----
 st.subheader("Network subgraph")
@@ -101,4 +101,4 @@ ego = G.ego_subgraph(full, entity_id, radius=1)
 # ego_subgraph returns an undirected view; rebuild a directed subgraph for styling.
 sub = full.subgraph(list(ego.nodes)).copy()
 st.plotly_chart(G.plotly_figure(sub, f"Neighbourhood of {profile['name']}"),
-                use_container_width=True)
+                width='stretch')

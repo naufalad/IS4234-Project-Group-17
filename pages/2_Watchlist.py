@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from pep_app import get_scored, sidebar_config
+from pep_analytics.ui import get_scored, sidebar_config
 
 st.title("Watchlist")
 
@@ -45,7 +45,7 @@ display_cols = [
     "risk_score", "risk_level", "escalate_to_finma",
 ]
 display_cols = [c for c in display_cols if c in view.columns]
-st.dataframe(view[display_cols], use_container_width=True, hide_index=True)
+st.dataframe(view[display_cols], width='stretch', hide_index=True)
 
 # ---- score breakdown for a selected row (Requirement 3.6) ----
 st.subheader("Score breakdown")
