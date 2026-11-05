@@ -256,8 +256,23 @@ else:
         key=f"case_assignment_board_{board_nonce}",
     )
 
-    if drop_event and "pending_case_drop" not in st.session_state:
-        case_id = drop_event.get("case_id")
+        # Click on the x button of an assigned case -> open the manage/remove dialog
+    if (
+        drop_event
+        and drop_event.get("action") == "manage"
+        and "pending_case_drop" not in st.session_state
+        and "pending_case_manage" not in st.session_state
+    ):
+        st.session_state["pending_case_manage"] = (
+            drop_event.get("case_id"),
+            drop_event.get("officer_id"),
+        )
+    elif (
+        drop_event
+        and drop_event.get("action") != "manage"
+        and "pending_case_drop" not in st.session_state
+        and "pending_case_manage" not in st.session_state
+    ):
         target_officer = drop_event.get("officer_id")
         source_matches = assignments[assignments["case_id"] == case_id]
         previous_officer = (
@@ -275,6 +290,10 @@ else:
     pending_drop = st.session_state.get("pending_case_drop")
     if pending_drop:
         confirm_case_drop_dialog(*pending_drop)
+    
+    pending_manage = st.session_state.get("pending_case_manage")
+    if pending_manage and not pending_drop:
+        manage_assignment_dialog(*pending_manage)
 st.divider()
 st.subheader("2. Cases assigned to officers")
 assignments = DBM.list_officer_cases()
