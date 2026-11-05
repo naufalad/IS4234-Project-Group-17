@@ -1,0 +1,681 @@
+entity_id,name,entity_type,country,pep_category,linked_pep_id,linked_pep_name,pep_role,flagged_as_pep_by_bank,swiss_bank,offshore_jurisdiction,declared_income_usd,expected_monthly_volume_usd,source_of_funds_verified,bank_risk_rating,is_suspicious,scenario
+E01012,Imad A. Zimmermann,Person,LB,Not PEP,,,,No,CH_C,No,55000.0,4600.0,Yes,MEDIUM,No,BACKGROUND
+E01042,Emil W. Girard,Person,CH,Not PEP,,,,No,CH_B,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E01049,Nils A. Marino,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,42000.0,,Yes,LOW,No,BACKGROUND
+E01064,Klara V. Roth,Person,FR,Not PEP,,,,No,CH_D,No,121000.0,10100.0,Yes,LOW,No,BACKGROUND
+E01067,Highland Group SA,Company,CH,Not PEP,,,,No,CH_B,No,26246000.0,2187000.0,Yes,LOW,No,BACKGROUND
+E01073,Lorenz F. Gemayel,Person,LU,Not PEP,,,,No,CH_C,No,137000.0,11500.0,Yes,LOW,No,BACKGROUND
+E01084,Ghassan T. Mansour,Person,CH,PEP family,E01088,Kamal L. Frei,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01088,Kamal L. Frei,Person,CH,PEP,,,Minister of Finance,Yes,CH_C,No,228000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01093,Dominik M. Palmer,Person,CH,Not PEP,,,,No,CH_D,No,217000.0,18100.0,Yes,MEDIUM,No,BACKGROUND
+E01106,Greta C. Perrin,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,125000.0,,No,MEDIUM,No,BACKGROUND
+E01110,Nils M. Bachmann,Person,CH,Not PEP,,,,No,CH_D,No,173000.0,14500.0,Yes,MEDIUM,No,BACKGROUND
+E01114,Leon N. Bennett,Person,FR,Not PEP,,,,No,CH_B,No,86000.0,7200.0,Yes,LOW,No,BACKGROUND
+E01120,Willow Consulting Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,3661000.0,,Yes,MEDIUM,No,BACKGROUND
+E01122,Renata M. Fontaine,Person,US,Not PEP,,,,No,None (foreign counterparty),No,64000.0,,Yes,LOW,No,BACKGROUND
+E01147,Ines V. Bachmann,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,51000.0,,Yes,MEDIUM,No,BACKGROUND
+E01149,Yara P. Graf,Person,AE,PEP,,,Head of State-Owned Utility,Yes,CH_A,No,217000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01165,Ivory Ventures SA,Company,CH,Not PEP,,,,No,CH_B,No,3118000.0,260000.0,Yes,LOW,No,BACKGROUND
+E01190,Elisa G. Fakhoury,Person,CH,Not PEP,,,,No,CH_D,No,87000.0,7300.0,Yes,LOW,No,BACKGROUND
+E01226,Indigo Group SARL,Company,FR,Not PEP,,,,No,CH_A,No,5983000.0,499000.0,Yes,MEDIUM,No,BACKGROUND
+E01265,Yarrow Capital SA,Company,CH,Not PEP,,,,No,CH_C,No,2656000.0,221000.0,No,LOW,No,BACKGROUND
+E01281,Dario T. Hayek,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,24000.0,,Yes,MEDIUM,No,BACKGROUND
+E01287,Petra E. Petrou,Person,CH,Not PEP,,,,No,CH_D,No,47000.0,3900.0,Yes,LOW,No,BACKGROUND
+E01295,Zoe G. Girard,Person,FR,Not PEP,,,,No,CH_C,No,179000.0,14900.0,Yes,MEDIUM,No,BACKGROUND
+E01321,Renata B. Georgiou,Person,LB,Not PEP,,,,No,CH_A,No,23000.0,1900.0,Yes,LOW,No,BACKGROUND
+E01327,Zoran R. Frei,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,45000.0,,Yes,LOW,No,BACKGROUND
+E01338,Vera F. Kunz,Person,CH,Not PEP,,,,No,CH_B,No,133000.0,11100.0,Yes,LOW,No,BACKGROUND
+E01342,Ghassan J. Antoniou,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,42000.0,,Yes,LOW,No,BACKGROUND
+E01343,Public Authority AE-03,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E01389,Zoran B. Frem,Person,FR,Not PEP,,,,No,CH_B,No,96000.0,8000.0,Yes,LOW,No,BACKGROUND
+E01390,Noah D. Antoniou,Person,US,Not PEP,,,,No,None (foreign counterparty),No,57000.0,,Yes,LOW,No,BACKGROUND
+E01404,Aline D. Wyss,Person,LU,Not PEP,,,,No,CH_C,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E01429,Farah N. Steiner,Person,CH,Not PEP,,,,No,CH_B,No,51000.0,4300.0,Yes,MEDIUM,No,BACKGROUND
+E01430,Bruno L. Hayek,Person,CY,Not PEP,,,,No,CH_A,Yes,87000.0,7200.0,No,LOW,No,BACKGROUND
+E01433,Keystone Group FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,942000.0,,Yes,MEDIUM,No,BACKGROUND
+E01438,Oskar E. Petrou,Person,US,Not PEP,,,,No,None (foreign counterparty),No,73000.0,,Yes,LOW,No,BACKGROUND
+E01467,Petra M. Vogel,Person,CH,Not PEP,,,,No,CH_B,No,45000.0,3700.0,No,LOW,No,BACKGROUND
+E01480,Dominik M. Mercier,Person,FR,PEP family,E02473,Amira V. Walsh,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01500,Public Authority GB-01,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E01506,Renata B. Walsh,Person,CH,Not PEP,,,,No,CH_C,No,116000.0,9700.0,No,MEDIUM,No,BACKGROUND
+E01507,Dominik H. Saad,Person,CH,Not PEP,,,,No,CH_C,No,177000.0,14700.0,Yes,LOW,No,BACKGROUND
+E01513,Oskar B. Rousseau,Person,CH,Not PEP,,,,No,CH_B,No,75000.0,6300.0,Yes,LOW,No,BACKGROUND
+E01518,Public Authority CH-03,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E01521,Hillside Properties Ltd,Company,GB,Not PEP,,,,No,CH_A,No,2748000.0,229000.0,Yes,LOW,No,BACKGROUND
+E01549,Tobias L. Marino,Person,CH,Not PEP,,,,No,CH_B,No,192000.0,16000.0,Yes,LOW,No,BACKGROUND
+E01571,Aline C. Marino,Person,FR,Not PEP,,,,No,CH_B,No,106000.0,8800.0,Yes,LOW,No,BACKGROUND
+E01579,Yara G. Maalouf,Person,US,Not PEP,,,,No,None (foreign counterparty),No,32000.0,,Yes,MEDIUM,No,BACKGROUND
+E01594,Camille C. Kunz,Person,LB,Not PEP,,,,No,CH_B,No,18000.0,1500.0,Yes,LOW,No,BACKGROUND
+E01603,Adrian J. Zimmermann,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,228000.0,,No,LOW,No,BACKGROUND
+E01641,Nadia G. Fakhoury,Person,FR,Not PEP,,,,No,CH_A,No,209000.0,17400.0,No,LOW,No,BACKGROUND
+E01642,Selina F. Mansour,Person,GB,PEP family,E09664,Hugo K. Schmid,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01670,Westmere Capital SA,Company,CH,Not PEP,,,,No,CH_A,No,5922000.0,494000.0,Yes,LOW,No,BACKGROUND
+E01691,Renata H. Bennett,Person,CH,Not PEP,,,,No,CH_B,No,41000.0,3400.0,Yes,LOW,No,BACKGROUND
+E01697,Xavier E. Marti,Person,US,Not PEP,,,,No,None (foreign counterparty),No,94000.0,,Yes,LOW,No,BACKGROUND
+E01722,Vera M. Mansour,Person,US,Not PEP,,,,No,CH_B,No,48000.0,4000.0,No,MEDIUM,No,BACKGROUND
+E01752,Sami T. Perrin,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,49000.0,,Yes,LOW,No,BACKGROUND
+E01753,Gabriel F. Chamoun,Person,FR,Not PEP,,,,No,CH_B,No,37000.0,3100.0,Yes,LOW,No,BACKGROUND
+E01800,Zoe S. Zimmermann,Person,LB,Not PEP,,,,No,CH_A,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E01829,Fiona M. Galli,Person,LB,Not PEP,,,,No,CH_C,No,12000.0,1000.0,Yes,LOW,No,BACKGROUND
+E01834,Mila W. Roth,Person,CH,Not PEP,,,,No,CH_C,No,42000.0,3500.0,Yes,LOW,No,BACKGROUND
+E01835,Jonas L. Salameh,Person,CH,Not PEP,,,,No,CH_B,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E01869,Celine E. Graf,Person,FR,Not PEP,,,,No,CH_D,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E01870,Fairview Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,655000.0,,Yes,MEDIUM,No,BACKGROUND
+E01876,Oakridge Consulting SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,474000.0,,No,LOW,No,BACKGROUND
+E01882,Quarry Investments SAL,Company,LB,Not PEP,,,,No,CH_D,No,1008000.0,84000.0,No,LOW,No,BACKGROUND
+E01886,Juniper Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,11965000.0,,Yes,LOW,No,BACKGROUND
+E01890,Tamara J. Salameh,Person,CY,Not PEP,,,,No,CH_D,Yes,65000.0,5400.0,No,LOW,No,BACKGROUND
+E01900,Birchwood Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2879000.0,,Yes,LOW,No,BACKGROUND
+E01902,Thornbury Holdings LLC,Company,US,Not PEP,,,,No,CH_D,No,8124000.0,677000.0,Yes,MEDIUM,No,BACKGROUND
+E01928,Celine E. Galli,Person,GB,Not PEP,,,,No,CH_D,No,104000.0,8700.0,No,MEDIUM,No,BACKGROUND
+E01935,Tobias W. Gerber,Person,LB,Not PEP,,,,No,CH_B,No,47000.0,3900.0,Yes,LOW,No,BACKGROUND
+E01951,Nadia V. Petrou,Person,CY,Not PEP,,,,No,CH_C,Yes,59000.0,4900.0,Yes,LOW,No,BACKGROUND
+E01957,Adrian J. Galli,Person,FR,Not PEP,,,,No,CH_D,No,46000.0,3800.0,Yes,MEDIUM,No,BACKGROUND
+E01972,Glacier Capital SA,Company,CH,Not PEP,,,,No,CH_D,No,10197000.0,850000.0,Yes,LOW,No,BACKGROUND
+E01974,Beacon Investments Ltd,Company,CY,Not PEP,,,,No,CH_C,Yes,2590000.0,216000.0,Yes,HIGH,No,BACKGROUND
+E01975,Basil D. Salameh,Person,CH,PEP,,,Deputy Minister,Yes,CH_B,No,244000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E01981,Dominik L. Rousseau,Person,CH,Not PEP,,,,No,CH_D,No,186000.0,15500.0,No,LOW,No,BACKGROUND
+E01984,Beacon Services Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1548000.0,0.0,Yes,HIGH,No,BACKGROUND
+E01997,Falcon Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,5363000.0,447000.0,Yes,LOW,No,BACKGROUND
+E01999,Cobalt Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,1402000.0,117000.0,Yes,LOW,No,BACKGROUND
+E02000,Clearwater Services SA,Company,CH,Not PEP,,,,No,CH_B,No,3609000.0,301000.0,Yes,LOW,No,BACKGROUND
+E02023,Basil W. Ricci,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,23000.0,,Yes,LOW,No,BACKGROUND
+E02024,Dario N. Lehmann,Person,FR,Not PEP,,,,No,CH_C,No,120000.0,10000.0,Yes,LOW,No,BACKGROUND
+E02035,Amira J. Marti,Person,FR,Not PEP,,,,No,CH_A,No,34000.0,2800.0,Yes,LOW,No,BACKGROUND
+E02081,Wendy M. Ferrari,Person,CH,Not PEP,,,,No,CH_C,No,111000.0,9300.0,Yes,LOW,No,BACKGROUND
+E02093,Bridgeport Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,3296000.0,,Yes,MEDIUM,No,BACKGROUND
+E02095,Pembroke Logistics SAL,Company,LB,Not PEP,,,,No,CH_A,No,325000.0,27000.0,Yes,LOW,No,BACKGROUND
+E02105,Klara D. Chevalier,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,33000.0,,Yes,LOW,No,BACKGROUND
+E02106,Camille H. Hofer,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,151000.0,,Yes,LOW,No,BACKGROUND
+E02114,Oakridge Properties Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,550000.0,,Yes,MEDIUM,No,BACKGROUND
+E02121,Xavier M. Marti,Person,CH,Not PEP,,,,No,CH_C,No,326000.0,27100.0,Yes,LOW,No,BACKGROUND
+E02142,Helena L. Frem,Person,CH,PEP,,,Mayor of Capital City,Yes,CH_A,No,102000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02148,Jana E. Hughes,Person,CH,Not PEP,,,,No,CH_A,No,216000.0,18000.0,Yes,MEDIUM,No,BACKGROUND
+E02174,Kamal L. Girard,Person,CH,Not PEP,,,,No,CH_D,No,286000.0,23800.0,Yes,LOW,No,BACKGROUND
+E02207,Wim C. Antoniou,Person,LB,Not PEP,,,,No,CH_B,No,36000.0,3000.0,No,LOW,No,BACKGROUND
+E02213,Adrian R. Bachmann,Person,LB,Not PEP,,,,No,CH_D,No,32000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E02220,Xavier T. Mansour,Person,CH,Not PEP,,,,No,CH_B,No,51000.0,4200.0,No,LOW,No,BACKGROUND
+E02222,Evergreen Group Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,148000.0,,Yes,LOW,No,BACKGROUND
+E02229,Wendy R. Ricci,Person,AE,Not PEP,,,,No,CH_A,No,119000.0,9900.0,Yes,LOW,No,BACKGROUND
+E02234,Amira C. Baumann,Person,CY,PEP family,E08456,Marta F. Fakhoury,,Yes,CH_C,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02245,Upland Holdings SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3522000.0,,Yes,MEDIUM,No,BACKGROUND
+E02247,Fiona T. Marino,Person,CH,Not PEP,,,,No,CH_B,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E02262,Opal Logistics SA,Company,CH,Not PEP,,,,No,CH_D,No,1393000.0,116000.0,Yes,LOW,No,BACKGROUND
+E02278,Irene L. Ricci,Person,AE,Not PEP,,,,No,CH_C,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E02303,Imad N. Perrin,Person,CH,Not PEP,,,,No,CH_A,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E02313,Petra T. Vogel,Person,CH,Not PEP,,,,No,CH_C,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E02329,Beatrice H. Bennett,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,63000.0,,No,LOW,No,BACKGROUND
+E02330,Ivory Properties SAL,Company,LB,Not PEP,,,,No,CH_C,No,1588000.0,132000.0,Yes,LOW,No,BACKGROUND
+E02345,Foxglove Partners SAL,Company,LB,Not PEP,,,,No,CH_B,No,8728000.0,727000.0,Yes,MEDIUM,No,BACKGROUND
+E02346,Petra S. Hofer,Person,GB,PEP,,,Ambassador,Yes,CH_A,No,91000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02351,Bruno C. Walsh,Person,CH,Not PEP,,,,No,CH_C,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E02357,Yarrow Associates Ltd,Company,CY,Not PEP,,,,No,None (foreign counterparty),Yes,10317000.0,,Yes,HIGH,No,BACKGROUND
+E02362,Oskar D. Frem,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,15000.0,,Yes,LOW,No,BACKGROUND
+E02364,Dominik G. Graf,Person,CH,Not PEP,,,,No,CH_D,No,37000.0,3100.0,No,LOW,No,BACKGROUND
+E02380,Noah S. Lambert,Person,CH,Not PEP,,,,No,CH_D,No,467000.0,38900.0,Yes,LOW,No,BACKGROUND
+E02443,Nordic Properties SARL,Company,FR,Not PEP,,,,No,CH_A,No,7530000.0,627000.0,Yes,LOW,No,BACKGROUND
+E02449,Seabright Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,13993000.0,1166000.0,Yes,MEDIUM,No,BACKGROUND
+E02457,Umbra Services Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,986000.0,,Yes,MEDIUM,No,BACKGROUND
+E02473,Amira V. Walsh,Person,FR,PEP,,,Minister of Finance,Yes,CH_B,No,182000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02478,Celine C. Steiner,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,177000.0,,Yes,LOW,No,BACKGROUND
+E02490,Wim C. Bachmann,Person,CH,Not PEP,,,,No,CH_A,No,220000.0,18300.0,Yes,LOW,No,BACKGROUND
+E02506,Public Authority LB-02,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E02521,Polaris Group SA,Company,CH,Not PEP,,,,No,CH_D,No,6434000.0,536000.0,No,LOW,No,BACKGROUND
+E02546,Public Authority GB-02,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E02556,Leon N. Hughes,Person,FR,Not PEP,,,,No,CH_A,No,67000.0,5600.0,No,LOW,No,BACKGROUND
+E02557,Zephyr Investments SA,Company,CH,Not PEP,,,,No,CH_D,No,1476000.0,123000.0,Yes,LOW,No,BACKGROUND
+E02593,Lindenhof Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4423000.0,,No,MEDIUM,No,BACKGROUND
+E02595,Imad D. Marino,Person,CY,Not PEP,,,,No,CH_C,Yes,63000.0,5300.0,Yes,MEDIUM,No,BACKGROUND
+E02599,Nordic Trading SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1282000.0,,Yes,LOW,No,BACKGROUND
+E02604,Nils F. Aoun,Person,CH,Not PEP,,,,No,CH_D,No,201000.0,16700.0,Yes,LOW,No,BACKGROUND
+E02619,Celine K. Petrou,Person,AE,Not PEP,,,,No,CH_C,No,158000.0,13200.0,Yes,LOW,No,BACKGROUND
+E02640,Glacier Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4171000.0,,Yes,LOW,No,BACKGROUND
+E02659,Yara P. Baumann,Person,GB,Not PEP,,,,No,CH_B,No,36000.0,3000.0,Yes,LOW,No,BACKGROUND
+E02674,Gabriel W. Frem,Person,CY,PEP,,,Director of National Pension Fund,Yes,CH_A,Yes,117000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02683,Greta S. Fakhoury,Person,CH,Not PEP,,,,No,CH_C,No,103000.0,8600.0,No,LOW,No,BACKGROUND
+E02684,Olivia J. Conti,Person,LB,Not PEP,,,,No,CH_B,No,27000.0,2200.0,Yes,LOW,No,BACKGROUND
+E02694,Arcadia Capital Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,10634000.0,,Yes,LOW,No,BACKGROUND
+E02708,Gabriel V. Maalouf,Person,LU,Not PEP,,,,No,None (foreign counterparty),No,65000.0,,Yes,MEDIUM,No,BACKGROUND
+E02723,Eastgate Investments SARL,Company,FR,Not PEP,,,,No,CH_A,No,6102000.0,508000.0,Yes,MEDIUM,No,BACKGROUND
+E02727,Tamara P. Brunner,Person,CH,Not PEP,,,,No,CH_D,No,36000.0,3000.0,Yes,MEDIUM,No,BACKGROUND
+E02728,Kamal M. Marti,Person,CH,Not PEP,,,,No,CH_D,No,247000.0,20600.0,Yes,LOW,No,BACKGROUND
+E02734,Marlowe Logistics SA,Company,CH,Not PEP,,,,No,CH_B,No,1634000.0,136000.0,Yes,LOW,No,BACKGROUND
+E02745,Noah G. Ferrari,Person,CH,Not PEP,,,,No,CH_D,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E02755,Adrian D. Conti,Person,CH,Not PEP,,,,No,CH_C,No,158000.0,13200.0,Yes,LOW,No,BACKGROUND
+E02785,Emil E. Hughes,Person,LB,Not PEP,,,,No,CH_D,No,102000.0,8500.0,Yes,LOW,No,BACKGROUND
+E02798,Kamal M. Mercier,Person,AE,PEP,,,Deputy Minister,Yes,CH_B,No,139000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E02813,Emerald Investments Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,11765000.0,,Yes,LOW,No,BACKGROUND
+E02816,Ursula E. Vogel,Person,GB,Not PEP,,,,No,CH_B,No,106000.0,8800.0,Yes,MEDIUM,No,BACKGROUND
+E02822,Delta Holdings Sarl,Company,LU,Not PEP,,,,No,CH_D,No,3345000.0,279000.0,Yes,LOW,No,BACKGROUND
+E02829,Olivia C. Hughes,Person,LU,Not PEP,,,,No,CH_D,No,82000.0,6800.0,Yes,MEDIUM,No,BACKGROUND
+E02833,Oskar J. Maalouf,Person,LB,Not PEP,,,,No,CH_C,No,101000.0,8400.0,Yes,LOW,No,BACKGROUND
+E02848,Amira H. Maalouf,Person,CH,Not PEP,,,,No,CH_A,No,30000.0,2500.0,Yes,MEDIUM,No,BACKGROUND
+E02849,Jana N. Fontaine,Person,FR,Not PEP,,,,No,CH_A,No,99000.0,8200.0,Yes,LOW,No,BACKGROUND
+E02859,Marta C. Marti,Person,US,Not PEP,,,,No,CH_C,No,335000.0,27900.0,Yes,LOW,No,BACKGROUND
+E02877,Patrick V. Bianchi,Person,CH,Not PEP,,,,No,CH_A,No,164000.0,13700.0,No,LOW,No,BACKGROUND
+E02879,Marta B. Fakhoury,Person,LB,Not PEP,,,,No,CH_D,No,73000.0,6100.0,Yes,LOW,No,BACKGROUND
+E02885,Public Authority CH-02,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E02917,Beacon Associates Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,20042000.0,0.0,Yes,HIGH,No,BACKGROUND
+E02922,Seabright Investments LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,5389000.0,,Yes,MEDIUM,No,BACKGROUND
+E02923,Sami T. Vogel,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,151000.0,,Yes,LOW,No,BACKGROUND
+E02937,Dario V. Chevalier,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,MEDIUM,No,BACKGROUND
+E02949,Mila E. Steiner,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,100000.0,,Yes,LOW,No,BACKGROUND
+E02985,Larkspur Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,42405000.0,,No,MEDIUM,No,BACKGROUND
+E02996,Hugo V. Renaud,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,72000.0,,Yes,LOW,No,BACKGROUND
+E02998,Jonas L. Saad,Person,LB,Not PEP,,,,No,CH_A,No,77000.0,6400.0,No,MEDIUM,No,BACKGROUND
+E03041,Marlowe Investments SA,Company,CH,Not PEP,,,,No,CH_A,No,2919000.0,243000.0,Yes,LOW,No,BACKGROUND
+E03043,Imad L. Bachmann,Person,CH,Not PEP,,,,No,CH_D,No,92000.0,7600.0,Yes,LOW,No,BACKGROUND
+E03069,Valentin E. Bachmann,Person,GB,Not PEP,,,,No,CH_A,No,46000.0,3800.0,Yes,MEDIUM,No,BACKGROUND
+E03087,Jonas H. Bennett,Person,US,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,Yes,LOW,No,BACKGROUND
+E03093,Petra M. Hughes,Person,GB,Not PEP,,,,No,CH_D,No,182000.0,15100.0,Yes,LOW,No,BACKGROUND
+E03095,Jonas W. Roth,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,275000.0,,Yes,LOW,No,BACKGROUND
+E03111,Dominik M. Hughes,Person,CH,Not PEP,,,,No,CH_D,No,324000.0,27000.0,Yes,MEDIUM,No,BACKGROUND
+E03121,Renata K. Bachmann,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,30000.0,,Yes,LOW,No,BACKGROUND
+E03123,Ghassan P. Conti,Person,CY,Not PEP,,,,No,CH_D,Yes,189000.0,15700.0,Yes,MEDIUM,No,BACKGROUND
+E03124,Marta G. Marti,Person,CH,Not PEP,,,,No,CH_D,No,110000.0,9100.0,Yes,MEDIUM,No,BACKGROUND
+E03157,Beacon Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,4183000.0,349000.0,Yes,LOW,No,BACKGROUND
+E03158,Beacon Associates SA,Company,CH,Not PEP,,,,No,CH_C,No,3506000.0,292000.0,Yes,LOW,No,BACKGROUND
+E03163,Rafael C. Gerber,Person,FR,Not PEP,,,,No,CH_A,No,13000.0,1100.0,Yes,LOW,No,BACKGROUND
+E03170,Dario T. Marino,Person,LB,Not PEP,,,,No,CH_C,No,24000.0,2000.0,Yes,LOW,No,BACKGROUND
+E03172,Felix L. Perrin,Person,CY,Not PEP,,,,No,CH_D,Yes,193000.0,16100.0,Yes,LOW,No,BACKGROUND
+E03174,Northwind Services SA,Company,CH,Not PEP,,,,No,CH_D,No,9697000.0,808000.0,No,LOW,No,BACKGROUND
+E03200,Klara D. Fakhoury,Person,CH,Not PEP,,,,No,CH_C,No,129000.0,10700.0,Yes,LOW,No,BACKGROUND
+E03214,Basil V. Bachmann,Person,CH,Not PEP,,,,No,CH_B,No,35000.0,2900.0,Yes,MEDIUM,No,BACKGROUND
+E03231,Hana L. Mansour,Person,CH,PEP family,E01975,Basil D. Salameh,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E03274,Farah M. Perrin,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,108000.0,,Yes,LOW,No,BACKGROUND
+E03275,Birchwood Capital SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,113000.0,,Yes,LOW,No,BACKGROUND
+E03285,Opal Services SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,4294000.0,,Yes,LOW,No,BACKGROUND
+E03299,Yara W. Fontaine,Person,GB,Not PEP,,,,No,CH_B,No,116000.0,9700.0,Yes,LOW,No,BACKGROUND
+E03316,Mila H. Maalouf,Person,CH,Not PEP,,,,No,CH_D,No,33000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E03448,Ivory Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,26981000.0,,Yes,MEDIUM,No,BACKGROUND
+E03458,Upland Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,478000.0,,Yes,LOW,No,BACKGROUND
+E03477,Aline N. Antoniou,Person,LB,PEP family,E09511,Amira W. Baumann,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E03487,Gabriel M. Brunner,Person,LB,PEP,,,Head of State-Owned Utility,Yes,CH_A,No,194000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E03495,Westmere Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2375000.0,,Yes,LOW,No,BACKGROUND
+E03497,Rosewood Consulting SA,Company,CH,Not PEP,,,,No,CH_D,No,927000.0,77000.0,Yes,LOW,No,BACKGROUND
+E03516,Quentin H. Girard,Person,CH,Not PEP,,,,No,CH_A,No,251000.0,20900.0,Yes,MEDIUM,No,BACKGROUND
+E03557,Emre R. Graf,Person,AE,Not PEP,,,,No,CH_C,No,332000.0,27700.0,Yes,LOW,No,BACKGROUND
+E03563,Felix A. Antoniou,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,27000.0,,Yes,LOW,No,BACKGROUND
+E03568,Wendy L. Gemayel,Person,LU,Not PEP,,,,No,CH_C,No,184000.0,15400.0,Yes,LOW,No,BACKGROUND
+E03569,Celine N. Gemayel,Person,US,Not PEP,,,,No,CH_D,No,22000.0,1800.0,Yes,LOW,No,BACKGROUND
+E03578,Rosewood Properties Ltd,Company,CY,Not PEP,,,,No,CH_C,Yes,1384000.0,115000.0,Yes,HIGH,No,BACKGROUND
+E03582,Noah L. Ricci,Person,GB,Not PEP,,,,No,CH_D,No,122000.0,10200.0,Yes,LOW,No,BACKGROUND
+E03591,Ines M. Georgiou,Person,AE,PEP family,E06952,Kamal W. Graf,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E03593,Upland Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,5301000.0,,Yes,LOW,No,BACKGROUND
+E03629,Nadia F. Marino,Person,LB,Not PEP,,,,No,CH_B,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E03654,Malik G. Baumann,Person,US,Not PEP,,,,No,CH_C,No,46000.0,3900.0,No,MEDIUM,No,BACKGROUND
+E03655,Ursula W. Schmid,Person,GB,Not PEP,,,,No,CH_B,No,70000.0,5800.0,Yes,MEDIUM,No,BACKGROUND
+E03678,Opal Capital SAL,Company,LB,Not PEP,,,,No,CH_B,No,280000.0,23000.0,Yes,LOW,No,BACKGROUND
+E03686,Tobias R. Walsh,Person,AE,PEP family,E02798,Kamal M. Mercier,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E03691,Oskar K. Fontaine,Person,LB,Not PEP,,,,No,CH_B,No,74000.0,6100.0,Yes,LOW,No,BACKGROUND
+E03708,Irene G. Roth,Person,LB,Not PEP,,,,No,CH_A,No,31000.0,2600.0,Yes,LOW,No,BACKGROUND
+E03715,Zephyr Group SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,16571000.0,,Yes,LOW,No,BACKGROUND
+E03716,Seabright Consulting SARL,Company,FR,Not PEP,,,,No,CH_C,No,50554000.0,4213000.0,No,LOW,No,BACKGROUND
+E03722,Katrin E. Gerber,Person,FR,Not PEP,,,,No,CH_C,No,62000.0,5200.0,Yes,LOW,No,BACKGROUND
+E03727,Amira T. Bennett,Person,LB,Not PEP,,,,No,CH_B,No,98000.0,8100.0,Yes,LOW,No,BACKGROUND
+E03742,Katrin L. Steiner,Person,GB,Not PEP,,,,No,CH_C,No,43000.0,3600.0,Yes,LOW,No,BACKGROUND
+E03746,Felix P. Chamoun,Person,LB,Not PEP,,,,No,CH_D,No,12000.0,1000.0,No,LOW,No,BACKGROUND
+E03762,Oakridge Properties SA,Company,CH,Not PEP,,,,No,CH_C,No,2981000.0,248000.0,Yes,LOW,No,BACKGROUND
+E03777,Lorenz H. Roth,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,28000.0,,Yes,LOW,No,BACKGROUND
+E03791,Jana W. Vogel,Person,CH,Not PEP,,,,No,CH_B,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E03796,Selina W. Aoun,Person,CH,Not PEP,,,,No,CH_D,No,46000.0,3800.0,Yes,LOW,No,BACKGROUND
+E03813,Westmere Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,278000.0,23000.0,Yes,MEDIUM,No,BACKGROUND
+E03829,Selina R. Renaud,Person,LB,Not PEP,,,,No,CH_B,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E03859,Imad H. Frem,Person,GB,Not PEP,,,,No,CH_D,No,47000.0,3900.0,Yes,MEDIUM,No,BACKGROUND
+E03877,Vera E. Chamoun,Person,LB,Not PEP,,,,No,CH_B,No,59000.0,4900.0,Yes,LOW,No,BACKGROUND
+E03910,Adrian E. Bianchi,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,110000.0,,Yes,LOW,No,BACKGROUND
+E03925,Dario P. Gerber,Person,CY,Not PEP,,,,No,CH_B,Yes,37000.0,3000.0,Yes,LOW,No,BACKGROUND
+E03954,Hana B. Conti,Person,AE,Not PEP,,,,No,CH_D,No,116000.0,9600.0,Yes,LOW,No,BACKGROUND
+E03979,Aline N. Georgiou,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,69000.0,,Yes,LOW,No,BACKGROUND
+E04003,Lorenz W. Lambert,Person,US,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,Yes,LOW,No,BACKGROUND
+E04034,Dalia R. Chamoun,Person,CH,Not PEP,,,,No,CH_B,No,136000.0,11300.0,Yes,LOW,No,BACKGROUND
+E04037,Glacier Investments SA,Company,CH,Not PEP,,,,No,CH_C,No,4335000.0,361000.0,Yes,LOW,No,BACKGROUND
+E04042,Petra W. Fakhoury,Person,CH,Not PEP,,,,No,CH_A,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E04056,Ivory Group SA,Company,CH,Not PEP,,,,No,CH_C,No,6203000.0,517000.0,Yes,MEDIUM,No,BACKGROUND
+E04070,Polaris Services SAL,Company,LB,Not PEP,,,,No,CH_B,No,121000.0,10000.0,Yes,LOW,No,BACKGROUND
+E04083,Simon P. Marti,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,78000.0,,Yes,LOW,No,BACKGROUND
+E04122,Quayside Services SA,Company,CH,Not PEP,,,,No,CH_D,No,3574000.0,298000.0,Yes,LOW,No,BACKGROUND
+E04133,Nadia S. Fontaine,Person,GB,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E04137,Maple Investments Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,725000.0,0.0,Yes,HIGH,No,BACKGROUND
+E04162,Celine K. Conti,Person,CH,Not PEP,,,,No,CH_D,No,119000.0,10000.0,Yes,LOW,No,BACKGROUND
+E04179,Camille E. Baumann,Person,GB,Not PEP,,,,No,CH_C,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E04181,Ivory Ventures Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,762000.0,,No,LOW,No,BACKGROUND
+E04182,Birchwood Services SA,Company,CH,Not PEP,,,,No,CH_B,No,5330000.0,444000.0,Yes,LOW,No,BACKGROUND
+E04191,Indigo Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,4219000.0,352000.0,Yes,LOW,No,BACKGROUND
+E04197,Irene B. Marti,Person,CH,Not PEP,,,,No,CH_A,No,101000.0,8400.0,Yes,MEDIUM,No,BACKGROUND
+E04208,Jasper E. Gemayel,Person,LB,Not PEP,,,,No,CH_C,No,74000.0,6200.0,Yes,LOW,No,BACKGROUND
+E04213,Zephyr Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,7398000.0,,No,LOW,No,BACKGROUND
+E04223,Elisa P. Aoun,Person,LB,Not PEP,,,,No,CH_B,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E04238,Cora M. Wyss,Person,FR,Not PEP,,,,No,CH_A,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E04239,Petra F. Walsh,Person,CH,Not PEP,,,,No,CH_D,No,216000.0,18000.0,Yes,LOW,No,BACKGROUND
+E04251,Imad H. Mansour,Person,CH,Not PEP,,,,No,CH_D,No,432000.0,36000.0,Yes,LOW,No,BACKGROUND
+E04271,Wim K. Hayek,Person,CY,Not PEP,,,,No,CH_C,Yes,202000.0,16900.0,No,LOW,No,BACKGROUND
+E04277,Willow Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,3835000.0,,Yes,MEDIUM,No,BACKGROUND
+E04281,Beatrice T. Vogel,Person,CH,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E04295,Irene V. Frei,Person,LB,Not PEP,,,,No,CH_C,No,32000.0,2700.0,Yes,MEDIUM,No,BACKGROUND
+E04314,Thornbury Services SA,Company,CH,Not PEP,,,,No,CH_D,No,4036000.0,336000.0,Yes,MEDIUM,No,BACKGROUND
+E04326,Marlowe Ventures LLC,Company,US,Not PEP,,,,No,CH_C,No,29574000.0,2464000.0,Yes,LOW,No,BACKGROUND
+E04328,Xavier A. Hayek,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,83000.0,,No,LOW,No,BACKGROUND
+E04337,Malik G. Roth,Person,FR,PEP family,E09338,Jonas S. Bachmann,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E04338,Klara M. Bachmann,Person,LB,Not PEP,,,,No,CH_B,No,53000.0,4500.0,Yes,LOW,No,BACKGROUND
+E04368,Public Authority AE-01,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E04371,Valentin R. Conti,Person,CH,Not PEP,,,,No,CH_B,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E04389,Leon D. Hughes,Person,GB,Not PEP,,,,No,CH_A,No,60000.0,5000.0,Yes,MEDIUM,No,BACKGROUND
+E04425,Tobias W. Girard,Person,LU,Not PEP,,,,No,CH_D,No,385000.0,32100.0,Yes,MEDIUM,No,BACKGROUND
+E04428,Valentin P. Bianchi,Person,CH,Not PEP,,,,No,CH_D,No,139000.0,11600.0,Yes,LOW,No,BACKGROUND
+E04430,Dalia E. Frei,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,231000.0,,Yes,LOW,No,BACKGROUND
+E04434,Lindenhof Properties SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4138000.0,,Yes,LOW,No,BACKGROUND
+E04459,Imad H. Gerber,Person,CH,Not PEP,,,,No,CH_C,No,167000.0,13900.0,Yes,MEDIUM,No,BACKGROUND
+E04460,Ines D. Kunz,Person,CH,Not PEP,,,,No,CH_A,No,151000.0,12600.0,Yes,LOW,No,BACKGROUND
+E04474,Nadia T. Fakhoury,Person,CH,Not PEP,,,,No,CH_B,No,597000.0,49800.0,Yes,LOW,No,BACKGROUND
+E04479,Hillside Trading SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,1151000.0,,Yes,MEDIUM,No,BACKGROUND
+E04509,Bridgeport Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1250000.0,,Yes,LOW,No,BACKGROUND
+E04536,Aline S. Hofer,Person,FR,Not PEP,,,,No,CH_B,No,18000.0,1500.0,Yes,LOW,No,BACKGROUND
+E04552,Emil N. Maalouf,Person,CH,Not PEP,,,,No,CH_A,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E04568,Celine K. Aoun,Person,GB,Not PEP,,,,No,CH_A,No,77000.0,6400.0,Yes,LOW,No,BACKGROUND
+E04580,Camille J. Vogel,Person,FR,Not PEP,,,,No,CH_D,No,33000.0,2800.0,Yes,LOW,No,BACKGROUND
+E04587,Zoe M. Marti,Person,CH,Not PEP,,,,No,CH_B,No,164000.0,13700.0,Yes,LOW,No,BACKGROUND
+E04599,Dalia L. Baumann,Person,CH,Not PEP,,,,No,CH_D,No,53000.0,4400.0,Yes,LOW,No,BACKGROUND
+E04613,Indigo Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,39808000.0,3317000.0,Yes,LOW,No,BACKGROUND
+E04614,Opal Consulting Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,4322000.0,,Yes,LOW,No,BACKGROUND
+E04615,Birchwood Logistics SA,Company,CH,Not PEP,,,,No,CH_C,No,10219000.0,852000.0,Yes,LOW,No,BACKGROUND
+E04650,Dunmore Holdings SA,Company,CH,Not PEP,,,,No,CH_D,No,17037000.0,1420000.0,Yes,MEDIUM,No,BACKGROUND
+E04652,Klara H. Chamoun,Person,CH,PEP family,E02142,Helena L. Frem,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E04673,Westmere Capital FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,3576000.0,,No,MEDIUM,No,BACKGROUND
+E04677,Oakridge Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,3784000.0,315000.0,Yes,LOW,No,BACKGROUND
+E04684,Mila F. Ricci,Person,CH,Not PEP,,,,No,CH_A,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E04716,Vera R. Perrin,Person,CH,Not PEP,,,,No,CH_A,No,297000.0,24700.0,Yes,MEDIUM,No,BACKGROUND
+E04756,Quarry Group SA,Company,CH,Not PEP,,,,No,CH_D,No,570000.0,47000.0,Yes,LOW,No,BACKGROUND
+E04778,Delta Investments SA,Company,CH,Not PEP,,,,No,CH_D,No,18444000.0,1537000.0,Yes,MEDIUM,No,BACKGROUND
+E04779,Rana E. Ferrari,Person,FR,Not PEP,,,,No,CH_C,No,69000.0,5700.0,No,LOW,No,BACKGROUND
+E04799,Yarrow Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,4013000.0,334000.0,Yes,LOW,No,BACKGROUND
+E04808,Ursula P. Aoun,Person,CY,Not PEP,,,,No,CH_B,Yes,161000.0,13400.0,Yes,LOW,No,BACKGROUND
+E04810,Hugo N. Chevalier,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,27000.0,,Yes,LOW,No,BACKGROUND
+E04817,Gabriel E. Hughes,Person,GB,PEP family,E07716,Klara V. Bachmann,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E04833,Xavier K. Hayek,Person,LB,Not PEP,,,,No,CH_C,No,55000.0,4600.0,No,MEDIUM,No,BACKGROUND
+E04837,Ghassan G. Frei,Person,GB,Not PEP,,,,No,CH_B,No,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E04845,Bruno D. Turner,Person,CH,Not PEP,,,,No,CH_D,No,44000.0,3700.0,Yes,LOW,No,BACKGROUND
+E04870,Sami G. Renaud,Person,CH,PEP family,E02142,Helena L. Frem,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E04874,Fairview Capital SA,Company,CH,Not PEP,,,,No,CH_A,No,1617000.0,135000.0,Yes,MEDIUM,No,BACKGROUND
+E04901,Tidewater Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1934000.0,,Yes,LOW,No,BACKGROUND
+E04943,Fiona E. Lambert,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,125000.0,,Yes,LOW,No,BACKGROUND
+E04946,Rana T. Ferrari,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,57000.0,,Yes,LOW,No,BACKGROUND
+E04968,Dario M. Baumann,Person,CH,Not PEP,,,,No,CH_D,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E04992,Rosewood Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,1358000.0,113000.0,Yes,MEDIUM,No,BACKGROUND
+E05036,Rosewood Ventures SARL,Company,FR,Not PEP,,,,No,CH_C,No,1389000.0,116000.0,Yes,LOW,No,BACKGROUND
+E05038,Fiona E. Bennett,Person,FR,Not PEP,,,,No,CH_A,No,26000.0,2100.0,Yes,LOW,No,BACKGROUND
+E05052,Emil D. Lehmann,Person,LB,Not PEP,,,,No,CH_C,No,56000.0,4700.0,Yes,LOW,No,BACKGROUND
+E05064,Public Authority FR-01,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E05069,Beatrice A. Walsh,Person,CY,Not PEP,,,,No,CH_C,Yes,31000.0,2500.0,Yes,MEDIUM,No,BACKGROUND
+E05081,Fairview Associates SA,Company,CH,Not PEP,,,,No,CH_C,No,9666000.0,805000.0,Yes,LOW,No,BACKGROUND
+E05083,Jadestone Capital SA,Company,CH,Not PEP,,,,No,CH_B,No,6295000.0,525000.0,No,LOW,No,BACKGROUND
+E05096,Saffron Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1667000.0,,Yes,LOW,No,BACKGROUND
+E05100,Oskar M. Bianchi,Person,CH,Not PEP,,,,No,CH_C,No,323000.0,26900.0,Yes,LOW,No,BACKGROUND
+E05110,Jasper N. Fontaine,Person,CH,Not PEP,,,,No,CH_A,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E05130,Upland Associates SA,Company,CH,Not PEP,,,,No,CH_D,No,6071000.0,506000.0,Yes,LOW,No,BACKGROUND
+E05167,Zoe E. Chevalier,Person,LB,Not PEP,,,,No,CH_A,No,75000.0,6300.0,Yes,LOW,No,BACKGROUND
+E05170,Tamara C. Frei,Person,FR,Not PEP,,,,No,CH_A,No,62000.0,5100.0,Yes,LOW,No,BACKGROUND
+E05188,Amberly Services FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,6536000.0,,Yes,LOW,No,BACKGROUND
+E05204,Beatrice T. Marino,Person,GB,PEP,,,Military General,Yes,CH_A,No,230000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E05242,Mila H. Conti,Person,LB,Not PEP,,,,No,CH_D,No,16000.0,1300.0,Yes,MEDIUM,No,BACKGROUND
+E05283,Klara M. Gemayel,Person,US,Not PEP,,,,No,CH_A,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E05314,Felix R. Georgiou,Person,LB,Not PEP,,,,No,CH_B,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E05329,Public Authority CY-01,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E05331,Bruno K. Bachmann,Person,CH,Not PEP,,,,No,CH_B,No,124000.0,10300.0,Yes,LOW,No,BACKGROUND
+E05346,Nils W. Aoun,Person,US,Not PEP,,,,No,CH_C,No,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E05347,Delta Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,1544000.0,,Yes,MEDIUM,No,BACKGROUND
+E05369,Quentin V. Chevalier,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,82000.0,,Yes,MEDIUM,No,BACKGROUND
+E05380,Valley Partners FZE,Company,AE,Not PEP,,,,No,CH_A,No,1714000.0,143000.0,Yes,MEDIUM,No,BACKGROUND
+E05388,Xavier H. Hayek,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,37000.0,,Yes,LOW,No,BACKGROUND
+E05428,Katrin T. Lambert,Person,LB,Not PEP,,,,No,CH_A,No,85000.0,7100.0,Yes,LOW,No,BACKGROUND
+E05433,Willow Investments SA,Company,CH,Not PEP,,,,No,CH_C,No,24259000.0,2022000.0,Yes,LOW,No,BACKGROUND
+E05440,Wim G. Hughes,Person,CH,Not PEP,,,,No,CH_B,No,108000.0,9000.0,Yes,LOW,No,BACKGROUND
+E05453,Kamal T. Saad,Person,CH,Not PEP,,,,No,CH_C,No,153000.0,12800.0,Yes,LOW,No,BACKGROUND
+E05457,Katrin C. Fakhoury,Person,LB,Not PEP,,,,No,CH_A,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E05461,Dominik V. Marino,Person,CH,Not PEP,,,,No,CH_A,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E05464,Patrick P. Conti,Person,CH,Not PEP,,,,No,CH_A,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E05468,Petra P. Hofer,Person,CH,Not PEP,,,,No,CH_A,No,54000.0,4500.0,Yes,MEDIUM,No,BACKGROUND
+E05484,Ghassan A. Brunner,Person,US,Not PEP,,,,No,CH_D,No,48000.0,4000.0,Yes,LOW,No,BACKGROUND
+E05501,Farah N. Bennett,Person,FR,Not PEP,,,,No,CH_D,No,163000.0,13600.0,Yes,LOW,No,BACKGROUND
+E05504,Basil E. Marti,Person,CH,Not PEP,,,,No,CH_A,No,270000.0,22500.0,Yes,LOW,No,BACKGROUND
+E05507,Public Authority CY-03,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E05517,Ursula W. Gerber,Person,GB,Not PEP,,,,No,CH_D,No,122000.0,10200.0,Yes,MEDIUM,No,BACKGROUND
+E05524,Hillside Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,12026000.0,,No,MEDIUM,No,BACKGROUND
+E05526,Lorenz N. Kunz,Person,CH,Not PEP,,,,No,CH_D,No,126000.0,10500.0,Yes,MEDIUM,No,BACKGROUND
+E05527,Mila K. Maalouf,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,35000.0,,Yes,LOW,No,BACKGROUND
+E05534,Goldcrest Properties SAL,Company,LB,Not PEP,,,,No,CH_B,No,981000.0,82000.0,Yes,MEDIUM,No,BACKGROUND
+E05578,Ghassan N. Turner,Person,GB,PEP family,E07716,Klara V. Bachmann,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E05588,Bruno B. Chevalier,Person,CH,Not PEP,,,,No,CH_C,No,88000.0,7300.0,Yes,LOW,No,BACKGROUND
+E05605,Aurora Properties Ltd,Company,GB,Not PEP,,,,No,CH_B,No,69261000.0,5772000.0,Yes,LOW,No,BACKGROUND
+E05608,Evergreen Logistics Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,3087000.0,,Yes,MEDIUM,No,BACKGROUND
+E05616,Nils D. Wyss,Person,LB,Not PEP,,,,No,CH_B,No,17000.0,1400.0,Yes,LOW,No,BACKGROUND
+E05623,Camille S. Schmid,Person,LB,Not PEP,,,,No,CH_B,No,13000.0,1100.0,Yes,LOW,No,BACKGROUND
+E05658,Wendy K. Aoun,Person,CH,Not PEP,,,,No,CH_A,No,99000.0,8300.0,Yes,LOW,No,BACKGROUND
+E05673,Evergreen Associates SARL,Company,FR,Not PEP,,,,No,CH_C,No,10134000.0,845000.0,Yes,LOW,No,BACKGROUND
+E05679,Amira N. Vogel,Person,CH,Not PEP,,,,No,CH_C,No,135000.0,11300.0,Yes,MEDIUM,No,BACKGROUND
+E05688,Lindenhof Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,6478000.0,540000.0,Yes,LOW,No,BACKGROUND
+E05689,Layla K. Lambert,Person,LB,Not PEP,,,,No,CH_C,No,20000.0,1700.0,No,LOW,No,BACKGROUND
+E05691,Hana W. Galli,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,85000.0,,Yes,MEDIUM,No,BACKGROUND
+E05698,Hugo A. Petrou,Person,GB,Not PEP,,,,No,CH_B,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E05710,Zoe F. Wyss,Person,LU,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E05736,Helena E. Bianchi,Person,FR,Not PEP,,,,No,CH_C,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E05747,Sami J. Bachmann,Person,GB,Not PEP,,,,No,CH_B,No,125000.0,10400.0,Yes,LOW,No,BACKGROUND
+E05759,Rosewood Holdings SA,Company,CH,Not PEP,,,,No,CH_C,No,28668000.0,2389000.0,Yes,LOW,No,BACKGROUND
+E05776,Mila M. Gemayel,Person,CH,Not PEP,,,,No,CH_A,No,148000.0,12300.0,Yes,LOW,No,BACKGROUND
+E05798,Vera H. Gerber,Person,LB,Not PEP,,,,No,CH_D,No,50000.0,4100.0,Yes,LOW,No,BACKGROUND
+E05802,Farah L. Marino,Person,LU,Not PEP,,,,No,CH_B,No,129000.0,10700.0,Yes,LOW,No,BACKGROUND
+E05826,Valentin L. Frem,Person,CH,Not PEP,,,,No,CH_D,No,123000.0,10300.0,Yes,LOW,No,BACKGROUND
+E05832,Lorenz A. Frei,Person,CY,PEP,,,Senator,Yes,CH_A,Yes,187000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E05868,Farah F. Steiner,Person,LB,Not PEP,,,,No,CH_C,No,43000.0,3600.0,Yes,LOW,No,BACKGROUND
+E05887,Helena L. Hayek,Person,CH,Not PEP,,,,No,CH_A,No,111000.0,9200.0,Yes,LOW,No,BACKGROUND
+E05889,Rosewood Associates SAL,Company,LB,Not PEP,,,,No,CH_A,No,3290000.0,274000.0,Yes,LOW,No,BACKGROUND
+E05890,Olivia W. Hofer,Person,CH,Not PEP,,,,No,CH_A,No,26000.0,2200.0,Yes,LOW,No,BACKGROUND
+E05899,Tobias J. Kunz,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,41000.0,,Yes,LOW,No,BACKGROUND
+E05911,Emil C. Salameh,Person,GB,Not PEP,,,,No,CH_A,No,52000.0,4300.0,Yes,LOW,No,BACKGROUND
+E05947,Vera A. Steiner,Person,CY,Not PEP,,,,No,CH_B,Yes,92000.0,7700.0,Yes,LOW,No,BACKGROUND
+E05969,Oskar A. Renaud,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,23000.0,,Yes,LOW,No,BACKGROUND
+E05974,Nils W. Marino,Person,CH,Not PEP,,,,No,CH_A,No,565000.0,47100.0,Yes,MEDIUM,No,BACKGROUND
+E06022,Seabright Consulting SAL,Company,LB,Not PEP,,,,No,CH_A,No,3796000.0,316000.0,Yes,MEDIUM,No,BACKGROUND
+E06039,Ghassan R. Mansour,Person,LB,Not PEP,,,,No,CH_A,No,55000.0,4500.0,Yes,LOW,No,BACKGROUND
+E06045,Ivory Logistics SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,13841000.0,,Yes,LOW,No,BACKGROUND
+E06046,Noah N. Lehmann,Person,FR,Not PEP,,,,No,CH_D,No,97000.0,8100.0,Yes,LOW,No,BACKGROUND
+E06074,Upland Properties SA,Company,CH,Not PEP,,,,No,CH_B,No,175000.0,15000.0,No,LOW,No,BACKGROUND
+E06089,Beacon Holdings Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,907000.0,,Yes,LOW,No,BACKGROUND
+E06094,Vera V. Turner,Person,US,Not PEP,,,,No,None (foreign counterparty),No,44000.0,,Yes,LOW,No,BACKGROUND
+E06103,Valentin A. Gemayel,Person,CY,Not PEP,,,,No,CH_A,Yes,242000.0,20200.0,Yes,LOW,No,BACKGROUND
+E06104,Elisa B. Conti,Person,FR,Not PEP,,,,No,CH_B,No,216000.0,18000.0,Yes,LOW,No,BACKGROUND
+E06114,Kestrel Properties Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,13924000.0,,Yes,LOW,No,BACKGROUND
+E06139,Katrin P. Maalouf,Person,CH,Not PEP,,,,No,CH_B,No,176000.0,14600.0,Yes,LOW,No,BACKGROUND
+E06150,Beatrice H. Hughes,Person,CH,PEP family,E01088,Kamal L. Frei,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06166,Malik B. Hayek,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,55000.0,,Yes,LOW,No,BACKGROUND
+E06177,Cobalt Partners SA,Company,CH,Not PEP,,,,No,CH_A,No,16018000.0,1335000.0,Yes,MEDIUM,No,BACKGROUND
+E06187,Mila D. Marino,Person,FR,Not PEP,,,,No,CH_A,No,435000.0,36200.0,Yes,LOW,No,BACKGROUND
+E06191,Coral Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,11198000.0,,Yes,MEDIUM,No,BACKGROUND
+E06212,Polaris Partners SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1763000.0,,Yes,LOW,No,BACKGROUND
+E06225,Mila T. Girard,Person,LB,PEP,,,Senator,Yes,CH_A,No,183000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06277,Celine B. Steiner,Person,FR,PEP,,,Ambassador,Yes,CH_D,No,146000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06287,Felix T. Gemayel,Person,LB,Not PEP,,,,No,CH_B,No,64000.0,5300.0,Yes,LOW,No,BACKGROUND
+E06295,Jadestone Holdings Sarl,Company,LU,Not PEP,,,,No,CH_C,No,14575000.0,1215000.0,Yes,LOW,No,BACKGROUND
+E06309,Seabright Ventures SA,Company,CH,Not PEP,,,,No,CH_C,No,540000.0,45000.0,Yes,LOW,No,BACKGROUND
+E06312,Indigo Partners SA,Company,CH,Not PEP,,,,No,CH_B,No,600000.0,50000.0,Yes,MEDIUM,No,BACKGROUND
+E06317,Sami H. Turner,Person,CH,Not PEP,,,,No,CH_C,No,133000.0,11100.0,Yes,LOW,No,BACKGROUND
+E06333,Tobias D. Chevalier,Person,LB,Not PEP,,,,No,CH_A,No,63000.0,5200.0,Yes,LOW,No,BACKGROUND
+E06347,Gabriel E. Saad,Person,CH,Not PEP,,,,No,CH_C,No,220000.0,18400.0,Yes,LOW,No,BACKGROUND
+E06352,Public Authority AE-02,Government body,AE,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E06389,Public Authority CH-01,Government body,CH,Not PEP,,,,No,CH_B,No,,0.0,Unknown,Not rated,No,S4_LEGIT_PEP
+E06425,Public Authority FR-04,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E06433,Keystone Holdings Ltd,Company,CY,Not PEP,,,,No,CH_B,Yes,2077000.0,173000.0,No,HIGH,No,BACKGROUND
+E06442,Gabriel L. Mercier,Person,GB,PEP family,E05204,Beatrice T. Marino,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06448,Public Authority CY-02,Government body,CY,Not PEP,,,,No,None (foreign counterparty),Yes,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E06453,Elisa D. Walsh,Person,CH,Not PEP,,,,No,CH_C,No,44000.0,3600.0,Yes,LOW,No,BACKGROUND
+E06459,Noah N. Antoniou,Person,GB,Not PEP,,,,No,CH_B,No,46000.0,3800.0,Yes,LOW,No,BACKGROUND
+E06462,Noah T. Antoniou,Person,CH,Not PEP,,,,No,CH_B,No,159000.0,13200.0,Yes,LOW,No,BACKGROUND
+E06480,Ivory Consulting Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1565000.0,0.0,Yes,HIGH,No,BACKGROUND
+E06510,Public Authority LB-01,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E06524,Foxglove Trading SA,Company,CH,Not PEP,,,,No,CH_D,No,4412000.0,368000.0,No,MEDIUM,No,BACKGROUND
+E06530,Jana L. Galli,Person,AE,PEP family,E01149,Yara P. Graf,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06601,Greta G. Graf,Person,CH,Not PEP,,,,No,CH_A,No,397000.0,33100.0,Yes,MEDIUM,No,BACKGROUND
+E06626,Goldcrest Group SAL,Company,LB,Not PEP,,,,No,CH_B,No,11909000.0,992000.0,Yes,MEDIUM,No,BACKGROUND
+E06627,Helena K. Schmid,Person,CH,Not PEP,,,,No,CH_B,No,224000.0,18700.0,Yes,LOW,No,BACKGROUND
+E06651,Birchwood Trading FZE,Company,AE,Not PEP,,,,No,CH_B,No,1609000.0,134000.0,Yes,LOW,No,BACKGROUND
+E06654,Selina M. Turner,Person,LU,Not PEP,,,,No,CH_B,No,35000.0,2900.0,Yes,LOW,No,BACKGROUND
+E06668,Quentin L. Rousseau,Person,FR,Not PEP,,,,No,CH_B,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E06672,Lorenz R. Zimmermann,Person,FR,Not PEP,,,,No,CH_C,No,52000.0,4300.0,No,MEDIUM,No,BACKGROUND
+E06676,Layla C. Baumann,Person,CH,Not PEP,,,,No,CH_A,No,66000.0,5500.0,No,LOW,No,BACKGROUND
+E06681,Jana S. Ferrari,Person,FR,Not PEP,,,,No,CH_A,No,66000.0,5500.0,Yes,MEDIUM,No,BACKGROUND
+E06688,Adrian T. Fontaine,Person,LB,Not PEP,,,,No,CH_A,No,19000.0,1600.0,Yes,LOW,No,BACKGROUND
+E06692,Bruno V. Saad,Person,GB,Not PEP,,,,No,CH_B,No,84000.0,7000.0,Yes,MEDIUM,No,BACKGROUND
+E06712,Dominik F. Marti,Person,US,Not PEP,,,,No,CH_A,No,27000.0,2300.0,Yes,LOW,No,BACKGROUND
+E06734,Public Authority LB-03,Government body,LB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E06738,Nordic Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,47467000.0,,No,LOW,No,BACKGROUND
+E06773,Elisa D. Brunner,Person,CH,Not PEP,,,,No,CH_D,No,90000.0,7500.0,Yes,LOW,No,BACKGROUND
+E06785,Emre F. Fakhoury,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,20000.0,,Yes,LOW,No,BACKGROUND
+E06788,Nils L. Chamoun,Person,LB,Not PEP,,,,No,CH_C,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E06810,Hugo P. Steiner,Person,CH,Not PEP,,,,No,CH_C,No,38000.0,3200.0,Yes,MEDIUM,No,BACKGROUND
+E06819,Quentin A. Gemayel,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,59000.0,,Yes,LOW,No,BACKGROUND
+E06820,Northwind Services SAL,Company,LB,Not PEP,,,,No,CH_B,No,23345000.0,1945000.0,Yes,LOW,No,BACKGROUND
+E06841,Jasper M. Renaud,Person,CH,Not PEP,,,,No,CH_B,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E06865,Dunmore Partners Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,4266000.0,,Yes,MEDIUM,No,BACKGROUND
+E06869,Rafael V. Gemayel,Person,CH,Not PEP,,,,No,CH_C,No,69000.0,5800.0,Yes,LOW,No,BACKGROUND
+E06882,Bridgeport Group SAL,Company,LB,Not PEP,,,,No,CH_A,No,10891000.0,908000.0,Yes,LOW,No,BACKGROUND
+E06885,Layla T. Perrin,Person,GB,Not PEP,,,,No,CH_D,No,143000.0,11900.0,Yes,LOW,No,BACKGROUND
+E06887,Malik D. Walsh,Person,CH,Not PEP,,,,No,CH_B,No,61000.0,5100.0,Yes,MEDIUM,No,BACKGROUND
+E06892,Mila S. Roth,Person,CH,Not PEP,,,,No,CH_D,No,70000.0,5800.0,Yes,LOW,No,BACKGROUND
+E06929,Felix M. Baumann,Person,FR,PEP family,E08987,Emre R. Hofer,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06933,Camille G. Petrou,Person,FR,Not PEP,,,,No,CH_A,No,109000.0,9100.0,Yes,LOW,No,BACKGROUND
+E06952,Kamal W. Graf,Person,AE,PEP,,,Supreme Court Judge,Yes,CH_C,No,185000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E06962,Wim P. Ricci,Person,CY,Not PEP,,,,No,CH_C,Yes,106000.0,8800.0,Yes,LOW,No,BACKGROUND
+E06990,Fiona A. Ferrari,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E06998,Yara B. Chamoun,Person,CH,Not PEP,,,,No,CH_D,No,37000.0,3100.0,Yes,LOW,No,BACKGROUND
+E07013,Ines M. Fakhoury,Person,LB,Not PEP,,,,No,CH_D,No,52000.0,4300.0,Yes,LOW,No,BACKGROUND
+E07017,Valentin T. Roth,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,LOW,No,BACKGROUND
+E07034,Zoran R. Gerber,Person,CH,Not PEP,,,,No,CH_C,No,139000.0,11600.0,Yes,LOW,No,BACKGROUND
+E07047,Layla V. Brunner,Person,CH,Not PEP,,,,No,CH_D,No,36000.0,3000.0,Yes,LOW,No,BACKGROUND
+E07062,Xavier A. Ricci,Person,US,Not PEP,,,,No,None (foreign counterparty),No,108000.0,,Yes,LOW,No,BACKGROUND
+E07109,Sami T. Lehmann,Person,CH,Not PEP,,,,No,CH_D,No,189000.0,15800.0,Yes,LOW,No,BACKGROUND
+E07117,Fiona E. Maalouf,Person,CH,Not PEP,,,,No,CH_A,No,99000.0,8200.0,Yes,MEDIUM,No,BACKGROUND
+E07126,Nadia G. Lehmann,Person,AE,Not PEP,,,,No,CH_C,No,88000.0,7300.0,Yes,LOW,No,BACKGROUND
+E07136,Dario R. Frem,Person,CH,Not PEP,,,,No,CH_A,No,68000.0,5700.0,Yes,MEDIUM,No,BACKGROUND
+E07151,Dario E. Gerber,Person,CH,Not PEP,,,,No,CH_D,No,236000.0,19700.0,Yes,LOW,No,BACKGROUND
+E07162,Tidewater Holdings SA,Company,CH,Not PEP,,,,No,CH_A,No,786000.0,66000.0,Yes,LOW,No,BACKGROUND
+E07225,Eastgate Partners Ltd,Company,GB,Not PEP,,,,No,CH_D,No,17719000.0,1477000.0,Yes,MEDIUM,No,BACKGROUND
+E07231,Saffron Investments SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,8048000.0,,No,MEDIUM,No,BACKGROUND
+E07251,Goldcrest Group SA,Company,CH,Not PEP,,,,No,CH_A,No,5359000.0,447000.0,Yes,MEDIUM,No,BACKGROUND
+E07257,Nils K. Brunner,Person,LB,Not PEP,,,,No,CH_D,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E07259,Basil N. Georgiou,Person,FR,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,MEDIUM,No,BACKGROUND
+E07267,Vera C. Ricci,Person,CH,Not PEP,,,,No,CH_B,No,47000.0,3900.0,No,MEDIUM,No,BACKGROUND
+E07276,Beatrice P. Aoun,Person,CY,Not PEP,,,,No,CH_B,Yes,105000.0,8700.0,Yes,LOW,No,BACKGROUND
+E07294,Oakridge Capital SA,Company,CH,Not PEP,,,,No,CH_D,No,2418000.0,201000.0,Yes,LOW,No,BACKGROUND
+E07296,Emre S. Aoun,Person,LB,PEP family,E03487,Gabriel M. Brunner,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07300,Camille E. Girard,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,37000.0,,Yes,LOW,No,BACKGROUND
+E07303,Ghassan V. Girard,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,163000.0,,Yes,LOW,No,BACKGROUND
+E07332,Celine T. Ferrari,Person,AE,Not PEP,,,,No,CH_D,No,29000.0,2400.0,Yes,LOW,No,BACKGROUND
+E07357,Nadia R. Mercier,Person,CH,Not PEP,,,,No,CH_C,No,164000.0,13700.0,Yes,LOW,No,BACKGROUND
+E07366,Lorenz W. Baumann,Person,CH,Not PEP,,,,No,CH_B,No,70000.0,5800.0,Yes,LOW,No,BACKGROUND
+E07378,Zoran L. Chamoun,Person,LB,PEP family,E06225,Mila T. Girard,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07381,Cobalt Associates LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,4894000.0,,Yes,LOW,No,BACKGROUND
+E07390,Ursula K. Baumann,Person,CH,PEP family,E01975,Basil D. Salameh,,Yes,CH_B,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07411,Verity Consulting SAL,Company,LB,Not PEP,,,,No,CH_B,No,632000.0,53000.0,Yes,LOW,No,BACKGROUND
+E07435,Public Authority FR-03,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E07436,Eastgate Holdings SA,Company,CH,Not PEP,,,,No,CH_B,No,3698000.0,308000.0,Yes,LOW,No,BACKGROUND
+E07443,Adrian D. Baumann,Person,FR,Not PEP,,,,No,CH_B,No,68000.0,5700.0,Yes,LOW,No,BACKGROUND
+E07452,Pembroke Investments FZE,Company,AE,Not PEP,,,,No,CH_C,No,4636000.0,386000.0,Yes,LOW,No,BACKGROUND
+E07463,Hana F. Fontaine,Person,CH,Not PEP,,,,No,CH_A,No,357000.0,29700.0,Yes,LOW,No,BACKGROUND
+E07467,Jadestone Consulting FZE,Company,AE,Not PEP,,,,No,CH_C,No,5497000.0,458000.0,Yes,LOW,No,BACKGROUND
+E07500,Leon S. Zimmermann,Person,LB,Not PEP,,,,No,CH_D,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E07501,Indigo Consulting SAL,Company,LB,Not PEP,,,,No,CH_A,No,4493000.0,374000.0,Yes,LOW,No,BACKGROUND
+E07505,Mila J. Frei,Person,AE,Not PEP,,,,No,CH_C,No,72000.0,6000.0,No,MEDIUM,No,BACKGROUND
+E07519,Petra S. Bianchi,Person,CH,Not PEP,,,,No,CH_A,No,52000.0,4400.0,Yes,LOW,No,BACKGROUND
+E07566,Emre B. Perrin,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,60000.0,,No,LOW,No,BACKGROUND
+E07573,Tobias N. Antoniou,Person,AE,Not PEP,,,,No,CH_C,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E07580,Delta Ventures Ltd,Company,CY,Not PEP,,,,No,CH_A,Yes,6012000.0,501000.0,Yes,HIGH,No,BACKGROUND
+E07639,Verity Ventures SA,Company,CH,Not PEP,,,,No,CH_C,No,6313000.0,526000.0,No,MEDIUM,No,BACKGROUND
+E07640,Dalia T. Turner,Person,LB,Not PEP,,,,No,CH_A,No,83000.0,6900.0,Yes,LOW,No,BACKGROUND
+E07651,Public Authority GB-03,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E07672,Basil V. Renaud,Person,LB,Not PEP,,,,No,CH_A,No,79000.0,6500.0,Yes,LOW,No,BACKGROUND
+E07674,Olivia A. Zimmermann,Person,FR,Not PEP,,,,No,CH_C,No,89000.0,7400.0,No,LOW,No,BACKGROUND
+E07681,Wim F. Lambert,Person,LB,Not PEP,,,,No,CH_C,No,29000.0,2400.0,Yes,LOW,No,BACKGROUND
+E07693,Nadia C. Bachmann,Person,CH,Not PEP,,,,No,CH_D,No,123000.0,10300.0,Yes,LOW,No,BACKGROUND
+E07700,Wendy S. Petrou,Person,LB,Not PEP,,,,No,CH_A,No,42000.0,3500.0,Yes,LOW,No,BACKGROUND
+E07709,Foxglove Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,104281000.0,,No,MEDIUM,No,BACKGROUND
+E07711,Beacon Investments SA,Company,CH,Not PEP,,,,No,CH_B,No,39382000.0,3282000.0,No,LOW,No,BACKGROUND
+E07716,Klara V. Bachmann,Person,GB,PEP,,,Mayor of Capital City,Yes,CH_C,No,173000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07718,Emre P. Hughes,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,84000.0,,Yes,MEDIUM,No,BACKGROUND
+E07729,Juniper Capital Ltd,Company,GB,Not PEP,,,,No,CH_B,No,1765000.0,147000.0,Yes,LOW,No,BACKGROUND
+E07731,Rafael V. Kunz,Person,CH,Not PEP,,,,No,CH_A,No,254000.0,21100.0,Yes,LOW,No,BACKGROUND
+E07739,Clearwater Services Ltd,Company,GB,Not PEP,,,,No,CH_C,No,493000.0,41000.0,Yes,LOW,No,BACKGROUND
+E07745,Patrick S. Vogel,Person,CH,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E07753,Bruno N. Salameh,Person,LU,Not PEP,,,,No,None (foreign counterparty),No,60000.0,,Yes,LOW,No,BACKGROUND
+E07757,Petra L. Zimmermann,Person,GB,PEP family,E05204,Beatrice T. Marino,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07778,Ursula T. Aoun,Person,CH,Not PEP,,,,No,CH_A,No,145000.0,12000.0,Yes,LOW,No,BACKGROUND
+E07788,Imad H. Fontaine,Person,CH,Not PEP,,,,No,CH_A,No,135000.0,11200.0,Yes,LOW,No,BACKGROUND
+E07813,Lorenz W. Zimmermann,Person,FR,Not PEP,,,,No,CH_C,No,127000.0,10600.0,Yes,LOW,No,BACKGROUND
+E07840,Jana M. Hofer,Person,CH,Not PEP,,,,No,CH_B,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E07842,Simon W. Conti,Person,FR,Not PEP,,,,No,CH_D,No,38000.0,3200.0,Yes,MEDIUM,No,BACKGROUND
+E07851,Sami N. Steiner,Person,CH,Not PEP,,,,No,CH_A,No,92000.0,7700.0,Yes,LOW,No,BACKGROUND
+E07866,Irene N. Lehmann,Person,CH,Not PEP,,,,No,CH_D,No,115000.0,9600.0,Yes,LOW,No,BACKGROUND
+E07877,Camille D. Marti,Person,CH,Not PEP,,,,No,CH_A,No,187000.0,15600.0,Yes,MEDIUM,No,BACKGROUND
+E07887,Bruno G. Frem,Person,CH,Not PEP,,,,No,CH_A,No,48000.0,4000.0,Yes,MEDIUM,No,BACKGROUND
+E07889,Nadia M. Roth,Person,LB,Not PEP,,,,No,CH_A,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E07894,Basil E. Chevalier,Person,AE,PEP family,E06952,Kamal W. Graf,,Yes,CH_C,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E07899,Basil J. Fontaine,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,LOW,No,BACKGROUND
+E07904,Malik A. Chamoun,Person,LB,Not PEP,,,,No,CH_B,No,73000.0,6100.0,Yes,LOW,No,BACKGROUND
+E07922,Tamara L. Hughes,Person,LU,Not PEP,,,,No,CH_A,No,45000.0,3700.0,Yes,LOW,No,BACKGROUND
+E07924,Farah K. Mercier,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E07928,Oskar S. Chamoun,Person,GB,Not PEP,,,,No,CH_D,No,113000.0,9500.0,Yes,MEDIUM,No,BACKGROUND
+E07976,Jasper D. Frem,Person,CH,Not PEP,,,,No,CH_D,No,71000.0,5900.0,Yes,LOW,No,BACKGROUND
+E07986,Dunmore Ventures Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,2117000.0,0.0,Yes,HIGH,No,BACKGROUND
+E07997,Zoe H. Antoniou,Person,US,Not PEP,,,,No,None (foreign counterparty),No,75000.0,,Yes,LOW,No,BACKGROUND
+E08000,Jonas D. Walsh,Person,CH,Not PEP,,,,No,CH_B,No,70000.0,5900.0,Yes,MEDIUM,No,BACKGROUND
+E08002,Fairview Associates SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,55870000.0,,Yes,LOW,No,BACKGROUND
+E08015,Celine E. Gerber,Person,CY,Not PEP,,,,No,None (foreign counterparty),Yes,80000.0,,Yes,LOW,No,BACKGROUND
+E08017,Beatrice F. Zimmermann,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,54000.0,,No,LOW,No,BACKGROUND
+E08023,Adrian M. Ferrari,Person,CH,Not PEP,,,,No,CH_A,No,220000.0,18400.0,Yes,LOW,No,BACKGROUND
+E08036,Malik B. Maalouf,Person,CH,Not PEP,,,,No,CH_A,No,121000.0,10100.0,Yes,LOW,No,BACKGROUND
+E08043,Klara N. Brunner,Person,GB,Not PEP,,,,No,CH_C,No,72000.0,6000.0,Yes,MEDIUM,No,BACKGROUND
+E08070,Klara C. Graf,Person,CH,Not PEP,,,,No,CH_B,No,127000.0,10600.0,No,LOW,No,BACKGROUND
+E08078,Fiona S. Vogel,Person,FR,Not PEP,,,,No,CH_D,No,60000.0,5000.0,Yes,LOW,No,BACKGROUND
+E08113,Basil L. Gerber,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,69000.0,,Yes,MEDIUM,No,BACKGROUND
+E08131,Arcadia Associates SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,4534000.0,,Yes,MEDIUM,No,BACKGROUND
+E08149,Jonas L. Girard,Person,CH,Not PEP,,,,No,CH_B,No,148000.0,12300.0,Yes,MEDIUM,No,BACKGROUND
+E08151,Sami D. Rousseau,Person,CH,Not PEP,,,,No,CH_A,No,72000.0,6000.0,Yes,LOW,No,BACKGROUND
+E08161,Leon R. Mercier,Person,CH,Not PEP,,,,No,CH_C,No,53000.0,4400.0,Yes,LOW,No,BACKGROUND
+E08168,Lorenz G. Bachmann,Person,LB,Not PEP,,,,No,CH_B,No,56000.0,4700.0,No,MEDIUM,No,BACKGROUND
+E08186,Jana H. Zimmermann,Person,LB,Not PEP,,,,No,CH_A,No,46000.0,3900.0,Yes,LOW,No,BACKGROUND
+E08248,Dominik D. Antoniou,Person,CH,Not PEP,,,,No,CH_D,No,79000.0,6600.0,No,LOW,No,BACKGROUND
+E08249,Noah K. Palmer,Person,FR,Not PEP,,,,No,CH_B,No,52000.0,4400.0,Yes,LOW,No,BACKGROUND
+E08260,Dalia S. Kunz,Person,CY,Not PEP,,,,No,CH_A,Yes,56000.0,4700.0,Yes,LOW,No,BACKGROUND
+E08276,Petra M. Bianchi,Person,LB,Not PEP,,,,No,CH_B,No,38000.0,3200.0,Yes,LOW,No,BACKGROUND
+E08301,Hana F. Fakhoury,Person,CH,Not PEP,,,,No,CH_D,No,163000.0,13500.0,Yes,LOW,No,BACKGROUND
+E08307,Olivia W. Roth,Person,AE,Not PEP,,,,No,CH_B,No,134000.0,11100.0,Yes,LOW,No,BACKGROUND
+E08309,Willow Investments SAL,Company,LB,Not PEP,,,,No,CH_C,No,3696000.0,308000.0,Yes,LOW,No,BACKGROUND
+E08318,Jonas B. Bennett,Person,CH,Not PEP,,,,No,CH_C,No,203000.0,16900.0,Yes,LOW,No,BACKGROUND
+E08336,Jana K. Mansour,Person,CH,Not PEP,,,,No,CH_B,No,202000.0,16800.0,Yes,MEDIUM,No,BACKGROUND
+E08372,Emre C. Mansour,Person,LB,Not PEP,,,,No,CH_A,No,31000.0,2600.0,Yes,MEDIUM,No,BACKGROUND
+E08379,Aurora Ventures Ltd,Company,CY,Not PEP,,,,No,None (foreign counterparty),Yes,44694000.0,,Yes,HIGH,No,BACKGROUND
+E08384,Hugo A. Saad,Person,LU,Not PEP,,,,No,CH_B,No,360000.0,30000.0,No,LOW,No,BACKGROUND
+E08439,Emil L. Roth,Person,CH,Not PEP,,,,No,CH_D,No,46000.0,3900.0,Yes,LOW,No,BACKGROUND
+E08441,Vera P. Renaud,Person,LB,Not PEP,,,,No,CH_B,No,23000.0,1900.0,Yes,LOW,No,BACKGROUND
+E08456,Marta F. Fakhoury,Person,CY,PEP,,,Military General,Yes,CH_C,Yes,154000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E08457,Beacon Properties SA,Company,CH,Not PEP,,,,No,CH_B,No,2288000.0,191000.0,Yes,MEDIUM,No,BACKGROUND
+E08473,Selina C. Turner,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,88000.0,,Yes,LOW,No,BACKGROUND
+E08488,Oskar R. Rousseau,Person,CH,Not PEP,,,,No,CH_B,No,99000.0,8300.0,No,LOW,No,BACKGROUND
+E08509,Dominik G. Renaud,Person,FR,PEP family,E06277,Celine B. Steiner,,Yes,CH_D,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E08524,Ghassan M. Bianchi,Person,CH,Not PEP,,,,No,CH_B,No,20000.0,1700.0,Yes,LOW,No,BACKGROUND
+E08537,Foxglove Ventures SA,Company,CH,Not PEP,,,,No,CH_D,No,4579000.0,382000.0,Yes,LOW,No,BACKGROUND
+E08538,Tamara S. Ferrari,Person,FR,Not PEP,,,,No,CH_D,No,148000.0,12300.0,No,MEDIUM,No,BACKGROUND
+E08552,Beatrice J. Lehmann,Person,CY,PEP family,E02674,Gabriel W. Frem,,Yes,CH_A,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E08559,Aurora Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,623000.0,,Yes,LOW,No,BACKGROUND
+E08579,Elisa S. Walsh,Person,LB,Not PEP,,,,No,CH_A,No,118000.0,9800.0,Yes,MEDIUM,No,BACKGROUND
+E08586,Patrick S. Brunner,Person,AE,Not PEP,,,,No,CH_D,No,31000.0,2600.0,Yes,MEDIUM,No,BACKGROUND
+E08603,Fairview Consulting SA,Company,CH,Not PEP,,,,No,CH_A,No,1619000.0,135000.0,Yes,MEDIUM,No,BACKGROUND
+E08606,Helena M. Conti,Person,FR,Not PEP,,,,No,CH_B,No,64000.0,5300.0,Yes,LOW,No,BACKGROUND
+E08609,Kamal B. Steiner,Person,US,Not PEP,,,,No,CH_B,No,40000.0,3300.0,Yes,LOW,No,BACKGROUND
+E08634,Katrin P. Bianchi,Person,LB,Not PEP,,,,No,CH_C,No,102000.0,8500.0,Yes,LOW,No,BACKGROUND
+E08670,Klara S. Ferrari,Person,CH,Not PEP,,,,No,CH_D,No,78000.0,6500.0,Yes,LOW,No,BACKGROUND
+E08694,Helena D. Maalouf,Person,CH,Not PEP,,,,No,CH_C,No,141000.0,11700.0,Yes,LOW,No,BACKGROUND
+E08704,Klara T. Mercier,Person,CY,Not PEP,,,,No,CH_D,Yes,77000.0,6400.0,Yes,MEDIUM,No,BACKGROUND
+E08712,Leon D. Salameh,Person,CY,Not PEP,,,,No,CH_D,Yes,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E08714,Klara B. Marti,Person,CH,Not PEP,,,,No,CH_C,No,376000.0,31400.0,Yes,LOW,No,BACKGROUND
+E08722,Seabright Partners SA,Company,CH,Not PEP,,,,No,CH_D,No,14495000.0,1208000.0,Yes,LOW,No,BACKGROUND
+E08725,Goldcrest Ventures SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,2581000.0,,Yes,MEDIUM,No,BACKGROUND
+E08762,Petra K. Aoun,Person,CH,Not PEP,,,,No,CH_D,No,181000.0,15100.0,Yes,LOW,No,BACKGROUND
+E08772,Dominik E. Perrin,Person,CH,Not PEP,,,,No,CH_D,No,82000.0,6900.0,Yes,LOW,No,BACKGROUND
+E08775,Polaris Properties SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3642000.0,,Yes,MEDIUM,No,BACKGROUND
+E08776,Oskar G. Bachmann,Person,LB,Not PEP,,,,No,CH_C,No,26000.0,2100.0,Yes,LOW,No,BACKGROUND
+E08781,Goldcrest Partners SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,1387000.0,,Yes,LOW,No,BACKGROUND
+E08825,Lindenhof Holdings SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,217000.0,,Yes,LOW,No,BACKGROUND
+E08841,Ines B. Salameh,Person,CH,Not PEP,,,,No,CH_C,No,68000.0,5700.0,Yes,LOW,No,BACKGROUND
+E08848,Ursula B. Chamoun,Person,US,Not PEP,,,,No,None (foreign counterparty),No,65000.0,,Yes,MEDIUM,No,BACKGROUND
+E08850,Sami J. Gerber,Person,FR,Not PEP,,,,No,CH_D,No,67000.0,5600.0,Yes,LOW,No,BACKGROUND
+E08863,Zoe M. Hughes,Person,CH,Not PEP,,,,No,CH_B,No,152000.0,12600.0,Yes,MEDIUM,No,BACKGROUND
+E08865,Elisa P. Roth,Person,CY,Not PEP,,,,No,CH_C,Yes,33000.0,2800.0,Yes,LOW,No,BACKGROUND
+E08884,Aurora Investments Ltd,Company,CY,Not PEP,,,,No,CH_D,Yes,11121000.0,927000.0,Yes,HIGH,No,BACKGROUND
+E08886,Maple Logistics SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,7021000.0,,Yes,MEDIUM,No,BACKGROUND
+E08888,Dario R. Hughes,Person,GB,Not PEP,,,,No,CH_A,No,34000.0,2900.0,Yes,LOW,No,BACKGROUND
+E08890,Clearwater Consulting SA,Company,CH,Not PEP,,,,No,CH_C,No,2437000.0,203000.0,No,LOW,No,BACKGROUND
+E08896,Hugo N. Bianchi,Person,FR,Not PEP,,,,No,CH_A,No,110000.0,9200.0,Yes,LOW,No,BACKGROUND
+E08910,Xavier W. Girard,Person,FR,PEP family,E06277,Celine B. Steiner,,Yes,CH_D,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E08912,Emre M. Fontaine,Person,US,Not PEP,,,,No,None (foreign counterparty),No,107000.0,,Yes,LOW,No,BACKGROUND
+E08918,Greta S. Hayek,Person,CH,Not PEP,,,,No,CH_C,No,66000.0,5500.0,Yes,LOW,No,BACKGROUND
+E08923,Bruno E. Hughes,Person,CH,Not PEP,,,,No,CH_A,No,54000.0,4500.0,Yes,LOW,No,BACKGROUND
+E08933,Helena W. Antoniou,Person,FR,Not PEP,,,,No,CH_D,No,154000.0,12900.0,Yes,LOW,No,BACKGROUND
+E08934,Helena E. Steiner,Person,GB,Not PEP,,,,No,CH_C,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E08943,Highland Logistics Ltd,Company,VG,Not PEP,,,,No,CH_B,Yes,1070000.0,0.0,Yes,HIGH,No,BACKGROUND
+E08945,Yarrow Associates SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,175000.0,,Yes,LOW,No,BACKGROUND
+E08952,Camille M. Georgiou,Person,GB,Not PEP,,,,No,CH_D,No,174000.0,14500.0,No,MEDIUM,No,BACKGROUND
+E08959,Public Authority FR-02,Government body,FR,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E08963,Rafael B. Renaud,Person,CY,Not PEP,,,,No,CH_B,Yes,86000.0,7100.0,Yes,LOW,No,BACKGROUND
+E08974,Rana H. Schmid,Person,FR,Not PEP,,,,No,CH_A,No,93000.0,7800.0,Yes,LOW,No,BACKGROUND
+E08987,Emre R. Hofer,Person,FR,PEP,,,Director of National Pension Fund,Yes,CH_B,No,191000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09000,Adrian E. Hughes,Person,CH,Not PEP,,,,No,CH_A,No,55000.0,4600.0,Yes,LOW,No,BACKGROUND
+E09017,Dominik J. Ricci,Person,CH,Not PEP,,,,No,CH_A,No,83000.0,6900.0,Yes,MEDIUM,No,BACKGROUND
+E09054,Goldcrest Consulting SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,608000.0,,Yes,MEDIUM,No,BACKGROUND
+E09066,Xavier C. Renaud,Person,GB,PEP family,E02346,Petra S. Hofer,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09087,Saffron Capital SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,821000.0,,No,LOW,No,BACKGROUND
+E09118,Dalia C. Frei,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,86000.0,,No,LOW,No,BACKGROUND
+E09131,Jadestone Ventures SA,Company,CH,Not PEP,,,,No,CH_B,No,5907000.0,492000.0,Yes,LOW,No,BACKGROUND
+E09133,Fairview Ventures SAL,Company,LB,Not PEP,,,,No,None (foreign counterparty),No,2475000.0,,Yes,LOW,No,BACKGROUND
+E09135,Celine P. Zimmermann,Person,LB,Not PEP,,,,No,CH_B,No,22000.0,1800.0,Yes,LOW,No,BACKGROUND
+E09139,Renata C. Schmid,Person,FR,Not PEP,,,,No,CH_B,No,83000.0,6900.0,No,LOW,No,BACKGROUND
+E09154,Rana N. Maalouf,Person,LB,PEP family,E03487,Gabriel M. Brunner,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09163,Malik F. Schmid,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,67000.0,,Yes,LOW,No,BACKGROUND
+E09168,Jonas J. Vogel,Person,AE,Not PEP,,,,No,CH_B,No,71000.0,5900.0,Yes,LOW,No,BACKGROUND
+E09179,Glacier Properties SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,3370000.0,,Yes,LOW,No,BACKGROUND
+E09217,Quayside Holdings FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,3485000.0,,Yes,MEDIUM,No,BACKGROUND
+E09226,Redwood Trading FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,15836000.0,,Yes,LOW,No,BACKGROUND
+E09278,Jonas D. Marti,Person,CH,Not PEP,,,,No,CH_A,No,50000.0,4200.0,Yes,LOW,No,BACKGROUND
+E09285,Amira M. Schmid,Person,LB,Not PEP,,,,No,CH_C,No,51000.0,4200.0,Yes,LOW,No,BACKGROUND
+E09312,Felix W. Walsh,Person,CH,Not PEP,,,,No,CH_D,No,244000.0,20300.0,Yes,LOW,No,BACKGROUND
+E09323,Helena N. Fakhoury,Person,LB,Not PEP,,,,No,CH_A,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E09338,Jonas S. Bachmann,Person,FR,PEP,,,Member of Parliament,Yes,CH_A,No,202000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09345,Yara R. Fakhoury,Person,CH,Not PEP,,,,No,CH_B,No,332000.0,27700.0,No,LOW,No,BACKGROUND
+E09357,Olivia B. Ferrari,Person,GB,Not PEP,,,,No,None (foreign counterparty),No,81000.0,,Yes,LOW,No,BACKGROUND
+E09369,Imad M. Maalouf,Person,US,Not PEP,,,,No,CH_B,No,95000.0,8000.0,Yes,MEDIUM,No,BACKGROUND
+E09405,Imad G. Aoun,Person,AE,Not PEP,,,,No,None (foreign counterparty),No,77000.0,,No,LOW,No,BACKGROUND
+E09412,Layla T. Antoniou,Person,CH,Not PEP,,,,No,CH_D,No,34000.0,2800.0,Yes,LOW,No,BACKGROUND
+E09427,Adrian C. Chamoun,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,130000.0,,Yes,LOW,No,BACKGROUND
+E09431,Vera L. Gerber,Person,CH,Not PEP,,,,No,CH_A,No,168000.0,14000.0,Yes,LOW,No,BACKGROUND
+E09436,Jana B. Maalouf,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,29000.0,,Yes,LOW,No,BACKGROUND
+E09442,Jana D. Conti,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,61000.0,,Yes,LOW,No,BACKGROUND
+E09462,Camille H. Girard,Person,CH,Not PEP,,,,No,CH_C,No,132000.0,11000.0,No,LOW,No,BACKGROUND
+E09469,Juniper Ventures Sarl,Company,LU,Not PEP,,,,No,None (foreign counterparty),No,7217000.0,,Yes,MEDIUM,No,BACKGROUND
+E09488,Rana N. Baumann,Person,GB,Not PEP,,,,No,CH_C,No,71000.0,6000.0,Yes,LOW,No,BACKGROUND
+E09489,Rafael R. Wyss,Person,US,Not PEP,,,,No,None (foreign counterparty),No,68000.0,,Yes,LOW,No,BACKGROUND
+E09494,Yara E. Chamoun,Person,CY,Not PEP,,,,No,CH_B,Yes,81000.0,6700.0,Yes,LOW,No,BACKGROUND
+E09511,Amira W. Baumann,Person,LB,PEP,,,Member of Parliament,Yes,CH_B,No,205000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09550,Greta B. Ferrari,Person,CH,Not PEP,,,,No,CH_C,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E09577,Cora T. Ricci,Person,CY,Not PEP,,,,No,CH_A,Yes,100000.0,8300.0,Yes,LOW,No,BACKGROUND
+E09585,Wendy V. Conti,Person,CH,Not PEP,,,,No,CH_A,No,207000.0,17200.0,Yes,LOW,No,BACKGROUND
+E09596,Quayside Investments SARL,Company,FR,Not PEP,,,,No,None (foreign counterparty),No,4566000.0,,No,LOW,No,BACKGROUND
+E09607,Patrick P. Salameh,Person,GB,PEP family,E02346,Petra S. Hofer,,Yes,CH_A,No,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09621,Marlowe Consulting SA,Company,CH,Not PEP,,,,No,CH_D,No,1128000.0,94000.0,Yes,LOW,No,BACKGROUND
+E09625,Fiona R. Vogel,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,LOW,No,BACKGROUND
+E09627,Dario V. Wyss,Person,CH,Not PEP,,,,No,CH_D,No,61000.0,5100.0,Yes,LOW,No,BACKGROUND
+E09642,Sami M. Frei,Person,CH,Not PEP,,,,No,CH_D,No,104000.0,8700.0,Yes,MEDIUM,No,BACKGROUND
+E09654,Valentin R. Ferrari,Person,CH,Not PEP,,,,No,CH_B,No,244000.0,20300.0,Yes,LOW,No,BACKGROUND
+E09664,Hugo K. Schmid,Person,GB,PEP,,,Supreme Court Judge,Yes,CH_B,No,204000.0,40000.0,Yes,HIGH,No,S4_LEGIT_PEP
+E09690,Wim W. Schmid,Person,CH,Not PEP,,,,No,CH_B,No,60000.0,5000.0,No,MEDIUM,No,BACKGROUND
+E09695,Hillside Logistics FZE,Company,AE,Not PEP,,,,No,None (foreign counterparty),No,10597000.0,,Yes,LOW,No,BACKGROUND
+E09727,Quentin P. Graf,Person,CH,Not PEP,,,,No,CH_B,No,113000.0,9400.0,Yes,LOW,No,BACKGROUND
+E09762,Wendy P. Rousseau,Person,CH,Not PEP,,,,No,CH_C,No,50000.0,4200.0,Yes,MEDIUM,No,BACKGROUND
+E09804,Bruno S. Mansour,Person,AE,Not PEP,,,,No,CH_A,No,131000.0,10900.0,Yes,LOW,No,BACKGROUND
+E09807,Hugo G. Lambert,Person,LB,Not PEP,,,,No,CH_C,No,94000.0,7800.0,Yes,LOW,No,BACKGROUND
+E09819,Lindenhof Associates Ltd,Company,GB,Not PEP,,,,No,None (foreign counterparty),No,1611000.0,,Yes,LOW,No,BACKGROUND
+E09823,Nils W. Galli,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,34000.0,,Yes,LOW,No,BACKGROUND
+E09829,Redwood Logistics LLC,Company,US,Not PEP,,,,No,None (foreign counterparty),No,10268000.0,,Yes,LOW,No,BACKGROUND
+E09871,Tobias M. Marino,Person,CH,Not PEP,,,,No,CH_D,No,174000.0,14500.0,Yes,LOW,No,BACKGROUND
+E09873,Leon K. Ferrari,Person,CH,Not PEP,,,,No,CH_C,No,49000.0,4100.0,Yes,LOW,No,BACKGROUND
+E09892,Xavier R. Girard,Person,CH,Not PEP,,,,No,CH_B,No,64000.0,5400.0,Yes,LOW,No,BACKGROUND
+E09896,Coral Holdings SA,Company,CH,Not PEP,,,,No,CH_C,No,522000.0,43000.0,Yes,LOW,No,BACKGROUND
+E09899,Falcon Partners SA,Company,CH,Not PEP,,,,No,CH_D,No,6784000.0,565000.0,Yes,MEDIUM,No,BACKGROUND
+E09900,Public Authority GB-04,Government body,GB,Not PEP,,,,No,None (foreign counterparty),No,,,Unknown,Not rated,No,S4_LEGIT_PEP
+E09917,Clearwater Group SAL,Company,LB,Not PEP,,,,No,CH_A,No,6022000.0,502000.0,Yes,LOW,No,BACKGROUND
+E09942,Noah R. Mansour,Person,CH,Not PEP,,,,No,CH_D,No,81000.0,6800.0,Yes,LOW,No,BACKGROUND
+E09944,Renata A. Girard,Person,LB,Not PEP,,,,No,None (foreign counterparty),No,39000.0,,No,MEDIUM,No,BACKGROUND
+E09947,Quayside Ventures SA,Company,CH,Not PEP,,,,No,CH_A,No,2433000.0,203000.0,Yes,MEDIUM,No,BACKGROUND
+E09949,Falcon Properties SA,Company,CH,Not PEP,,,,No,CH_A,No,33302000.0,2775000.0,Yes,MEDIUM,No,BACKGROUND
+E09963,Amira C. Renaud,Person,FR,Not PEP,,,,No,None (foreign counterparty),No,49000.0,,Yes,LOW,No,BACKGROUND
+E09965,Rafael L. Salameh,Person,CH,Not PEP,,,,No,CH_C,No,103000.0,8500.0,Yes,MEDIUM,No,BACKGROUND
+E09974,Sami G. Gerber,Person,CH,Not PEP,,,,No,CH_D,No,54000.0,4500.0,Yes,LOW,No,BACKGROUND
+E09976,Rana F. Roth,Person,CY,PEP family,E05832,Lorenz A. Frei,,Yes,CH_A,Yes,,5000.0,Yes,HIGH,No,S4_LEGIT_PEP
