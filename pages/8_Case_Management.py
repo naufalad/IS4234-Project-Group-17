@@ -256,6 +256,9 @@ else:
         key=f"case_assignment_board_{board_nonce}",
     )
 
+    if drop_event and "pending_case_drop" not in st.session_state:
+        case_id = drop_event.get("case_id")
+
         # Click on the x button of an assigned case -> open the manage/remove dialog
     if (
         drop_event
