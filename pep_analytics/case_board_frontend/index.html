@@ -61,17 +61,19 @@
       node.dataset.caseId = item.case_id;
       node.innerHTML = `<div class="case-title">${text(item.case_id)} · ${text(item.entity_name)}</div>
         <div class="case-meta">Risk ${Number(item.risk_score || 0).toFixed(0)} · ${text(item.swiss_bank || "")}</div>`;
-            if (removable) {
+      if (removable) {
         const x = document.createElement("button");
         x.className = "case-x";
         x.type = "button";
-        x.title = "Remove or reassign this case";
-        x.setAttribute("aria-label", "Remove or reassign this case");
+        x.title = "Remove assignment";
+        x.setAttribute("aria-label", "Remove assignment");
         x.textContent = "\u00d7";
+        x.addEventListener("pointerdown", event => event.stopPropagation());
         x.addEventListener("click", event => {
+          event.preventDefault();
           event.stopPropagation();
           send("streamlit:setComponentValue", {
-            value: { action: "manage", case_id: item.case_id, officer_id: item.officer_id },
+            value: { action: "remove", case_id: item.case_id, officer_id: item.officer_id },
             dataType: "json"
           });
         });
@@ -137,7 +139,7 @@
           const caseId = event.dataTransfer.getData("text/plain") || draggedCaseId;
           if (!caseId) return;
           send("streamlit:setComponentValue", {
-            value: { case_id: caseId, officer_id: officer.officer_id },
+            value: { action: "assign", case_id: caseId, officer_id: officer.officer_id },
             dataType: "json"
           });
         });

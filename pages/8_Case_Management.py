@@ -25,6 +25,7 @@ def _reset_assignment_board() -> None:
         st.session_state.get("assignment_board_nonce", 0) + 1
     )
     st.session_state.pop("pending_case_drop", None)
+    st.session_state.pop("pending_case_removal", None)
     st.session_state.pop("pending_case_manage", None)
 
 
@@ -82,6 +83,42 @@ def confirm_case_drop_dialog(
         DBM.assign_officer_to_case(case_id, officer_id, notes)
         _reset_assignment_board()
         st.toast(f"{case_id} assigned to {officer['name']}.")
+        st.rerun()
+
+
+@st.dialog("Remove case assignment", dismissible=False)
+def confirm_case_removal_dialog(case_id: str, officer_id: str) -> None:
+    assignments = DBM.list_officer_cases()
+    selected = assignments[
+        (assignments["case_id"] == case_id)
+        & (assignments["officer_id"] == officer_id)
+    ]
+    if selected.empty:
+        st.info("This assignment has already been removed.")
+        if st.button("Close", width="stretch"):
+            _reset_assignment_board()
+            st.rerun()
+        return
+
+    assignment = selected.iloc[0]
+    st.warning(
+        f"Remove **{assignment['entity_name']}** (`{case_id}`) from "
+        f"**{assignment['officer_name']}** (`{officer_id}`)?"
+    )
+    st.caption("The case will return to the unassigned critical-case lane.")
+    cancel_col, remove_col = st.columns(2)
+    if cancel_col.button("Cancel", width="stretch", key="cancel_case_removal"):
+        _reset_assignment_board()
+        st.rerun()
+    if remove_col.button(
+        "Remove assignment",
+        type="primary",
+        width="stretch",
+        key="confirm_case_removal",
+    ):
+        DBM.unassign_officer_from_case(case_id, officer_id)
+        _reset_assignment_board()
+        st.toast(f"{case_id} returned to the unassigned lane.")
         st.rerun()
 
 
@@ -256,46 +293,53 @@ else:
         key=f"case_assignment_board_{board_nonce}",
     )
 
-    if drop_event and "pending_case_drop" not in st.session_state:
+    if drop_event:
+        action = drop_event.get("action", "assign")
         case_id = drop_event.get("case_id")
+        officer_id = drop_event.get("officer_id")
 
-        # Click on the x button of an assigned case -> open the manage/remove dialog
-    if (
-        drop_event
-        and drop_event.get("action") == "manage"
-        and "pending_case_drop" not in st.session_state
-        and "pending_case_manage" not in st.session_state
-    ):
-        st.session_state["pending_case_manage"] = (
-            drop_event.get("case_id"),
-            drop_event.get("officer_id"),
-        )
-    elif (
-        drop_event
-        and drop_event.get("action") != "manage"
-        and "pending_case_drop" not in st.session_state
-        and "pending_case_manage" not in st.session_state
-    ):
-        target_officer = drop_event.get("officer_id")
-        source_matches = assignments[assignments["case_id"] == case_id]
-        previous_officer = (
-            str(source_matches.iloc[0]["officer_id"])
-            if not source_matches.empty
-            else None
-        )
-        if case_id and target_officer and previous_officer != target_officer:
-            st.session_state["pending_case_drop"] = (
-                case_id,
-                target_officer,
-                previous_officer,
+        if (
+            action == "remove"
+            and case_id
+            and officer_id
+            and "pending_case_removal" not in st.session_state
+        ):
+            st.session_state["pending_case_removal"] = (case_id, officer_id)
+        elif (
+            action == "manage"
+            and case_id
+            and officer_id
+            and "pending_case_manage" not in st.session_state
+        ):
+            # Backward compatibility with an already-loaded board component.
+            st.session_state["pending_case_manage"] = (case_id, officer_id)
+        elif (
+            action == "assign"
+            and case_id
+            and officer_id
+            and "pending_case_drop" not in st.session_state
+        ):
+            source_matches = assignments[assignments["case_id"] == case_id]
+            previous_officer = (
+                str(source_matches.iloc[0]["officer_id"])
+                if not source_matches.empty
+                else None
             )
+            if previous_officer != officer_id:
+                st.session_state["pending_case_drop"] = (
+                    case_id,
+                    officer_id,
+                    previous_officer,
+                )
 
+    pending_removal = st.session_state.get("pending_case_removal")
     pending_drop = st.session_state.get("pending_case_drop")
-    if pending_drop:
-        confirm_case_drop_dialog(*pending_drop)
-    
     pending_manage = st.session_state.get("pending_case_manage")
-    if pending_manage and not pending_drop:
+    if pending_removal:
+        confirm_case_removal_dialog(*pending_removal)
+    elif pending_drop:
+        confirm_case_drop_dialog(*pending_drop)
+    elif pending_manage:
         manage_assignment_dialog(*pending_manage)
 st.divider()
 st.subheader("2. Cases assigned to officers")

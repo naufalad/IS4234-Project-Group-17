@@ -15,7 +15,7 @@ from typing import Any
 import pandas as pd
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = REPO_ROOT / "dataset2"
+DATA_DIR = REPO_ROOT / "dataset1"
 DEFAULT_DB_PATH = REPO_ROOT / "pep_database.db"
 
 # Schema definitions
@@ -236,10 +236,10 @@ def init_db(db_path: Path | str | None = None, force_reseed: bool = False) -> No
         # Check if tables have rows; if not, seed from CSVs
         cursor = conn.cursor()
         for table, file_name in [
-            ("entities", "entities.csv"),
-            ("network_edges", "network_edges.csv"),
-            ("transactions", "transactions.csv"),
-            ("pep_quarterly_report", "pep_quarterly_report.csv"),
+            ("entities", "entities_flat.csv"),
+            ("network_edges", "network_edges_flat.csv"),
+            ("transactions", "transactions_flat.csv"),
+            ("pep_quarterly_report", "pep_quarterly_report_flat.csv"),
         ]:
             cursor.execute(f"SELECT COUNT(*) FROM {table}")
             count = cursor.fetchone()[0]
@@ -773,6 +773,37 @@ def list_officer_cases(db_path: Path | str | None = None) -> pd.DataFrame:
         )
     finally:
         conn.close()
+
+
+def unassign_officer_from_case(
+    case_id: str,
+    officer_id: str,
+    db_path: Path | str | None = None,
+) -> bool:
+    """Remove an officer assignment and clear the legacy supervisor field."""
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    conn = get_connection(db_path)
+    with conn:
+        cursor = conn.execute(
+            "DELETE FROM officer_cases WHERE case_id = ? AND officer_id = ?",
+            [case_id, officer_id],
+        )
+        removed = cursor.rowcount > 0
+        if removed:
+            remaining = conn.execute(
+                "SELECT COUNT(*) FROM officer_cases WHERE case_id = ?", [case_id]
+            ).fetchone()[0]
+            if remaining == 0:
+                conn.execute(
+                    """
+                    UPDATE cases
+                    SET assigned_supervisor = NULL, updated_at = ?
+                    WHERE case_id = ?
+                    """,
+                    [now_iso, case_id],
+                )
+    conn.close()
+    return removed
 
 
 def update_officer_case(
