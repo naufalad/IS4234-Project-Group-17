@@ -1,6 +1,6 @@
-# FINMA PEP Supervision — simplified synthetic dataset
+# FINMA PEP Supervisory Technology
 
-Four tables. All names are fictional; the pattern mirrors the HSBC Geneva / Forry case (2002–2016).
+Four tables. All names are fictional;
 `is_suspicious` and `scenario` are the answer key — use them to check results, not as inputs.
 
 | File | Rows | Use it for |
