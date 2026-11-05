@@ -831,4 +831,23 @@ def batch_insert_unified_records(
         "escalations_triggered": escalated,
     }
 
+def unassign_case(case_id: str, db_path: Path | str | None = None) -> bool:
+    """Remove a case's officer assignment so it returns to the unassigned list."""
+    init_db(db_path)
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    conn = get_connection(db_path)
+    try:
+        with conn:
+            removed = conn.execute(
+                "DELETE FROM officer_cases WHERE case_id = ?", [case_id]
+            ).rowcount > 0
+            conn.execute(
+                "UPDATE cases SET assigned_supervisor = 'Unassigned', updated_at = ? "
+                "WHERE case_id = ?",
+                [now_iso, case_id],
+            )
+    finally:
+        conn.close()
+    return removed
+
 

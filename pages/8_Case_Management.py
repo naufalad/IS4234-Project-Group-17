@@ -25,6 +25,7 @@ def _reset_assignment_board() -> None:
         st.session_state.get("assignment_board_nonce", 0) + 1
     )
     st.session_state.pop("pending_case_drop", None)
+    st.session_state.pop("pending_case_manage", None)
 
 
 @st.dialog("Confirm case assignment", width="large", dismissible=False)
@@ -83,6 +84,63 @@ def confirm_case_drop_dialog(
         st.toast(f"{case_id} assigned to {officer['name']}.")
         st.rerun()
 
+
+@st.dialog("Change case assignment", width="large", dismissible=False)
+def manage_assignment_dialog(case_id: str, officer_id: str) -> None:
+    assignments = DBM.list_officer_cases()
+    current = assignments[
+        (assignments["case_id"] == case_id)
+        & (assignments["officer_id"] == officer_id)
+    ]
+    if current.empty:
+        st.error("This assignment no longer exists.")
+        if st.button("Close", width="stretch", key="manage_close"):
+            _reset_assignment_board()
+            st.rerun()
+        return
+
+    row = current.iloc[0]
+    st.markdown(f"**Case:** `{case_id}` · {row['entity_name']}")
+    st.markdown(f"**Currently assigned to:** {row['officer_name']} (`{officer_id}`)")
+
+    all_officers = DBM.list_officers()
+    others = all_officers[all_officers["officer_id"] != officer_id]
+    label_to_id = {f"{r.name} ({r.officer_id})": r.officer_id for r in others.itertuples()}
+
+    choices = ["Remove assignment (back to unassigned)"]
+    if label_to_id:
+        choices.insert(0, "Reassign to another officer")
+    action = st.radio("What would you like to do?", choices, key=f"manage_action_{case_id}")
+
+    new_officer_id = None
+    notes = str(row["notes"] or "")
+    if action.startswith("Reassign"):
+        chosen_label = st.selectbox(
+            "New officer", list(label_to_id), key=f"manage_new_officer_{case_id}"
+        )
+        new_officer_id = label_to_id[chosen_label]
+        notes = st.text_area(
+            "Handover notes", value=notes, height=140,
+            key=f"manage_notes_{case_id}",
+        )
+    else:
+        st.info("The case goes back to **Unassigned critical cases**.")
+
+    cancel_col, submit_col = st.columns(2)
+    if cancel_col.button("Cancel", width="stretch", key="cancel_case_manage"):
+        _reset_assignment_board()
+        st.rerun()
+    if submit_col.button(
+        "Confirm", type="primary", width="stretch", key="confirm_case_manage"
+    ):
+        if new_officer_id:
+            DBM.assign_officer_to_case(case_id, new_officer_id, notes)
+            st.toast(f"{case_id} reassigned to {chosen_label}.")
+        else:
+            DBM.unassign_case(case_id)
+            st.toast(f"{case_id} is unassigned again.")
+        _reset_assignment_board()
+        st.rerun()
 
 @st.dialog("Assignment notes", width="large")
 def assignment_notes_dialog(case_id: str, officer_id: str) -> None:
@@ -274,3 +332,24 @@ else:
                 )
             st.success("All assignment changes saved.")
             st.rerun()
+
+st.divider()
+st.subheader("3. All alert cases")
+overview = DBM.list_cases()[["case_id", "risk_score"]].merge(
+    DBM.list_officer_cases()[["case_id", "officer_name", "status"]],
+    on="case_id", how="left",
+)
+overview["unassigned"] = overview["officer_name"].isna()
+overview = overview.sort_values(["unassigned", "risk_score"], ascending=[True, False])
+overview["officer_name"] = overview["officer_name"].fillna("—")
+overview["status"] = overview["status"].fillna("Not assigned").str.replace("_", " ")
+st.dataframe(
+    overview[["case_id", "officer_name", "status"]],
+    width="stretch",
+    hide_index=True,
+    column_config={
+        "case_id": st.column_config.TextColumn("Case"),
+        "officer_name": st.column_config.TextColumn("Officer"),
+        "status": st.column_config.TextColumn("Status"),
+    },
+)

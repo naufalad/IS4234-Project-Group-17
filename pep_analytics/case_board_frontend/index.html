@@ -28,9 +28,11 @@
     .officer-header { padding: 10px; border-bottom: 1px solid var(--border); font-weight: 700; }
     .officer-email { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; font-weight: 400; }
     .officer-cases { min-height: 58px; max-height: 210px; padding: 7px; overflow-y: auto; }
-    .case-card { margin: 6px 0; padding: 10px; border-left: 4px solid var(--accent); border-radius: 7px; background: #171a21; cursor: grab; user-select: none; }
     .case-card:active { cursor: grabbing; }
     .case-card.dragging { opacity: .45; }
+    .case-card { position: relative; margin: 6px 0; padding: 10px 30px 10px 10px; border-left: 4px solid var(--accent); border-radius: 7px; background: #171a21; cursor: grab; user-select: none; }
+    .case-x { position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--muted); font-size: 16px; line-height: 22px; cursor: pointer; }
+    .case-x:hover { background: rgba(255,75,75,.25); color: var(--text); }
     .case-title { font-weight: 700; }
     .case-meta { margin-top: 4px; color: var(--muted); font-size: 12px; }
     .empty { padding: 12px; color: var(--muted); font-size: 13px; text-align: center; }
@@ -52,13 +54,29 @@
       return span.innerHTML;
     }
 
-    function card(item) {
+    function card(item, removable = false) {
       const node = document.createElement("div");
       node.className = "case-card";
       node.draggable = true;
       node.dataset.caseId = item.case_id;
       node.innerHTML = `<div class="case-title">${text(item.case_id)} · ${text(item.entity_name)}</div>
         <div class="case-meta">Risk ${Number(item.risk_score || 0).toFixed(0)} · ${text(item.swiss_bank || "")}</div>`;
+            if (removable) {
+        const x = document.createElement("button");
+        x.className = "case-x";
+        x.type = "button";
+        x.title = "Remove or reassign this case";
+        x.setAttribute("aria-label", "Remove or reassign this case");
+        x.textContent = "\u00d7";
+        x.addEventListener("click", event => {
+          event.stopPropagation();
+          send("streamlit:setComponentValue", {
+            value: { action: "manage", case_id: item.case_id, officer_id: item.officer_id },
+            dataType: "json"
+          });
+        });
+        node.appendChild(x);
+      }
       node.addEventListener("dragstart", event => {
         draggedCaseId = item.case_id;
         node.classList.add("dragging");
@@ -102,7 +120,7 @@
         const cases = document.createElement("div");
         cases.className = "officer-cases";
         const owned = assignments.filter(item => item.officer_id === officer.officer_id);
-        owned.forEach(item => cases.appendChild(card(item)));
+        owned.forEach(item => cases.appendChild(card(item, true)));
         if (!owned.length) cases.innerHTML = `<div class="empty">Drop a case here</div>`;
         zone.appendChild(cases);
         zone.addEventListener("dragover", event => {
