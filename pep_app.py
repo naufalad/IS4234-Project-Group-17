@@ -317,38 +317,14 @@ def batch_data_dialog(cfg):
 # ---- landing page ----
 def home_page():
     cfg = sidebar_config()
-    title_col, action_col = st.columns([9, 1], vertical_alignment="center")
+    title_col, action_col = st.columns([7, 2], vertical_alignment="center")
     title_col.title("FINMA PEP Supervisory Analytics")
-    st.markdown(
-        f"""
-        <style>
-        .st-key-open_batch_dialog button {{
-            width: 2.5rem;
-            height: 2.5rem;
-            margin-left: auto;
-            border: 1px solid var(--secondary-background-color);
-            border-radius: 0.5rem;
-            background-color: var(--secondary-background-color);
-            background-image: url("{_batch_icon_data_uri()}");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 1.35rem 1.35rem;
-            transition: transform 120ms ease, border-color 120ms ease;
-        }}
-        .st-key-open_batch_dialog button:hover {{
-            transform: translateY(-1px);
-            border-color: #ff4b4b;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
     if action_col.button(
-        "",
-        help=(
-            "Generate sample CSV/JSON files or upload and commit a complete "
-            "batch without event streaming."
-        ),
+        "Upload / generate data",
+        type="primary",
+        icon=":material/upload:",
+        width="stretch",
+        help="Upload a batch file, or download generated sample CSV/JSON files.",
         key="open_batch_dialog",
     ):
         batch_data_dialog(cfg)
