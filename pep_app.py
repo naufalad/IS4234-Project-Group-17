@@ -22,8 +22,6 @@ from pep_analytics.batch import (
     generate_sample_batch_csv,
     generate_sample_batch_json
 )
-from pep_analytics.config import RiskConfig
-from pep_analytics.data_loader import DataValidationError, load_all
 from pep_analytics.scoring import score_report
 
 import plotly.io as pio
@@ -43,7 +41,7 @@ pio.templates.default = "plotly+pep"
 
 st.set_page_config(page_title="FINMA PEP Supervisory Analytics", layout="wide", initial_sidebar_state="collapsed",
 )
-from pep_analytics.ui import get_scored, sidebar_config
+from pep_analytics.ui import sidebar_config
 
 DBM.init_db()
 
@@ -312,10 +310,11 @@ def batch_data_dialog(cfg):
                 event_type="BATCH_FILE_INGESTION",
             )
             st.cache_data.clear()
-        st.success(
+        st.session_state["batch_upload_success"] = (
             f"Batch update complete: {result['total_ingested']} records ingested; "
             f"{result['escalations_triggered']} escalations registered."
         )
+        st.rerun(scope="app")
 
 
 @st.dialog("Reset entire database", dismissible=False)
@@ -347,6 +346,28 @@ def reset_database_dialog():
             st.session_state.clear()
             st.session_state["database_reset_complete"] = True
         st.rerun()
+
+
+@st.fragment(run_every="2s")
+def live_home_metrics(cfg):
+    """Poll SQLite directly so Home KPIs stay synchronized with live data."""
+    report = DBM.load_table("pep_quarterly_report")
+    scored = score_report(report, cfg)
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("PEP client-quarters", f"{len(scored):,}")
+    c2.metric(
+        "Distinct PEP-linked entities",
+        f"{scored['entity_id'].nunique():,}",
+    )
+    c3.metric(
+        "High-risk client-quarters",
+        int((scored["risk_level"] == "High").sum()),
+    )
+    c4.metric(
+        "Escalations",
+        int((scored["escalate_to_finma"] == "Yes").sum()),
+    )
 
 
 # ---- landing page ----
@@ -390,14 +411,11 @@ def home_page():
 
     if st.session_state.pop("database_reset_complete", False):
         st.success("Database reset complete. Schema and baseline data were rebuilt.")
+    upload_success = st.session_state.pop("batch_upload_success", None)
+    if upload_success:
+        st.success(upload_success)
 
-    ds, scored = get_scored(cfg)
-
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("PEP client-quarters", f"{len(scored):,}")
-    c2.metric("Distinct PEP-linked entities", f"{scored['entity_id'].nunique():,}")
-    c3.metric("High-risk client-quarters", int((scored["risk_level"] == "High").sum()))
-    c4.metric("Escalations", int((scored["escalate_to_finma"] == "Yes").sum()))
+    live_home_metrics(cfg)
 
     st.subheader("Explore the dashboard")
 
