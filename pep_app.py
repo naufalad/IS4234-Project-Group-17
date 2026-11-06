@@ -213,8 +213,7 @@ def batch_data_dialog(cfg):
     st.caption(
         "Download a complete generated dataset or upload quarterly report in CSV/JSON format.  \n"
         "The uploaded batch will be ingested into the database and trigger any necessary escalations.  \n"
-        "Accepted CSV layouts: the generated unified template or the project's native "
-        "`pep_quarterly_report.csv`."
+        "Follow the accepted CSV/JSON layouts (see the sample files) and ensure that all required fields are present.  \n"
     )
 
     download_csv, download_json = st.columns(2)
