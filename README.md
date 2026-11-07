@@ -43,10 +43,6 @@ The app has 7 pages in its top navigation (defined in `pep_app.py`):
 | Drilldown | One entity: transactions over time, counterparties, quarterly risk history and network subgraph |
 | Case Management | Drag-and-drop board for assigning critical cases to FINMA officers, managing assignments and tracking case status |
 
-> `pages/5_Review.py` and `pages/7_Validation.py` are still in the repo but are
-> not registered in the navigation; the KYC-review worklist now lives on the
-> Overview page.
-
 ### Design notes
 
 - **Transparent, adjustable risk score.** Implements the exact 0–100 risk table
