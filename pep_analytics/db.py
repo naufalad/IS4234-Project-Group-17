@@ -831,6 +831,77 @@ def batch_insert_unified_records(
         "escalations_triggered": escalated,
     }
 
+
+_EDGE_KEY_COLS = ("source_id", "target_id", "edge_type", "detail", "known_to_bank")
+
+
+def insert_network_edges(
+    edges: list[dict[str, Any]],
+    event_type: str = "BATCH_EDGE_INGESTION",
+    db_path: Path | str | None = None,
+) -> dict[str, Any]:
+    """Append uploaded relationship rows to ``network_edges``.
+
+    Rows already in the table (same source, target, type, detail and
+    known_to_bank) are skipped, so re-uploading a file does not duplicate the
+    graph. Returns counts of inserted, skipped and hidden (known_to_bank = No)
+    edges, and writes one summary row to the audit log.
+    """
+    init_db(db_path)
+    cols = [
+        "source_id", "source_name", "target_id", "target_name", "edge_type",
+        "detail", "total_usd", "txn_count", "known_to_bank", "found_via",
+        "is_suspicious",
+    ]
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    conn = get_connection(db_path)
+    inserted = skipped = hidden = 0
+    try:
+        with conn:
+            existing = {
+                tuple(r)
+                for r in conn.execute(
+                    f"SELECT {', '.join(_EDGE_KEY_COLS)} FROM network_edges"
+                ).fetchall()
+            }
+            sql = (
+                f"INSERT INTO network_edges ({', '.join(cols)}) "
+                f"VALUES ({', '.join(['?'] * len(cols))})"
+            )
+            for edge in edges:
+                key = tuple(edge.get(c) for c in _EDGE_KEY_COLS)
+                if key in existing:
+                    skipped += 1
+                    continue
+                existing.add(key)
+                conn.execute(sql, [edge.get(c) for c in cols])
+                inserted += 1
+                if str(edge.get("known_to_bank", "")).strip().lower() == "no":
+                    hidden += 1
+
+            conn.execute(
+                """
+                INSERT INTO stream_audit_log (
+                    timestamp, event_type, entity_id, entity_name, quarter,
+                    swiss_bank, risk_score, escalate_to_finma, trigger_reason, details
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    now_iso, event_type, None, None, "", None, 0, "No", "",
+                    f"Network edges: {inserted} inserted, {skipped} duplicates "
+                    f"skipped, {hidden} hidden links (known_to_bank = No)",
+                ),
+            )
+    finally:
+        conn.close()
+
+    return {
+        "status": "success",
+        "inserted": inserted,
+        "skipped": skipped,
+        "hidden": hidden,
+    }
+
 def unassign_case(case_id: str, db_path: Path | str | None = None) -> bool:
     """Remove a case's officer assignment so it returns to the unassigned list."""
     init_db(db_path)

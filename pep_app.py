@@ -19,6 +19,8 @@ import streamlit as st
 from pep_analytics import db as DBM
 from pep_analytics.batch import (
     convert_csv_row_to_unified,
+    convert_edges_frame,
+    is_network_edges_frame,
     generate_sample_batch_csv,
     generate_sample_batch_json
 )
@@ -207,11 +209,61 @@ a[data-testid="stPageLink-NavLink"]:hover * {
 )
 
 
+def _network_edges_upload(uploaded: pd.DataFrame) -> None:
+    """Preview and commit a bank-submitted network-edges CSV."""
+    edges = convert_edges_frame(uploaded)
+    if not edges:
+        st.warning("No rows with both source_id and target_id were found.")
+        return
+
+    preview = pd.DataFrame(edges)
+    is_hidden = preview["known_to_bank"].str.lower().eq("no")
+    st.info(
+        f"Loaded **network-edges** CSV with **{len(uploaded)}** rows and "
+        f"**{len(uploaded.columns)}** columns."
+    )
+    p1, p2, p3 = st.columns(3)
+    p1.metric("Edges", len(edges))
+    p2.metric("Hidden links", int(is_hidden.sum()))
+    p3.metric("Known to bank", int((~is_hidden).sum()))
+    st.caption(
+        "Hidden links (known_to_bank = No) appear as dashed red edges on the "
+        "Network page. Edges already in the database are skipped."
+    )
+    st.dataframe(
+        preview.assign(_hidden=is_hidden)
+        .sort_values("_hidden", ascending=False)
+        .drop(columns="_hidden")[
+            ["source_id", "source_name", "target_id", "target_name",
+             "edge_type", "known_to_bank"]
+        ],
+        width="stretch",
+        hide_index=True,
+    )
+
+    if st.button(
+        f"Commit Network Edges ({len(edges)} rows)",
+        type="primary",
+        width="stretch",
+        key="home_edges_commit",
+    ):
+        with st.spinner("Adding network edges..."):
+            result = DBM.insert_network_edges(edges)
+            st.cache_data.clear()
+        st.session_state["batch_upload_success"] = (
+            f"Network edges added: {result['inserted']} inserted "
+            f"({result['hidden']} hidden links); "
+            f"{result['skipped']} duplicates skipped."
+        )
+        st.rerun(scope="app")
+
+
 @st.dialog("Batch Data Generator & Upload", width="large")
 def batch_data_dialog(cfg):
     """Render batch generation and ingestion without crowding the Home page."""
     st.caption(
-        "Download a complete generated dataset or upload quarterly report in CSV/JSON format.  \n"
+        "Download a complete generated dataset or upload a quarterly report (CSV/JSON) "
+        "or a network-edges file (CSV).  \n"
         "The uploaded batch will be ingested into the database and trigger any necessary escalations.  \n"
         "Follow the accepted CSV/JSON layouts (see the sample files) and ensure that all required fields are present.  \n"
     )
@@ -244,6 +296,9 @@ def batch_data_dialog(cfg):
     try:
         if uploaded_file.name.lower().endswith(".csv"):
             uploaded = pd.read_csv(uploaded_file)
+            if is_network_edges_frame(uploaded):
+                _network_edges_upload(uploaded)
+                return
             native_quarterly = "volume_vs_expected" in uploaded.columns
             batch_records = [
                 convert_csv_row_to_unified(row, cfg)

@@ -178,3 +178,48 @@ def convert_csv_row_to_unified(row: pd.Series, cfg: RiskConfig) -> dict[str, Any
     report["risk_level"] = str(scored["risk_level"])
     report["escalate_to_finma"] = str(scored["escalate_to_finma"])
     return {"entity": entity, "edge": edge, "report": report, "transactions": []}
+
+
+# --------------------------------------------------------------------------
+# Network-edges uploads (bank-submitted relationship files)
+# --------------------------------------------------------------------------
+EDGE_COLUMNS = [
+    "source_id", "source_name", "target_id", "target_name", "edge_type",
+    "detail", "total_usd", "txn_count", "known_to_bank", "found_via",
+    "is_suspicious",
+]
+
+
+def is_network_edges_frame(df: pd.DataFrame) -> bool:
+    """Return True when an uploaded CSV is a network-edges file."""
+    return {"source_id", "target_id"}.issubset(df.columns)
+
+
+def convert_edges_frame(df: pd.DataFrame) -> list[dict[str, Any]]:
+    """Normalise a network-edges CSV into rows ready for ``network_edges``.
+
+    Rows without both endpoints are dropped. ``known_to_bank`` defaults to
+    "Yes" so that only rows the file explicitly marks "No" become hidden links.
+    """
+    edges: list[dict[str, Any]] = []
+    for _, row in df.iterrows():
+        source_id = _text(row, "source_id")
+        target_id = _text(row, "target_id")
+        if not source_id or not target_id:
+            continue
+        total = row.get("total_usd")
+        count = row.get("txn_count")
+        edges.append({
+            "source_id": source_id,
+            "source_name": _text(row, "source_name", source_id),
+            "target_id": target_id,
+            "target_name": _text(row, "target_name", target_id),
+            "edge_type": _text(row, "edge_type", "Unspecified"),
+            "detail": _text(row, "detail") or None,
+            "total_usd": _number(row, "total_usd") if _present(total) else None,
+            "txn_count": _number(row, "txn_count") if _present(count) else None,
+            "known_to_bank": _text(row, "known_to_bank", "Yes").capitalize(),
+            "found_via": _text(row, "found_via", "Batch Upload Gateway"),
+            "is_suspicious": _text(row, "is_suspicious", "No").capitalize(),
+        })
+    return edges
