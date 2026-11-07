@@ -89,7 +89,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Bank blind spots")
-    st.caption("PEP-linked entities the bank never flagged (Requirement 4.3).")
+    st.caption("PEP-linked entities the bank never flagged.")
     bs = G.blind_spots(ds.entities)
     cols = [c for c in ["entity_id", "name", "pep_category", "linked_pep_name",
                         "swiss_bank"] if c in bs.columns]
@@ -97,6 +97,6 @@ with col1:
 
 with col2:
     st.subheader("Pass-through client-quarters")
-    st.caption("Near-1 inflow/outflow ratio on material inflow (Requirement 4.2).")
+    st.caption("Near-1 inflow/outflow ratio on material inflow.")
     pt = G.pass_through_entities(scored, cfg)
     st.dataframe(pt, width='stretch', hide_index=True)
